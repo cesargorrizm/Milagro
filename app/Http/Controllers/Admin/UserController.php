@@ -15,10 +15,10 @@ class UserController extends Controller
 {
     public function __construct() {
 
-        $this->middleware('can:users.index')->only('index');
-        $this->middleware('can:users.create')->only('create', 'store');
-        $this->middleware('can:users.edit')->only('edit', 'update');
-        $this->middleware('can:users.destroy')->only('destroy');
+        $this->middleware('can:admin.users.index')->only('index');
+        $this->middleware('can:admin.users.create')->only('create', 'store');
+        $this->middleware('can:admin.users.edit')->only('edit', 'update');
+        $this->middleware('can:admin.users.destroy')->only('destroy');
 
     }
 
@@ -35,7 +35,7 @@ class UserController extends Controller
 
         $users = User::all();
 
-        return view('users.index', compact('titlePage','title'))->with('usuarios', $users);
+        return view('admin.users.index', compact('titlePage','title'))->with('usuarios', $users);
     }
 
     /**
@@ -51,7 +51,7 @@ class UserController extends Controller
         //$roles = Role::pluck('name','name')->all();
         $roles = Role::pluck('name', 'id');
 
-        return view('users.create', compact('titlePage','title', 'roles'));
+        return view('admin.users.create', compact('titlePage','title', 'roles'));
     }
 
     /**
@@ -84,7 +84,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
             ->with('status', '¡Se ha creado al usuario ' . $user->name . ' correctamente!');
 
 
@@ -115,7 +115,7 @@ class UserController extends Controller
 
         $roles = Role::pluck('name','id');
 
-        return view('users.edit', compact('titlePage', 'title', 'user', 'roles'))
+        return view('admin.users.edit', compact('titlePage', 'title', 'user', 'roles'))
             ->with('usuario', $user);
 
     }
@@ -151,7 +151,7 @@ class UserController extends Controller
         //$user->assignRole($request->input('roles'));
         $user->assignRole($request->get('role'));
 
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
             ->with('status', '¡Se ha actualizado el usuario ' . $user->name . ' correctamente!');
 
     }
@@ -170,7 +170,7 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
             ->with('status', '¡Se ha eliminado al usuario ' . $user->name . ' correctamente!');
     }
 
