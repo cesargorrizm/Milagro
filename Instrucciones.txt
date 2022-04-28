@@ -1,0 +1,4 @@
+1- Modificar .env con nombre Nombre del proyecto y Base De Datos
+2-Creamos en phpMyAdmin la Base de datos con el nombre del .env
+3- Comando: 
+	php artisan migrate --seed 
