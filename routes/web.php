@@ -70,5 +70,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
 
     //Resto de rutas de Admin
     // HOla
+    // Hola de nuevo
 
 });
