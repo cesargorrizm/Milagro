@@ -72,5 +72,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     // HOla
     // Hola de nuevo
     // hola
-
+    // Hola 
 });
