@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// SECCIONES PÚBLICAS
+
 /*
  * Home
  */
@@ -30,11 +32,31 @@ Route::get('/', function () {
  */
 Route::post('/', [ContactoController::class, 'send'])->name('contactoWeb');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+/*
+ * Acceso a Administración
+ */
+Route::get('login_empresa', function () {
+    return view('auth.login');
+})->name('login_empresa');
+
+
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
+
+//Route::get('/admin', function(){
+//    return view('layouts.admin');
+//})->name('admin');
+
+
+// PARTE ADMINISTRACIÓN
 
 Route::get('/admin', function(){
+    return view('layouts.admin');
+})->name('admin');
+
+Route::middleware(['auth:sanctum', 'verified', 'can:admin'])->get('login_empresa', function () {
     return view('layouts.admin');
 })->name('admin');
 
@@ -44,5 +66,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     Route::resource('/roles', RoleController::class)->names('roles');
 
     Route::resource('/users', UserController::class)->except('show')->names('users');
+
+
+    //Resto de rutas de Admin
 
 });
