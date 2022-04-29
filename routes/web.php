@@ -63,6 +63,8 @@ Route::middleware(['auth:sanctum', 'verified', 'can:admin'])->get('login_empresa
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
+    
+ //Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
     Route::resource('/roles', RoleController::class)->names('roles');
 

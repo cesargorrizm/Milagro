@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Página Principal</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin') }}">Página Principal</a></li>
                         <li class="breadcrumb-item active"><a href="{{ route('roles.index') }}">Roles</a></li>
                         <li class="breadcrumb-item active">Editar rol</li>
                     </ol>
