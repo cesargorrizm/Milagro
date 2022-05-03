@@ -118,7 +118,7 @@
     </div><!--//hero-section-->
     
     <!-- ******Reviews Section****** -->
-    <section id="reviews" class="reviews-section section">
+    {{-- <section id="reviews" class="reviews-section section">
         <div class="container text-center">
             <div id="reviews-carousel" class="carousel slide" data-ride="carousel">
                 <!--//wrapper for slides -->
@@ -191,7 +191,7 @@
                 
             </div><!--//reviews-carousel-->
         </div><!--//container-->
-    </section><!--//reviews-->
+    </section><!--//reviews--> --}}
        
     <!-- ******Menus section****** -->
     <div id="menus" class="menus-section">
@@ -490,40 +490,54 @@
     <div id="about" class="about-section">
         <div class="container text-center">
             <h2 class="section-title">
-                <span class="script">Our Story</span>
-                <span class="title-text">Behind The Scenes</span>
+                <span class="script">Servicios </span>
+                <span class="title-text">¿Qué te ofrecemos?</span>
                 <span class="title-border"></span>
             </h2>
             <div class="intro center-block">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
+                <p>“Si quiero”… todo empieza con una simple frase. A partir de ese momento comienza una carrera a contra-reloj con el objetivo de que todo esté a punto para el gran día. Por el simple motivo de que cada persona es completamente diferente, creemos que cada celebración debe ser totalmente diferente, poniendo en valor los gustos y detalles de cada pareja. </p>
             </div>
             <div class="suppliers">
-                <h3 class="title script">Our Suppliers</h3>
+                <h3 class="title script">SERVICIOS INCLUIDOS</h3>
                 <div class="supplier-list center-block">
                     <div class="supplier-type">
-                        <h4 class="type-title">Meat</h4>
-                        <ul class="list-unstyled">
-                            <li>Anderson Meat</li>
-                            <li>Sheppard John</li>
-                        </ul>
+                       Degustación del Menú para 6 personas previamente elegido (para contrataciones superiores a 120 plazas)
                     </div><!--//supplier-type-->
                     <div class="supplier-type">
-                        <h4 class="type-title">Fish</h4>
-                        <ul class="list-unstyled">
-                            <li>M&amp;T Seafood</li>
-                            <li>Collins Seafoods</li>
-                        </ul>
+                        - Decoración floral para la presidencia así como para el resto de las mesas
                     </div><!--//supplier-type-->
                     <div class="supplier-type">
-                        <h4 class="type-title">Fruit &amp; Veg</h4>
-                        <ul class="list-unstyled">
-                            <li>The Farm</li>
-                            <li>Fruitdrop Ltd</li>
-                        </ul>
+                        - Tarjetones de minuta para todos los comensales
+                    </div><!--//supplier-type-->
+                    <div class="supplier-type">
+                        - Seating plan invitados
+                    </div><!--//supplier-type-->
+                    <div class="supplier-type">
+                        - Habitación para los novios la noche de la boda en HOTEL TORICO PLAZA en régimen de alojamiento y desayuno. Check out 16.00 horas
+                    </div><!--//supplier-type-->
+                    <div class="supplier-type">
+                        - Zona infantil de juegos e hinchables con monitores
+                    </div><!--//supplier-type-->
+                    <div class="supplier-type">
+                        - Impuestos SGAE
+                    </div><!--//supplier-type-->
+                    <div class="supplier-type">
+                        - Descuento en celebraciones especiales: San Valentín , Nochevieja , Reyes, etc
                     </div><!--//supplier-type-->
                 </div><!--//supplier-list-->
             </div><!--//suppliers-->
-            <a class="btn btn-secondary text-center" href="{{ asset('media/pdf-file.pdf')}}" target="_blank">View full supplier list</a>
+            <div class="suppliers">
+                <h3 class="title script">Para vuestros invitados</h3>
+                <div class="supplier-list center-block">
+                    <div class="supplier-type">
+                        Aparcamiento amplio, vigilado y de fácil accesibilidad
+                    </div><!--//supplier-type-->
+                    <div class="supplier-type">
+                        Tarifas especiales para el alojamiento de vuestros invitados en el Hotel Torico Plaza (Yagüe de Salas,5)
+                    </div><!--//supplier-type-->
+                </div><!--//supplier-list-->
+            </div><!--//suppliers-->
+            {{-- <a class="btn btn-secondary text-center" href="{{ asset('media/pdf-file.pdf')}}" target="_blank">View full supplier list</a> --}}
         </div><!--//container-->
     </div><!--//about-section-->
     
