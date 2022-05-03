@@ -875,7 +875,7 @@ select {
 }
 .about-section .supplier-list {
   overflow: hidden;
-  display: inline-block;
+  /* display: inline-block; */
 }
 .about-section .supplier-type {
   float: left;

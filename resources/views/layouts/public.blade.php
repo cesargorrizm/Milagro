@@ -499,41 +499,45 @@
             </div>
             <div class="suppliers">
                 <h3 class="title script">SERVICIOS INCLUIDOS</h3>
-                <div class="supplier-list center-block">
-                    <div class="supplier-type">
-                       Degustación del Menú para 6 personas previamente elegido (para contrataciones superiores a 120 plazas)
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        - Decoración floral para la presidencia así como para el resto de las mesas
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        - Tarjetones de minuta para todos los comensales
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        - Seating plan invitados
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        - Habitación para los novios la noche de la boda en HOTEL TORICO PLAZA en régimen de alojamiento y desayuno. Check out 16.00 horas
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        - Zona infantil de juegos e hinchables con monitores
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        - Impuestos SGAE
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        - Descuento en celebraciones especiales: San Valentín , Nochevieja , Reyes, etc
+                <div class="supplier-list" style="text-align:left">
+                    <div class="supplier-type" style="text-align:left">
+                        <ul>
+                    <li>                        
+                        Degustación del Menú para 6 personas previamente elegido (para contrataciones superiores a 120 plazas)
+                    </li>
+                    <li>
+                        Decoración floral para la presidencia así como para el resto de las mesas
+                    </li> 
+                    <li>
+                        Tarjetones de minuta para todos los comensales
+                    </li>
+                    <li>
+                        Seating plan invitados
+                    </li>
+                    <li>
+                        Habitación para los novios la noche de la boda en HOTEL TORICO PLAZA en régimen de alojamiento y desayuno. Check out 16.00 horas
+                    </li> 
+                    <li>
+                        Zona infantil de juegos e hinchables con monitores
+                    </li>
+                    <li>
+                        Impuestos SGAE
+                    </li>
+                    <li>
+                        Descuento en celebraciones especiales: San Valentín , Nochevieja , Reyes, etc
+                    </li>
+                        </ul>
                     </div><!--//supplier-type-->
                 </div><!--//supplier-list-->
             </div><!--//suppliers-->
             <div class="suppliers">
                 <h3 class="title script">Para vuestros invitados</h3>
-                <div class="supplier-list center-block">
-                    <div class="supplier-type">
-                        Aparcamiento amplio, vigilado y de fácil accesibilidad
-                    </div><!--//supplier-type-->
-                    <div class="supplier-type">
-                        Tarifas especiales para el alojamiento de vuestros invitados en el Hotel Torico Plaza (Yagüe de Salas,5)
+                <div class="supplier-list" style="text-align:left">
+                    <div class="supplier-type" style="text-align:left">
+                        <ul style="text-align:left">
+                        <li>Aparcamiento amplio, vigilado y de fácil accesibilidad</li>
+                        <li>Tarifas especiales para el alojamiento de vuestros invitados en el Hotel Torico Plaza (Yagüe de Salas,5)</li>
+                        </ul>
                     </div><!--//supplier-type-->
                 </div><!--//supplier-list-->
             </div><!--//suppliers-->
