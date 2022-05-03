@@ -198,7 +198,7 @@
         <div class="container text-center">
             <h2 class="section-title">
                 <span class="script">Discover</span>
-                <span class="title-text">Our Menus</span>
+                <span class="title-text">Todo lo que has imaginado</span>
                 <span class="title-border"></span>
             </h2>
             <div class="intro center-block">
@@ -212,19 +212,21 @@
                 </ul>
             </div><!--//menu-links-->
             <div class="featured">
-                <h3 class="title script">Signature Dishes</h3>
+                <h3 class="title script">Nuestros salones</h3>
                 <div class="media-wrapper row">
-                    <div class="col-left col-xs-12 col-sm-8">
+                    <div class="col-left col-xs-12 col-sm-7">
                         <div id="links" class="row">
                             <div class="col-xs-12"> 
                                 <div class="media-item">
                                     <div class="media-item-inner">
-                                        <img class="img-responsive" src="{{ asset('images/menu/media-1.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/menu/media-1-lg.jpg')}}" data-gallery>
+                                        <img class="img-responsive" src="{{ asset('images/salones/35-san-pedro.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/salones/35-san-pedro.jpg')}}" data-gallery>
                                             <span class="mask-inner">
-                                                <span class="item-title script">Charbroiled Sterling Silver Pork Chop</span>
-                                                <span class="desc">Description about the dish goes here luctus leo, vitae tempor nulla. Nam iaculis turpis ac cursus interdum.</span>
-                                                <span class="price">£46</span>
+                                                <span class="item-title script">Salon San Pedro</span>
+                                                <span class="desc">
+                                                    Un ambiente cálido y acogedor
+                                                    Un salón con un estilo marcadamente contemporáneo e innovador donde la elegancia y la estética se funden</span>
+                                                <span class="price">400 personas</span>
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
@@ -236,12 +238,12 @@
                             <div class="col-xs-12 col-sm-6">    
                                 <div class="media-item">
                                     <div class="media-item-inner">
-                                        <img class="img-responsive" src="{{ asset('images/menu/media-2.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/menu/media-2-lg.jpg')}}" data-gallery>
+                                        <img class="img-responsive" src="{{ asset('images/salones/39-virgen-del-pilar.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/salones/39-virgen-del-pilar.jpg')}}" data-gallery>
                                             <span class="mask-inner">
-                                                <span class="item-title script">Wild Salmon</span>
+                                                <span class="item-title script">Salón Virgen del Pilar</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                <span class="price">£28</span>
+                                                {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
@@ -250,12 +252,12 @@
                             <div class="col-xs-12 col-sm-6"> 
                                 <div class="media-item">
                                     <div class="media-item-inner">
-                                        <img class="img-responsive" src="{{ asset('images/menu/media-3.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/menu/media-3-lg.jpg') }}" data-gallery>
+                                        <img class="img-responsive" src="{{ asset('images/salones/San-Fernando.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/salones/San-Fernando.jpg') }}" data-gallery>
                                             <span class="mask-inner">
-                                                <span class="item-title script">Crab and Avacado Salad</span>
+                                                <span class="item-title script">Salón San Fernando</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                <span class="price">£16</span>
+                                                {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
@@ -264,15 +266,15 @@
                         </div><!--//row-->
                     </div>
                     
-                    <div class="col-right col-xs-12 col-sm-4">
+                    <div class="col-right col-xs-12 col-sm-5">
                         <div class="media-item">
                             <div class="media-item-inner">
-                                <img class="img-responsive" src="{{ asset('images/menu/media-4.jpg') }}" alt="">
-                                <a class="mask" href="{{ asset('images/menu/media-4-lg.jpg') }}" data-gallery>
+                                <img class="img-responsive" src="{{ asset('images/salones/garden2.jpg') }}" alt="">
+                                <a class="mask" href="{{ asset('images/salones/garden2.jpg') }}" data-gallery>
                                     <span class="mask-inner">
-                                        <span class="item-title script">Ocean Seafood Platter</span>
-                                        <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                        <span class="price">£32</span>
+                                        <span class="item-title script">Sala Garden</span>
+                                        <span class="desc">Un salón con un estilo marcadamente contemporáneo e innovador donde la elegancia y la estética se funden</span>
+                                        {{-- <span class="price">£32</span> --}}
                                     </span><!--//mask-inner-->
                                 </a><!--//mask-->
                             </div><!--//media-item-inner-->
@@ -280,11 +282,11 @@
                         
                         <div class="media-item">
                             <div class="media-item-inner">
-                                <img class="img-responsive" src="{{ asset('images/menu/media-5.jpg') }}" alt="">
-                                <a class="mask" href="{{ asset('images/menu/media-5-lg.jpg') }}" data-gallery>
+                                <img class="img-responsive" src="{{ asset('images/salones/jardin2.jpg') }}" alt="">
+                                <a class="mask" href="{{ asset('images/salones/jardin2.jpg') }}" data-gallery>
                                     <span class="mask-inner">
-                                        <span class="item-title script">Duo of Lamb</span>
-                                        <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
+                                        <span class="item-title script">Terraza Jardín</span>
+                                        <span class="desc">El Jardín de El Restaurante El Milagro es un marco incomparable y excepcional, a tan solo 5 minutos de Teruel. Un espacio de ensueño que hace de cada visita al Milagro una experiencia diferente.</span>
                                         <span class="price">£36</span>
                                     </span><!--//mask-inner-->
                                 </a><!--//mask-->
@@ -292,6 +294,101 @@
                         </div><!--//media-item-->
                     </div><!--//col-right-->
 
+                </div><!--//media-wrapper-->
+            </div><!--//featured-->
+            <div class="featured">
+                <h3 class="title script">Nuestros espacios</h3>
+                <div class="media-wrapper row">
+                    <div class="col-left col-xs-12 col-sm-12">
+                        <div id="links" class="row">
+                            <div class="col-xs-12 col-sm-4">    
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        <img class="img-responsive" src="{{ asset('images/espacios/barra-mercaocentral.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/espacios/barra-mercaocentral.jpg')}}" data-gallery>
+                                            <span class="mask-inner">
+                                                <span class="item-title script">El Mercao</span>
+                                                <span class="desc">Situado en la Plaza Amantes, en pleno centro de la ciudad de Teruel, goza de una privacidad y unas vistas incomparables a los pies de la Torre de San Pedro</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            <div class="col-xs-12 col-sm-4"> 
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        <img class="img-responsive" src="{{ asset('images/espacios/lago-azul-vista-al-lago.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/espacios/lago-azul-vista-al-lago.jpg') }}" data-gallery>
+                                            <span class="mask-inner">
+                                                <span class="item-title script">EL LAGO AZUL</span>
+                                                <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            <div class="col-xs-12 col-sm-4"> 
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        <img class="img-responsive" src="{{ asset('images/espacios/mesa-central.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/espacios/mesa-central.jpg') }}" data-gallery>
+                                            <span class="mask-inner">
+                                                <span class="item-title script">La Escaleruela</span>
+                                                <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                        </div><!--//row-->
+                        <div id="links" class="row">
+                            <div class="col-xs-12 col-sm-4">    
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        <img class="img-responsive" src="{{ asset('images/espacios/finca.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/espacios/finca.jpg')}}" data-gallery>
+                                            <span class="mask-inner">
+                                                <span class="item-title script">FINCA SANTA ANA</span>
+                                                <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            <div class="col-xs-12 col-sm-4"> 
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        <img class="img-responsive" src="{{ asset('images/espacios/navarrete2.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/espacios/navarrete2.jpg') }}" data-gallery>
+                                            <span class="mask-inner">
+                                                <span class="item-title script">RINCON DE NAVARRETE</span>
+                                                <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            <div class="col-xs-12 col-sm-4"> 
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        <img class="img-responsive" src="{{ asset('images/espacios/bonet6.jpg') }}" alt="">
+                                        <a class="mask" href="{{ asset('images/espacios/bonet6.jpg') }}" data-gallery>
+                                            <span class="mask-inner">
+                                                <span class="item-title script">Salón San Fernando</span>
+                                                <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                        </div><!--//row-->
+                    </div>
                 </div><!--//media-wrapper-->
             </div><!--//featured-->
         </div><!--//container-->
@@ -306,18 +403,26 @@
                 <span class="title-border"></span>
             </h2>
             <div class="row text-left">
-                <div class="news-wrapper col-sm-8 col-xs-12 col-md-push-2 col-sm-push-2 col-xs-push-0">
+                <div class="news-wrapper col-sm-10 col-xs-12 col-md-push-1 col-sm-push-1 col-xs-push-0">
+                    
                     <div class="item">
-                        <h4 class="title">Wine Tasting</h4>
-                        <div class="meta">Saturday, 17th August</div>
-                        <p class="excerpt">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
-                        </p><!--//excerpt-->
-                        <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">Read more</a>
-                        <div class="date-badge">
-                            <span class="month">AUG</span>
-                            <span class="date">17</span>
-                        </div><!--/date-badge-->
+                        <table class="default">
+                            <tr>
+                              <td><h4 class="title">Wine Tasting</h4>
+                                <div class="meta">Saturday, 17th August</div>
+                                <p class="excerpt">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                                    
+                                </p><!--//excerpt-->
+                                <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">Read more</a>
+                                <div class="date-badge">
+                                    <span class="month">AUG</span>
+                                    <span class="date">17</span>
+                                </div><!--/date-badge--></td>
+                              <td><img class="img-responsive" width="200" height="200" src="{{ asset('images/menu/media-3.jpg') }}" alt=""></td>
+                            </tr>
+                          </table>
+                        
                     </div><!--//item-->
                     <div class="item">
                         <h4 class="title">Cooking Lesson</h4>
@@ -392,53 +497,42 @@
     <div id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title text-center">
-                <span class="script">Contact Us</span>
-                <span class="title-text">Get in Touch</span>
+                <span class="script">Contacta con nosotros</span>
+                <span class="title-text">Te estamos esperando</span>
                 <span class="title-border"></span>
             </h2>
             <div class="contact-content">
                 <div class="row">
                     <div class="map-col col-xs-12 col-sm-6">
                         <div id="map" class="map-container">
-                            <!--//You need to embed your own google map below-->
-                            <!--//Ref: https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=en -->
-                            <iframe src="{{ asset('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79461.78853986299!2d-0.22087714166825928!3d51.50989724581101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876052ddef3fe71%3A0x7f465130c3e2cba7!2sScott&#39;s!5e0!3m2!1sen!2suk!4v1469620593905') }}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            
-                        </div><!--//map-->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.2441709279183!2d-1.1404536841435613!3d40.359109979371844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5e7476835c7345%3A0x119f4ed6c51b5f23!2sRestaurante+EL+MILAGRO+de+Teruel!5e0!3m2!1ses!2ses!4v1471437910842" width="1280" height="420" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+    
+                        </div>
                     </div><!--//map-col-->
                     <div class="info-col col-xs-12 col-sm-6">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                        {{-- <div class="row"> --}}
+                            <div class="col-xs-12 col-md-12">
                                 <div class="general">
-                                    <h4 class="title">Come to find us</h4>
+                                    <h4 class="title"><b>Visita nuestras instalaciones</b></h4>
                                     <div class="adr-group">       
-                                        <span class="street-address">68 King Street</span><br>
-                                        <span class="city">London</span><br>
-                                        <span class="postal-code">SW1Y 8DJ</span><br>
-                                        <span class="country-name">London</span>
+                                        <span class="street-address">Carretera Sagunto-Burgos Km. 123</span><br>
+                                        <span class="city">Teruel</span><br>
+                                        <span class="postal-code">44195</span><br>
+                                        <span class="country-name">Teruel</span>
                                     </div>
                                     <div class="contact-methods">
-                                        <h5 class="subtitle">General Enquiries</h5>
+                                        <h5 class="subtitle">Correo y teléfono</h5>
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i> <a href="#">info@website.com</a></li>
-                                            <li><i class="fa fa-phone"></i> <a href="tel:0800123456">0800 123 456</a></li>
+                                            <li><i class="fa fa-envelope-o"></i> <a href="#">info@restauranteelmilagro.com</a></li>
+                                            <li><i class="fa fa-phone"></i> <a href="tel:0800123456"> +34 978 60 30 95</a></li>
                                         </ul>
                                     </div>
                                     <div class="contact-reserve">
-                                        <h5 class="subtitle" >Want to book a table?</h5>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve-modal">Book Now</button>
+                                        <h5 class="subtitle" >¿Quieres concertar una cita?</h5>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve-modal">Reserva ahora</button>
                                     </div>
                                 </div><!--//general-->
                             </div>
-                            <div class="col-xs-12 col-md-6">
-                                <div class="press">
-                                    <h4 class="title">Press Enquiries</h4>
-                                    <p>Please contact us for any press related enquiries</p>
-                                    <p><i class="fa fa-envelope-o"></i> <a href="#">press@website.com</a></p>
-                                    <p><a class="btn btn-secondary" href="#">Download Press Kit</a></p>
-                                </div><!--//press-->
-                            </div>
-                        </div><!--//row-->
                     </div><!--//info-col-->
                 </div><!--//row-->
             </div><!--//contact-content-->
