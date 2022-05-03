@@ -107,7 +107,7 @@
         </div>
         
         <div class="bg-slider-wrapper">
-            <div id="bg-slider" class="flexslider bg-slider">
+            <div id="bg-slider" class="flexslider bg-slider" style="opacity: 0.5">
                 <ul class="slides">
                     <li class="slide slide-1"></li>
                     <li class="slide slide-2"></li>
