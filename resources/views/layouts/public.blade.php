@@ -197,20 +197,20 @@
     <div id="menus" class="menus-section">
         <div class="container text-center">
             <h2 class="section-title">
-                <span class="script">Discover</span>
+                <span class="script">Instalaciones y detalles</span>
                 <span class="title-text">Todo lo que has imaginado</span>
                 <span class="title-border"></span>
             </h2>
             <div class="intro center-block">
-                <p>At Epicure you will find morden European dishes lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
+                <p>¿Quieres un banquete al aire libre en un lugar único? ¿Prefieres un salón acondicionado y adaptado a tus necesidades? Nosotros lo hacemos realidad. Donde quieras y como quieras.</p>
             </div>
-            <div class="menu-links">
+            {{-- <div class="menu-links">
                 <ul class="list-inline block-center">
                     <li><a class="btn btn-secondary" href="{{ asset('media/pdf-file.pdf') }}" target="_blank">Lunch Menu</a></li>
                     <li><a class="btn btn-secondary" href="{{ asset('media/pdf-file.pdf') }}" target="_blank">Dinner Menu</a></li>
                     <li><a class="btn btn-secondary" href="{{ asset('media/pdf-file.pdf') }}" target="_blank">Wine List</a></li>
                 </ul>
-            </div><!--//menu-links-->
+            </div><!--//menu-links--> --}}
             <div class="featured">
                 <h3 class="title script">Nuestros salones</h3>
                 <div class="media-wrapper row">
@@ -270,7 +270,7 @@
                         <div class="media-item">
                             <div class="media-item-inner">
                                 <img class="img-responsive" src="{{ asset('images/salones/garden2.jpg') }}" alt="">
-                                <a class="mask" href="{{ asset('images/salones/garden2.jpg') }}" data-gallery>
+                                <a class="mask" href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">
                                     <span class="mask-inner">
                                         <span class="item-title script">Sala Garden</span>
                                         <span class="desc">Un salón con un estilo marcadamente contemporáneo e innovador donde la elegancia y la estética se funden</span>
@@ -349,7 +349,8 @@
                                 <div class="media-item">
                                     <div class="media-item-inner">
                                         <img class="img-responsive" src="{{ asset('images/espacios/finca.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/espacios/finca.jpg')}}" data-gallery>
+                                        <a class="mask"  href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">
+                                            
                                             <span class="mask-inner">
                                                 <span class="item-title script">FINCA SANTA ANA</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
@@ -379,7 +380,7 @@
                                         <img class="img-responsive" src="{{ asset('images/espacios/bonet6.jpg') }}" alt="">
                                         <a class="mask" href="{{ asset('images/espacios/bonet6.jpg') }}" data-gallery>
                                             <span class="mask-inner">
-                                                <span class="item-title script">Salón San Fernando</span>
+                                                <span class="item-title script">HUERTO DE BONET</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
@@ -772,7 +773,8 @@
                 </div><!--//modal-header-->
                 <div class="modal-body">
                     <div class="post">
-                        <p><img class="img-responsive" src="{{ asset('images/news/news-1.jpg') }}" alt="" /></p>
+                       
+                        <p><img class="img-responsive" src="{{ asset('images/salones/garden2.jpg') }}" alt="" /></p>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
                         <p>Maecenas ac turpis sit amet leo semper ultricies lobortis sed purus. Integer erat felis, maximus in placerat vel, fermentum a libero. Ut quis mollis est. Pellentesque semper nibh ut scelerisque tincidunt. Nullam commodo quam eu lectus ullamcorper, quis sagittis ligula sagittis. Fusce id pellentesque risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                     </div>
