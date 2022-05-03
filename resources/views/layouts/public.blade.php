@@ -403,26 +403,58 @@
                 <span class="title-border"></span>
             </h2>
             <div class="row text-left">
-                <div class="news-wrapper col-sm-10 col-xs-12 col-md-push-1 col-sm-push-1 col-xs-push-0">
-                    
+                <div class="news-wrapper col-sm-6 col-xs-6 ">
                     <div class="item">
-                        <table class="default">
-                            <tr>
-                              <td><h4 class="title">Wine Tasting</h4>
-                                <div class="meta">Saturday, 17th August</div>
-                                <p class="excerpt">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
-                                    
-                                </p><!--//excerpt-->
-                                <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">Read more</a>
-                                <div class="date-badge">
-                                    <span class="month">AUG</span>
-                                    <span class="date">17</span>
-                                </div><!--/date-badge--></td>
-                              <td><img class="img-responsive" width="200" height="200" src="{{ asset('images/menu/media-3.jpg') }}" alt=""></td>
-                            </tr>
-                          </table>
-                        
+                        <h4 class="title">Wine Tasting</h4>
+                        <div class="meta">Saturday, 17th August</div>
+                        <p class="excerpt">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                        </p><!--//excerpt-->
+                        <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">Read more</a>
+                        <div class="date-badge">
+                            <span class="month">AUG</span>
+                            <span class="date">17</span>
+                        </div><!--/date-badge-->
+                    </div><!--//item-->
+                    <div class="item">
+                        <h4 class="title">Cooking Lesson</h4>
+                        <div class="meta">Saturday, 8th July</div>
+                        <p class="excerpt">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                        </p><!--//excerpt-->
+                        <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-2">Read more</a>
+                        <div class="date-badge">
+                            <span class="month">JUL</span>
+                            <span class="date">08</span>
+                        </div><!--/date-badge-->
+                    </div><!--//item-->
+                    <div class="item">
+                        <h4 class="title">Exclusive Offers</h4>
+                        <div class="meta">Tuesday, 1st June</div>
+                        <p class="excerpt">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                        </p><!--//excerpt-->
+                        <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-3">Read more</a>
+                        <div class="date-badge">
+                            <span class="month">JUN</span>
+                            <span class="date">01</span>
+                        </div><!--/date-badge-->
+                    </div><!--//item-->
+                </div><!--//col-news-->
+            
+            
+                <div class="news-wrapper col-sm-6 col-xs-6" style="float: right">
+                    <div class="item">
+                        <h4 class="title">Wine Tasting</h4>
+                        <div class="meta">Saturday, 17th August</div>
+                        <p class="excerpt">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.
+                        </p><!--//excerpt-->
+                        <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">Read more</a>
+                        <div class="date-badge">
+                            <span class="month">AUG</span>
+                            <span class="date">17</span>
+                        </div><!--/date-badge-->
                     </div><!--//item-->
                     <div class="item">
                         <h4 class="title">Cooking Lesson</h4>
