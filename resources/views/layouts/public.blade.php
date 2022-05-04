@@ -599,11 +599,11 @@
                     <div class="footer-col col-xs-12 col-sm-3">
                         <div class="footer-col-inner">
                             <h3 class="title">Opening Time</h3>
-                            <ul class="list-unstyled">
-                                <li><span>Lunes a Viernes::</span> 08:00 - 17:00</li>
+                            <ul>
+                                <li><span>Lunes a Viernes:</span> 08:00 - 17:00</li>
                                 <li><span>Sábados:</span>08:00 - CIERRE</li>
-                                <li><span>PARA RESERVAS FUERA DE ESTOS HORARIOS PÓNGASE EN CONTACTO CON NOSOTROS</span></li>
                             </ul>
+                            <span>PARA RESERVAS FUERA DE ESTOS HORARIOS PÓNGASE EN CONTACTO CON NOSOTROS</span>
                         </div><!--//footer-col-inner-->
                     </div><!--//footer-col-->
                     
