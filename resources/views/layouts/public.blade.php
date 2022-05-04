@@ -58,11 +58,11 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse  text-center">
                     <ul class="nav navbar-nav center-block">
                         <li class="nav-item"><a class="scrollto" href="#hero">Home</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#menus">Menus</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#menus">Salones &amp; Espacios</a></li>
                         <li class="nav-item"><a class="scrollto" href="#news">News &amp; Events</a></li>                                              
-                        <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
-                        <li class="nav-item"><a href="#" data-toggle="modal" data-target="#reserve-modal">Reservations</a></li>
-                        <li class="nav-item"><a class="scrollto" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#about">Servicios</a></li>
+                        <li class="nav-item"><a href="#" data-toggle="modal" data-target="#reserve-modal">Reservar</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#contact">Contacto</a></li>
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
             </nav><!--//main-nav-->
