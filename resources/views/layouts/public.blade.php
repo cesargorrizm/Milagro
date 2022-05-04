@@ -574,7 +574,7 @@
                                     <div class="contact-methods">
                                         <h5 class="subtitle">Correo y teléfono</h5>
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o"></i> <a href="#">info@restauranteelmilagro.com</a></li>
+                                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@restauranteelmilagro.com">info@restauranteelmilagro.com</a></li>
                                             <li><i class="fa fa-phone"></i> <a href="tel:0800123456"> +34 978 60 30 95</a></li>
                                         </ul>
                                     </div>
@@ -596,9 +596,9 @@
         <div class="footer-content">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-xs-12 col-sm-3">
+                    <div class="footer-col col-xs-12 col-sm-5">
                         <div class="footer-col-inner">
-                            <h3 class="title">Opening Time</h3>
+                            <h3 class="title">Horario</h3>
                             <ul>
                                 <li><span>Lunes a Viernes:</span> 08:00 - 17:00</li>
                                 <li><span>Sábados:</span>08:00 - CIERRE</li>
@@ -607,7 +607,7 @@
                         </div><!--//footer-col-inner-->
                     </div><!--//footer-col-->
                     
-                    <div class="footer-col col-xs-12 col-sm-6">
+                    <div class="footer-col col-xs-12 col-sm-5">
                         <div class="footer-col-inner">
                             <h3 class="title">Contacto</h3>
                             <ul class="list-unstyled">
@@ -631,7 +631,7 @@
                             </form><!--//subscribe-form-->                                      
                         </div><!--//footer-col-inner-->
                     </div><!--//foooter-col-->  --}}
-                    <div class="footer-col col-xs-12 col-sm-3">
+                    <div class="footer-col col-xs-12 col-sm-2">
                         <div class="footer-col-inner">
                             <h3 class="title">Redes sociales</h3> 
                             <ul class="social-icons list-inline">
