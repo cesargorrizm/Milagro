@@ -600,13 +600,25 @@
                         <div class="footer-col-inner">
                             <h3 class="title">Opening Time</h3>
                             <ul class="list-unstyled">
-                                <li><span>Mon - Fri:</span> 08:00 - 22:30</li>
-                                <li><span>Sat:</span> 09:00 - 23:00</li>
-                                <li><span>Sun:</span> 09:00 - 22:30</li>
+                                <li><span>Lunes a Viernes::</span> 08:00 - 17:00</li>
+                                <li><span>Sábados:</span>08:00 - CIERRE</li>
+                                <li><span>PARA RESERVAS FUERA DE ESTOS HORARIOS PÓNGASE EN CONTACTO CON NOSOTROS</span></li>
                             </ul>
                         </div><!--//footer-col-inner-->
                     </div><!--//footer-col-->
+                    
                     <div class="footer-col col-xs-12 col-sm-6">
+                        <div class="footer-col-inner">
+                            <h3 class="title">Contacto</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> CTRA. SAGUNTO-BURGOS KM, 123, 44195 Teruel</li>
+                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@restauranteelmilagro.com">info@restauranteelmilagro.com</a></li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i> +34 978 60 30 95</li>
+                            </ul>
+                        </div><!--//footer-col-inner-->
+                    </div>
+
+                    {{-- <div class="footer-col col-xs-12 col-sm-6">
                         <div class="footer-col-inner">
                             <h3 class="title">Newsletter</h3>
                             <p>Subscribe to our newsletter to get the latest offers and news.</p>  
@@ -618,10 +630,10 @@
                                 </div>                              
                             </form><!--//subscribe-form-->                                      
                         </div><!--//footer-col-inner-->
-                    </div><!--//foooter-col--> 
+                    </div><!--//foooter-col-->  --}}
                     <div class="footer-col col-xs-12 col-sm-3">
                         <div class="footer-col-inner">
-                            <h3 class="title">Follow us</h3> 
+                            <h3 class="title">Redes sociales</h3> 
                             <ul class="social-icons list-inline">
                                 <li><a href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i></a></li>                        
                                 <li><a href="https://www.facebook.com/3rdwavethemes" target="_blank"><i class="fa fa-facebook"></i></a></li>
