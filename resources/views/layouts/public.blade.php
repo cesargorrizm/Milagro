@@ -73,30 +73,30 @@
         <div class="content-wrapper">
             <div class="container text-center">
                 <div class="branding">
-                    <div class="script">Welcome to</div>
+                    <div class="script">Celebra tu boda en </div>
                     <h1 class="logo text-center">
                         <!--/*
                         <span class="border border-l"></span>
                         <span class="text">Epicure</span>
                         <span class="border border-r"></span>
                         */ -->
-                        <img class="img-responsive block-center" src="{{ asset('images/logo.png') }}" alt="logo" />
+                        <img class="img-responsive block-center" src="{{ asset('images/logo/logoGrupoMilagro.png') }}" alt="logo" />
                     </h1><!--//logo-->
                     <div class="tagline text-center">
                         <ul class="list center-block">
-                            <li class="type">Cafe</li>
+                            <li class="type">Tu boda</li>
                             <li role="presentation" class="dot"><i class="fa fa-circle"></i></li>
-                            <li class="type">Restaurant</li>
+                            <li class="type">Tus sueños</li>
                             <li role="presentation" class="dot"><i class="fa fa-circle"></i></li>
-                            <li class="type">Wine Bar</li>
+                            <li class="type">Hechos realidad</li>
                         </ul>
                     </div><!--//tagline-->
                 </div><!--//branding-->
                 <h2 class="promo-line">
-                    Promoting your restaurant in a powerful way
+                    Más de 25 años realizando sueños
                 </h2><!--//promo-->
                 <div class="cta-container">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve-modal">Book a Table</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve-modal">Concierta una cita</button>
                 </div><!--//cta-container-->
             </div><!--//container-->
         </div><!--//content-wrapper-->
@@ -691,6 +691,9 @@
                         <span class="script">Ven a visitarnos</span>
                         <span class="title-text">Concierta una cita</span>
                         <span class="title-border"></span>
+                            {{-- <h1>
+                            <img class="img-responsive block-center" src="{{ asset('images/logo/logoPequeño.png') }}" alt="logo" />
+                            </h1> --}}
                     </h2>
                     <div class="intro text-center">
                         <p class="blurb">Llámanos para concertar una cita</p>
@@ -799,6 +802,9 @@
                 </div><!--//modal-body-->
                 <div class="modal-footer text-center">
                     <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Close</button>
+                    {{-- <div class="col-xs-12 col-sm-4 row justify-content-center">
+                        <button type="submit" class="btn btn-block btn-primary">Reservar ahora</button>
+                    </div>     --}}
                 </div>
             </div><!--//modal-content-->
         </div>
