@@ -57,7 +57,7 @@
                 </div><!--//navbar-header-->
                 <div id="navbar-collapse" class="navbar-collapse collapse  text-center">
                     <ul class="nav navbar-nav center-block">
-                        <li class="nav-item"><a class="scrollto" href="#hero">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#hero">Inicio</a></li>
                         <li class="nav-item"><a class="scrollto" href="#menus">Salones &amp; Espacios</a></li>
                         <li class="nav-item"><a class="scrollto" href="#news">News &amp; Events</a></li>                                              
                         <li class="nav-item"><a class="scrollto" href="#about">Servicios</a></li>
@@ -688,15 +688,15 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h2 id="reserveModalLabel" class="modal-title text-center">
-                        <span class="script">Reservations</span>
-                        <span class="title-text">Book a Table</span>
+                        <span class="script">Ven a visitarnos</span>
+                        <span class="title-text">Concierta una cita</span>
                         <span class="title-border"></span>
                     </h2>
                     <div class="intro text-center">
-                        <p class="blurb">Call us now to book a table</p>
-                        <p class="phone subtitle">0800 123 456</p>
+                        <p class="blurb">Llámanos para concertar una cita</p>
+                        <p class="phone subtitle">+34 978 60 30 95</p>
                         <hr>
-                        <p class="booking-intro">Or book online</p>
+                        <p class="booking-intro">O envíanos un correo</p>
                     </div>
                 </div><!--//modal-header-->
                 <div class="modal-body">
@@ -706,14 +706,14 @@
                             <div class="datepicker-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-calendar-o"></i>
-                                    <label class="sr-only" for="cdate">Date</label>
+                                    <label class="sr-only" for="cdate">Fecha</label>
                                     <input type='text' id="cdate" class="form-control add-padding make-datepicker" name="date" required="" aria-required="true">
                                 </div>
                             </div>    
                             <div class="timepicker-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-clock-o"></i>
-                                    <label class="sr-only" for="ctime">Time</label>
+                                    <label class="sr-only" for="ctime">Hora</label>
                                     <input type='text' id="ctime" class="form-control add-padding make-timepicker" placeholder="18:00 PM" name="time" aria-required="true" required>
                                 </div>
                             </div>   
@@ -751,26 +751,26 @@
                             <div class="name-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-user"></i>
-                                    <label class="sr-only" for="cname">Name</label>
+                                    <label class="sr-only" for="cname">Nombre</label>
                                     <input type="text" class="form-control add-padding" id="cname" name="name" placeholder="Your name" minlength="2" aria-required="true" required>
                                 </div>
                             </div>                    
                             <div class="email-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-envelope"></i>
-                                    <label class="sr-only" for="cemail">Email</label>
+                                    <label class="sr-only" for="cemail">Correo</label>
                                     <input type="email" class="form-control add-padding" id="cemail" name="email" placeholder="Email Address" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="phone-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-phone"></i>
-                                    <label class="sr-only" for="cphone">Phone</label>
+                                    <label class="sr-only" for="cphone">Telefono</label>
                                     <input type="tel" class="form-control add-padding" id="cphone" name="phone" placeholder="Phone Number" aria-required="true" required>
                                 </div>
                             </div>
                              <div class="col-xs-12 form-group">
-                                <button type="submit" class="btn btn-block btn-primary">Book Now</button>
+                                <button type="submit" class="btn btn-block btn-primary">Reservar ahora</button>
                             </div>                           
                         </div><!--//row-->
                     </form><!--//reserve-form-->
