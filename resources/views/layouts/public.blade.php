@@ -404,7 +404,7 @@
                 <span class="title-border"></span>
             </h2>
             <div class="row text-left">
-                <div class="news-wrapper col-sm-6 col-xs-6 ">
+                <div class="news-wrapper col-sm-6 col-xs-10 ">
                     <div class="item">
                         <h4 class="title">Wine Tasting</h4>
                         <div class="meta">Saturday, 17th August</div>
@@ -444,7 +444,7 @@
                 </div><!--//col-news-->
             
             
-                <div class="news-wrapper col-sm-6 col-xs-6" style="float: right">
+                <div class="news-wrapper col-sm-6 col-xs-10" style="float: right">
                     <div class="item">
                         <h4 class="title">Wine Tasting</h4>
                         <div class="meta">Saturday, 17th August</div>
