@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-lg-6 form-group">
         {!! Form::label('email', 'Email', ['class' => 'is-required']) !!}
-        {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Introduzca el email del usuario', 'required']) !!}
+        {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Introduzca el email del usuario', 'autocomplete' => 'off', 'required']) !!}
 
         @error('email')
             <span class="text-danger">{{$message}}</span>
@@ -44,19 +44,19 @@
 
 </div>
 
-<div class="row">
-    <div class="col-lg-6 form-group">
-        {!! Form::label('phone', 'Teléfono') !!}
-        {!! Form::number('phone', null, ['class' => 'form-control', 'placeholder' => 'Ej. 963555222', 'autocomplete' => 'off' ]) !!}
+{{--<div class="row">--}}
+    {{--<div class="col-lg-6 form-group">--}}
+        {{--{!! Form::label('phone', 'Teléfono') !!}--}}
+        {{--{!! Form::number('phone', null, ['class' => 'form-control', 'placeholder' => 'Ej. 963555222', 'autocomplete' => 'off' ]) !!}--}}
 
-        @error('phone')
-        <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong></span>
-        @enderror
+        {{--@error('phone')--}}
+        {{--<span class="invalid-feedback" role="alert">--}}
+                {{--<strong>{{ $message }}</strong></span>--}}
+        {{--@enderror--}}
 
-    </div>
+    {{--</div>--}}
 
-</div>
+{{--</div>--}}
 
 <div class="row">
     <div class="col-lg-6 form-group">

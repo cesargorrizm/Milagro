@@ -1,0 +1,16 @@
+
+@media print{
+    /* Las secciones con esta */
+    .oculto-impresion, .oculto-impresion *{
+        display: none !important;
+    }
+}
+
+
+/* Clase para añadir asterisco rojo a los campos de formulario requeridos */
+.is-required:after {
+    content: '*';
+    margin-left: 3px;
+    color: red;
+    font-weight: bold;
+}

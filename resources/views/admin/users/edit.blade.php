@@ -48,8 +48,7 @@
 
             {!! Form::model($usuario, ['route' => ['users.update', $usuario], 'method' => 'put']) !!}
             <div class="card-body">
-                @php $editar = 1; @endphp
-                @include('users.partials.form')
+                @include('admin.users.partials.form')
                 {{--{!! Form::submit('Actualizar usuario', ['class' => 'btn btn-primary']) !!}--}}
                 {{--{!! Form::close() !!}--}}
             </div>

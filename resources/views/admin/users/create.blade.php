@@ -49,8 +49,8 @@
 
             {!! Form::open(['route' => 'users.store']) !!}
             <div class="card-body">
-                @php $editar = 0; @endphp
-                @include('users.partials.form')
+               
+                @include('admin.users.partials.form')
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">{{ __('Crear usuario') }}</button>

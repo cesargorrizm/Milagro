@@ -32,7 +32,6 @@
 
     @endforeach
 
-
     @error('permissions')
         <br>
         <span class="text-danger">{{$message}}</span>

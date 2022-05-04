@@ -15,7 +15,7 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminZone/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
 
 @endsection
 
@@ -50,7 +50,7 @@
                 {{--{{ session('status') }}--}}
             {{--</div>--}}
         {{--@endif--}}
-
+ 
         @include('includes.message')
 
         @if(empty($usuarios))
@@ -83,27 +83,17 @@
                     <table id="users" class="table table-bordered table-striped table-hover">
                         <thead>
                         <tr>
-                            {{--<th>ID</th>--}}
                             <th>Nombre</th>
-                            {{--<th>Apellidos</th>--}}
                             <th>Email</th>
-                            <th>Teléfono</th>
-                            {{--<th>Ocupación</th>--}}
                             <th>Rol</th>
-                            {{--<th>Residencia</th>--}}
-                            {{--<th colspan="2">Acciones</th>--}}
                             <th>Acciones</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($usuarios as $usuario)
                             <tr>
-                                {{--<td>{{ $usuario->id }}</td>--}}
                                 <td>{{ $usuario->name }}</td>
-                                {{--<td>{{ $usuario['surname'] }}</td>--}}
                                 <td>{{ $usuario->email }}</td>
-                                <td>@if($usuario->phone) {{ $usuario->phone }} @endif</td>
-                                {{--<td>{{ $usuario->type }}</td>--}}
                                 <td>
                                     @if(!empty($usuario->getRoleNames()))
                                         @foreach($usuario->getRoleNames() as $rol)
@@ -111,15 +101,15 @@
                                         @endforeach
                                     @endif
                                 </td>
-                                {{--<td>{{ !empty($usuario->residence) ? $usuario->residence->name:'' }}</td>--}}
+
                                 <td>
                                     <a href="{{ route('users.edit', $usuario) }}" class="btn btn-secondary btn-sm" title="Editar"><i class="fa fa-pen"></i></a>
 
-                                    @can('users.destroy')
+                                    {{-- @can('users.destroy') --}}
                                     <a class="btn btn-danger btn-sm" title="Eliminar" data-toggle="modal"
                                        data-target="#modalEliminar" data-href="{{ route('users.destroy', $usuario) }}"
                                        href='#'><i class='fa fa-trash'></i></a>
-                                    @endcan
+                                    {{-- @endcan --}}
                                 </td>
 
                             </tr>
@@ -127,15 +117,9 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                            {{--<th>ID</th>--}}
                             <th>Nombre</th>
-                            {{--<th>Apellidos</th>--}}
                             <th>Email</th>
-                            <th>Teléfono</th>
-                            {{--<th>Ocupación</th>--}}
                             <th>Rol</th>
-                            {{--<th>Residencia</th>--}}
-                            {{--<th colspan="2">Acciones</th>--}}
                             <th>Acciones</th>
                         </tr>
                         </tfoot>
@@ -186,8 +170,8 @@
     @parent
 
     <!-- DataTables -->
-    <script src="{{ asset('plugins/datatables/jquery.dataTables.js') }}"></script>
-    <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+    <script src="{{ asset('adminZone/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('adminZone/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
 
     <!-- page script -->
     <script>

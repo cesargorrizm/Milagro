@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,9 +17,9 @@ class UserController extends Controller
     public function __construct() {
 
         $this->middleware('can:users.index')->only('index');
+        $this->middleware('can:users.create')->only('create', 'store');
         $this->middleware('can:users.edit')->only('edit', 'update');
         $this->middleware('can:users.destroy')->only('destroy');
-        $this->middleware('can:users.create')->only('create', 'store');
 
     }
 
@@ -43,7 +44,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() 
     {
         $titlePage = "Crear Nuevo Usuario";
         $title = "Formulario Crear Usuario";
@@ -84,7 +85,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('admin.users.index')
+        return redirect()->route('users.index')
             ->with('status', '¡Se ha creado al usuario ' . $user->name . ' correctamente!');
 
 
@@ -151,7 +152,7 @@ class UserController extends Controller
         //$user->assignRole($request->input('roles'));
         $user->assignRole($request->get('role'));
 
-        return redirect()->route('admin.users.index')
+        return redirect()->route('users.index')
             ->with('status', '¡Se ha actualizado el usuario ' . $user->name . ' correctamente!');
 
     }
@@ -170,7 +171,7 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect()->route('admin.users.index')
+        return redirect()->route('users.index')
             ->with('status', '¡Se ha eliminado al usuario ' . $user->name . ' correctamente!');
     }
 

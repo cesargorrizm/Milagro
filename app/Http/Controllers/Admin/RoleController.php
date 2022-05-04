@@ -30,9 +30,10 @@ class RoleController extends Controller
         $title = "Listado de roles";
 
         $roles = Role::all();
-        $permissions = Permission::all();
+        //$permissions = Permission::all();
 
-        return view('admin.roles.index',compact('roles', 'title', 'titlePage', 'permissions'));
+        //return view('admin.roles.index',compact('roles', 'title', 'titlePage', 'permissions'));
+        return view('admin.roles.index',compact('roles', 'title', 'titlePage'));
     }
 
     /**
@@ -72,7 +73,7 @@ class RoleController extends Controller
         // asignamos al rol los permisos seleccionados
         $role->permissions()->sync($request->permissions);
 
-        return redirect()->route('admin.roles.index')->with('status', '¡Se ha creado el rol '
+        return redirect()->route('roles.index')->with('status', '¡Se ha creado el rol '
             . $role->name . ' correctamente!');
     }
 
@@ -139,7 +140,7 @@ class RoleController extends Controller
         //return redirect()->route('roles.index')
         //    ->with('success','Rol actualizado correctamente');
 
-        return redirect()->route('admin.roles.index')->with('status', '¡Se ha actualizado el rol '
+        return redirect()->route('roles.index')->with('status', '¡Se ha actualizado el rol '
             . $role->name . ' correctamente!');
 
     }
@@ -158,7 +159,7 @@ class RoleController extends Controller
         $role = Role::find($id);
         $role->delete();
 
-        return redirect()->route('admin.roles.index')->with('status', '¡Se ha eliminado el rol '
+        return redirect()->route('roles.index')->with('status', '¡Se ha eliminado el rol '
             . $role->name . ' correctamente!');
 
     }
