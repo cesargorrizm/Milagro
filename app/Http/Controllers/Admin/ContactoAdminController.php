@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Models\Contacto;
 
 
 use Illuminate\Http\Request;
@@ -17,9 +18,9 @@ class ContactoAdminController extends Controller
     {
         $titlePage = "Listado Contacto";
         //$permissions = Permission::all();
-
+        $contactos = Contacto::all();
         //return view('admin.roles.index',compact('roles', 'title', 'titlePage', 'permissions'));
-        return view('admin.contacto.index', compact('titlePage'));
+        return view('admin.contacto.index', compact('titlePage','contactos'));
     }
 
 }
