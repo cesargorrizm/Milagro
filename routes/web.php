@@ -76,6 +76,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     
     Route::resource('/tipo', TipoController::class)->names('tipo');
 
+    Route::resource('/instancia', TipoController::class)->names('instancia');
+
     //Resto de rutas de Admin
     // HOla
     // Hola de nuevo
