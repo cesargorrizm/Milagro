@@ -60,6 +60,12 @@ class RoleSeeder extends Seeder
         
             Permission::create(['name' => 'capacidad.index',
             'description' => 'Ver Capacidad Index']) -> syncRoles([$role1]);
+            Permission::create(['name' => 'capacidad.create',
+            'description' => 'Crear Capacidad']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'capacidad.edit',
+            'description' => 'Editar Capacidad']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'capacidad.destroy',
+            'description' => 'Eliminar Capacidad']) -> syncRoles([$role1]);
 
 
             

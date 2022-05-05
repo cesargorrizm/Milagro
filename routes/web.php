@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CapacidadController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ContactoAdminController;
@@ -77,7 +78,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     Route::resource('/tipo', TipoController::class)->names('tipo');
 
     Route::resource('/instancia', TipoController::class)->names('instancia');
-
+    
+    Route::resource('/capacidad', CapacidadController::class)->names('capacidad');
     //Resto de rutas de Admin
     // HOla
     // Hola de nuevo

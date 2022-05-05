@@ -155,6 +155,14 @@
                         </a>
                     </li>
                     @endcan
+                    @can('capacidad.index')
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('capacidad.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-solid fa-user-secret"></i>
+                            <p>Capacidad</p>
+                        </a>
+                    </li>
+                    @endcan
 
 
                 </ul>
