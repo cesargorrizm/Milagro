@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ContactoAdminController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -69,6 +70,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     Route::resource('/roles', RoleController::class)->names('roles');
 
     Route::resource('/users', UserController::class)->except('show')->names('users');
+    
+    Route::resource('/contacto', ContactoAdminController::class)->names('contacto');
 
 
     //Resto de rutas de Admin

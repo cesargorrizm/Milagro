@@ -399,8 +399,8 @@
     <div id="news" class="news-section">
         <div class="container text-center">
             <h2 class="section-title">
-                <span class="script">Latest</span>
-                <span class="title-text">News &amp; Events</span>
+                <span class="script">Servicios</span>
+                <span class="title-text">¿Qué te ofrecemos?</span>
                 <span class="title-border"></span>
             </h2>
             <div class="row text-left">

@@ -48,6 +48,11 @@
                     <a href="{{ route('users.index') }}" class="nav-link">Usuarios</a>
                 </li>
             @endcan
+            @can('contacto.index')
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('contacto.index') }}" class="nav-link">Contacto</a>
+            </li>
+        @endcan
         </ul>
 
         <ul class="navbar-nav ml-auto">
@@ -121,6 +126,14 @@
                             </a>
                         </li>
                     @endcan
+                    @can('contacto.index')
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('contacto.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-address-book"></i>
+                            <p>Contacto</p>
+                        </a>
+                    </li>
+                @endcan
 
                 </ul>
             </nav>
