@@ -52,7 +52,12 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="{{ route('contacto.index') }}" class="nav-link">Contacto</a>
             </li>
-        @endcan
+            @endcan
+            @can('tipo.index')
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('tipo.index') }}" class="nav-link">Tipo</a>
+            </li>
+            @endcan
         </ul>
 
         <ul class="navbar-nav ml-auto">
@@ -133,7 +138,16 @@
                             <p>Contacto</p>
                         </a>
                     </li>
-                @endcan
+                    @endcan
+                    @can('tipo.index')
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('tipo.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-solid fa-user-secret"></i>
+                            <p>Tipo</p>
+                        </a>
+                    </li>
+                    @endcan
+
 
                 </ul>
             </nav>

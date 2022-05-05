@@ -56,5 +56,16 @@ class RoleSeeder extends Seeder
             'description' => 'Ver Capacidad Index']) -> syncRoles([$role1]);
 
 
+            
+            Permission::create(['name' => 'tipo.index',
+            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'tipo.create',
+            'description' => 'Crear tipo']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'tipo.edit',
+            'description' => 'Editar tipo']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'tipo.destroy',
+            'description' => 'Eliminar tipo']) -> syncRoles([$role1]);
+
+
     }
 }

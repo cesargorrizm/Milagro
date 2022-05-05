@@ -13,7 +13,7 @@ class CreateTipoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo', function (Blueprint $table) {
+        Schema::create('tipos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
         });
@@ -26,6 +26,6 @@ class CreateTipoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo');
+        Schema::dropIfExists('tipos');
     }
 }
