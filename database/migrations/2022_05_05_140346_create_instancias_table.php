@@ -20,7 +20,7 @@ class CreateInstanciasTable extends Migration
             $table->unsignedBigInteger('tipo_id');
             $table->unsignedBigInteger('capacidad_id')->nullable();
             $table->foreign('tipo_id')->references('id')->on('tipos');
-            $table->foreign('capacidad_id')->references('id')->on('capacidads');
+            $table->foreign('capacidad_id')->references('id')->on('capacidads')->onDelete('set null');
             $table->timestamps();
 
         });

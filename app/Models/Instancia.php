@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Instancia extends Model
 {
     use HasFactory;
+
+
     protected $fillable = [
         'titulo', 'descripcion', 'tipo_id','capacidad_id'
     ];
+
+
+    public function tipos(){
+        return $this->belongsTo('App\Models\Tipo');
+    }
 }
