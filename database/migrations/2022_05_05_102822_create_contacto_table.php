@@ -15,7 +15,7 @@ class CreateContactoTable extends Migration
     {
         Schema::create('contacto', function (Blueprint $table) {
             $table->id();
-            $table->integer('telefono',9);
+            $table->integer('telefono');
             $table->string('email')->unique();
             $table->string('tripadvisor');
             $table->string('facebook');
