@@ -147,6 +147,14 @@
                         </a>
                     </li>
                     @endcan
+                    @can('instancia.index')
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('instancia.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-solid fa-user-secret"></i>
+                            <p>Instancia</p>
+                        </a>
+                    </li>
+                    @endcan
 
 
                 </ul>
