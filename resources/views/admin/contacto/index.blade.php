@@ -54,7 +54,7 @@
     <br>
 
 @else
-    <div class="card">
+    <div class="card"  class="col-sm-12">
 
         <div class="card-header">
 
@@ -65,47 +65,98 @@
         <!-- /.card-header -->
 
         <div class="card-body">
-            <table id="roles" class="table table-bordered table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>Telefono</th>
-                    <th>Email</th>
-                    <th>Tripadvisor</th>
-                    <th>Facebook</th>
-                    {{--<th colspan="2">Acciones</th>--}}
-                    <th>MiNube</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($contactos as $contacto)
+          
+                <table id="contactos" class="table table-bordered table-striped table-hover">
+                    <thead>
                     <tr>
-                        <td>{{$contacto->telefono}}</td>
-                        <td>{{ $contacto->email }}</td>
-                        <td>{{ $contacto->tripadvisor}}</td>
-                        {{--<td width="10px">--}}
-                        <td>{{ $contacto->facebook}}</td>
-                        <td>{{ $contacto->miNube}}</td>
-
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Tripadvisor</th>
+                        <th>Facebook</th>
+                        <th>MiNube</th>
+                        <th>Acciones</th>
                     </tr>
-                @endforeach
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Permisos</th>
-                    {{--<th colspan="2">Acciones</th>--}}
-                    <th>Acciones</th>
-                </tr>
-                </tfoot>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                    @foreach($contactos as $contacto)
+                        <tr>
+                            <td>{{$contacto->telefono}}</td>
+                            <td>{{ $contacto->email }}</td>
+                            <td>{{ $contacto->tripadvisor}}</td>
+                            
+                            {{--<td width="10px">--}}
+                            <td>{{ $contacto->facebook}}</td>
+                            <td>{{ $contacto->miNube}}</td>
+                            <td>
+                                <a href="{{ route('contacto.edit', $contacto) }}" 
+                                class="btn btn-secondary btn-sm" title="Editar">
+                                <i class="fa fa-pen"></i></a>
+                            </td>
+    
+                        </tr>
+                    @endforeach
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Tripadvisor</th>
+                        <th>Facebook</th>
+                        <th>MiNube</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </tfoot>
+                </table>
+              </div>
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
 @endif
 
 </div> <!-- /col-lg-12 -->
+@endsection
+@section('scripts')
+    @parent
+
+    <!-- DataTables -->
+    <script src="{{ asset('adminZone/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('adminZone/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+
+    <!-- page script -->
+    <script>
+        $(function () {
+            $('#contactos').DataTable({
+                columnDefs: [ {
+        targets: [2,3,4],
+        render: function ( data, type, row ) {
+            return data.substr( 0, 20 )+'…';
+        }
+    } ],
+                "language": {
+                    "decimal": "",
+                    "emptyTable": "No hay registros",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                    "infoEmpty": "Mostrando 0 de 0 de las 0 entradas",
+                    "infoFiltered": "(Filtrado del total de _MAX_ entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            });
+        });
+    </script>
+    
+
 @endsection
 
 

@@ -23,4 +23,15 @@ class ContactoAdminController extends Controller
         return view('admin.contacto.index', compact('titlePage','contactos'));
     }
 
+    public function edit(Contacto $contacto)
+    {
+        $titlePage = "Actualizar Contacto";
+        $title = "Formulario Actualizar Contacto";
+
+        $contactos = Contacto::pluck('email','id');
+
+        return view('admin.contacto.edit', compact('titlePage', 'title', 'contacto', 'contactos'))
+            ->with('contacto', $contacto);
+
+    }
 }
