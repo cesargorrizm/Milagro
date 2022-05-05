@@ -30,7 +30,7 @@
             </label>
         {{--</div>--}}
 
-    @endforeach
+    @endforeach 
 
     @error('permissions')
         <br>
