@@ -163,8 +163,14 @@
                         </a>
                     </li>
                     @endcan
-
-
+                    @can('image.index')
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('image.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-solid fa-images"></i>
+                            <p>Imagenes</p>
+                        </a>
+                    </li>
+                    @endcan
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
