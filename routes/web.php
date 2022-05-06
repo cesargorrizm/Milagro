@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ContactoAdminController;
 use App\Http\Controllers\Admin\TipoController;
-use App\Http\Controllers\Admin\InstanciaController;
+use App\Http\Controllers\Admin\SectorController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\HomeController;
 
@@ -79,7 +79,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     
     Route::resource('/tipo', TipoController::class)->names('tipo');
 
-    Route::resource('/instancia', InstanciaController::class)->names('instancia');
+    Route::resource('/sector', SectorController::class)->names('sector');
     
     Route::resource('/capacidad', CapacidadController::class)->names('capacidad');
     //Resto de rutas de Admin
@@ -88,3 +88,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     // hola
     // Hola 
 });
+    
+// Route::get('patologia', 'PatologiaController@index')->name('patologia');
+// Route::get('patologia/crear', 'PatologiaController@crear')->name('crear_patologia');
+// Route::post('patologia', 'PatologiaController@guardar')->name('guardar_patologia');
+// Route::get('patologia/{patologia}', 'PatologiaController@mostrar')->name('mostrar_patologia');
+// Route::get('patologia/{patologia}/editar', 'PatologiaController@editar')->name('editar_patologia');
+// Route::put('patologia/{patologia}', 'PatologiaController@actualizar')->name('actualizar_patologia');
+// Route::delete('patologia/{patologia}', 'PatologiaController@eliminar')->name('eliminar_patologia');

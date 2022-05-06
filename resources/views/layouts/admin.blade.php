@@ -147,11 +147,11 @@
                         </a>
                     </li>
                     @endcan
-                    @can('instancia.index')
+                    @can('sector.index')
                     <li class="nav-item has-treeview">
-                        <a href="{{ route('instancia.index') }}" class="nav-link">
+                        <a href="{{ route('sector.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-solid fa-user-secret"></i>
-                            <p>Instancia</p>
+                            <p>Sector</p>
                         </a>
                     </li>
                     @endcan

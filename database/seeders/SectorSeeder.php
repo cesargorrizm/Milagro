@@ -1,11 +1,11 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Instancia;
 
+use App\Models\Sector;
 use Illuminate\Database\Seeder;
 
-class InstanciaSeeder extends Seeder
+class SectorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class InstanciaSeeder extends Seeder
     public function run()
     {
     
-        Instancia::create([
+        Sector::create([
             'titulo'=>'Esto es un titulo',
             'descripcion'=>'Esto es una descripcion', 
             'tipo_id'=>1,
