@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
 use Spatie\Permission\Models\Role;
-use App\Models\User;
 
 class CapacidadController extends Controller
 {
@@ -37,7 +36,7 @@ class CapacidadController extends Controller
 
         $capacidad = Capacidad::all();
 
-        return view('admin.users.index', compact('titlePage','title'))->with('capacidad', $capacidad);
+        return view('admin.capacidad.index', compact('titlePage','title'))->with('capacidad', $capacidad);
     }
 
     /**
@@ -51,7 +50,7 @@ class CapacidadController extends Controller
         $title = "Formulario Crear Capacidad";
 
 
-        return view('admin.users.create', compact('titlePage','title'));
+        return view('admin.capacidad.create', compact('titlePage','title'));
     }
 
     /**
@@ -63,29 +62,25 @@ class CapacidadController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            //'password' => 'required|same:confirm-password',
-            'password' => 'required|min:6',
-            'role' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users,email',
+        //     //'password' => 'required|same:confirm-password',
+        //     'password' => 'required|min:6',
+        //     'role' => 'required',
+        // ]);
 
-        $user = new User();
+        $capacidad = new Capacidad();
+        
+        $capacidad->banqueteSinBaile = $request->banqueteSinBaile;
+        $capacidad->banqueteConBaile = $request->banqueteConBaile;
+        $capacidad->cocktail = $request->cocktail;
+        $capacidad->actos = $request->actos;
+        $capacidad->buffet = $request->buffet;
+        $capacidad->save();
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-
-        //Ciframos la contraseña
-        $user->password = Hash::make($request->password);
-
-        // asignamos al usuario el rol seleccionado
-        $user->assignRole($request->role);
-
-        $user->save();
-
-        return redirect()->route('users.index')
-            ->with('status', '¡Se ha creado al usuario ' . $user->name . ' correctamente!');
+        return redirect()->route('capacidad.index')
+            ->with('status', '¡Se ha creado al usuario ' . $capacidad->banqueteSinBaile . ' correctamente!');
 
 
     }
@@ -96,27 +91,20 @@ class CapacidadController extends Controller
      * @param int $id
      * @return void
      */
-//    public function show($id)
-//    {
-//        $user = User::find($id);
-//        return view('usuarios.show',compact('user'));
-//    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param User $user
+     * @param Capacidad $Capacidad
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Capacidad $Capacidad)
     {
-        $titlePage = "Actualizar Usuario";
-        $title = "Formulario Actualizar Usuario";
+        $titlePage = "Actualizar capacidad";
+        $title = "Formulario Actualizar capacidad";
 
-        $roles = Role::pluck('name','id');
-
-        return view('admin.users.edit', compact('titlePage', 'title', 'user', 'roles'))
-            ->with('usuario', $user);
+        return view('admin.capacidad.edit', compact('titlePage', 'title', 'Capacidad'))
+            ->with('capacidad', $Capacidad);
 
     }
 
@@ -124,54 +112,48 @@ class CapacidadController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param User $user
+     * @param Capacidad $capacidad
      * @return Response
      * @throws ValidationException
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Capacidad $capacidad)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-            'role' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email',
+        //     'password' => 'required|min:6',
+        //     'role' => 'required',
+        // ]);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
+        $capacidad = new Capacidad();
+        
+        $capacidad->banqueteSinBaile = $request->banqueteSinBaile;
+        $capacidad->banqueteConBaile = $request->banqueteConBaile;
+        $capacidad->cocktail = $request->cocktail;
+        $capacidad->actos = $request->actos;
+        $capacidad->buffet = $request->buffet;
+        $capacidad->update();
 
-        //Ciframos la contraseña
-        $user->password = Hash::make($request->password);
-
-        $user->update();
-
-        DB::table('model_has_roles')->where('model_id',$user->id)->delete();
-
-        //asignamos al usuario el rol seleccionado
-        //$user->assignRole($request->input('roles'));
-        $user->assignRole($request->get('role'));
-
-        return redirect()->route('users.index')
-            ->with('status', '¡Se ha actualizado el usuario ' . $user->name . ' correctamente!');
+        return redirect()->route('capacidad.index')
+            ->with('status', '¡Se ha actualizado el usuario ' . $capacidad->banqueteSinBaile . ' correctamente!');
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param User $user
+     * @param Capacidad $capacidad
      * @return Response
      * @throws \Exception
      */
     //public function destroy($id)
-    public function destroy(User $user)
+    public function destroy(Capacidad $capacidad)
     {
-        //$user = User::query()->findOrFail($id);
 
-        $user->delete();
+        $capacidad->delete();
 
-        return redirect()->route('users.index')
-            ->with('status', '¡Se ha eliminado al usuario ' . $user->name . ' correctamente!');
+        return redirect()->route('capacidad.index')
+            ->with('status', '¡Se ha eliminado al usuario ' . $capacidad->banqueteSinBaile . ' correctamente!');
     }
 
 }
