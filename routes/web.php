@@ -5,8 +5,10 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ContactoAdminController;
 use App\Http\Controllers\Admin\TipoController;
+use App\Http\Controllers\Admin\InstanciaController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,7 +79,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     
     Route::resource('/tipo', TipoController::class)->names('tipo');
 
-    Route::resource('/instancia', TipoController::class)->names('instancia');
+    Route::resource('/instancia', InstanciaController::class)->names('instancia');
     
     Route::resource('/capacidad', CapacidadController::class)->names('capacidad');
     //Resto de rutas de Admin

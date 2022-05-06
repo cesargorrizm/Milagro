@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contacto;
-use Illuminate\Support\Facades\Hash;
+
 
 use Illuminate\Http\Request;
 
