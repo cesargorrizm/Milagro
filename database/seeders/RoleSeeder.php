@@ -87,6 +87,16 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'instancia.destroy',
             'description' => 'Eliminar instancia']) -> syncRoles([$role1]);
 
+            Permission::create(['name' => 'image.index',
+            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'image.create',
+            'description' => 'Crear imagen']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'image.edit',
+            'description' => 'Editar imagen']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'image.destroy',
+            'description' => 'Eliminar imagen']) -> syncRoles([$role1]);
+
+
 
     }
 }

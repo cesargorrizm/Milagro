@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CapacidadController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ContactoAdminController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\TipoController;
 use App\Http\Controllers\Admin\SectorController;
 use App\Http\Controllers\ContactoController;
@@ -82,11 +83,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     Route::resource('/sector', SectorController::class)->names('sector');
     
     Route::resource('/capacidad', CapacidadController::class)->names('capacidad');
+
+    Route::resource('/image', ImageController::class)->names('image');
     //Resto de rutas de Admin
-    // HOla
-    // Hola de nuevo
-    // hola
-    // Hola 
+
 });
     
 // Route::get('patologia', 'PatologiaController@index')->name('patologia');
