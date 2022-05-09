@@ -100,7 +100,7 @@ class ImageController extends Controller
             }
 
         $image = new Image();
-        $image->url = ("images/post/" . $_FILES['archivo']['name']);
+        $image->url = asset("images/post/" . $_FILES['archivo']['name']);
         if ($fotoPrincipal == 1) {
             $image->principal = 1;
         } else {
@@ -145,9 +145,9 @@ class ImageController extends Controller
      */
     public function update(Request $request, Image $image)
     {
-        $request->validate([
-            'archivo' => 'required',
-        ]);
+        // $request->validate([
+        //     'archivo' => 'required',
+        // ]);
         $fotoPrincipal =  $request->principal;
         
 
@@ -182,11 +182,11 @@ class ImageController extends Controller
                         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
                     }
                 }
+                $image->url = asset('images/post/' . $_FILES['archivo']['name']);
             }
 
 
             // return $_FILES['archivo']['name'];
-        $image->url = asset('images/post/' . $_FILES['archivo']['name']);
         if ($fotoPrincipal == 1) {
             $image->principal = 1;
         } else {

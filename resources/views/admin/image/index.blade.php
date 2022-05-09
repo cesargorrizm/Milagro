@@ -86,22 +86,21 @@
                                 <td>
                                     <img src="{{asset($i->url)}}" class="img-fluid" width="120px">
                                  </td>
-                                @if($i->principal==1){
+                                @if($i->principal==1)
                                     <td>Es la foto principal</td>
-                                }
                                 @else
                                 <td>No es la foto principal</td>
                                 @endif
-                                {{-- <td>{{ $i->principal }}</td> --}}
+                               
 
                                 <td>
                                     <a href="{{ route('image.edit', $i) }}" class="btn btn-secondary btn-sm" title="Editar"><i class="fa fa-pen"></i></a>
 
-                                    {{-- @can('image.destroy') --}}
+                                    
                                     <a class="btn btn-danger btn-sm" title="Eliminar" data-toggle="modal"
                                        data-target="#modalEliminar" data-href="{{ route('image.destroy', $i) }}" 
                                        href='#'><i class='fa fa-trash'></i></a>
-                                    {{-- @endcan --}}
+                                    
                                 </td>
 
                             </tr>
