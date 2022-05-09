@@ -16,17 +16,15 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('adminZone/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
-
 @endsection
 
 @section('breadcrumb')
-
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    {{--<h1 class="m-0">@if (isset($titlePage)) {{ $titlePage }} @else {{ "Sección" }} @endif</h1>--}}
+                    {{-- <h1 class="m-0">@if (isset($titlePage)) {{ $titlePage }} @else {{ "Sección" }} @endif</h1> --}}
                     <h1>{{ $titlePage }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
@@ -45,7 +43,7 @@
     <div class="col-lg-12">
         @include('includes.message')
 
-        @if(empty($image))
+        @if (empty($image))
             <div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4><i class="fas fa-exclamation-triangle"></i> Alert!</h4>
@@ -53,11 +51,11 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="{{ route('image.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> {{ __('Nueva imagen') }}</a>
+                    <a href="{{ route('image.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                        {{ __('Nueva imagen') }}</a>
                 </div>
             </div>
             <br>
-
         @else
             <div class="card">
 
@@ -65,7 +63,8 @@
 
                     <div class="d-flex justify-content-between align-items-end">
                         <h3 class="card-title pb-2">{{ __($title) }}</h3>
-                        <a href="{{ route('image.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> {{ __('Nueva imagen') }}</a>
+                        <a href="{{ route('image.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                            {{ __('Nueva imagen') }}</a>
                     </div>
 
                 </div>
@@ -74,43 +73,54 @@
                 <div class="card-body">
                     <table id="image" class="table table-bordered table-striped table-hover">
                         <thead>
-                        <tr>
-                            <th>Url</th>
-                            <th>Principal</th>
-                            <th>Acciones</th> 
-                        </tr>
+                            <tr>
+                                <th>Url</th>
+                                <th>Principal</th>
+                                <th>Sector</th>
+                                <th>Acciones</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach($image as $i)
-                            <tr>
-                                <td>
-                                    <img src="{{asset($i->url)}}" class="img-fluid" width="120px">
-                                 </td>
-                                @if($i->principal==1)
-                                    <td>Es la foto principal</td>
-                                @else
-                                <td>No es la foto principal</td>
-                                @endif
-                               
-
-                                <td>
-                                    <a href="{{ route('image.edit', $i) }}" class="btn btn-secondary btn-sm" title="Editar"><i class="fa fa-pen"></i></a>
-
+                            @foreach ($image as $i)
+                                <tr>
+                                    <td>
+                                        <img src="{{ asset($i->url) }}" class="img-fluid" width="120px">
+                                    </td>
+                                    @if ($i->principal == 1)
+                                        <td>Es la foto principal</td>
+                                    @else
+                                        <td>No es la foto principal</td>
+                                    @endif
                                     
-                                    <a class="btn btn-danger btn-sm" title="Eliminar" data-toggle="modal"
-                                       data-target="#modalEliminar" data-href="{{ route('image.destroy', $i) }}" 
-                                       href='#'><i class='fa fa-trash'></i></a>
-                                    
-                                </td>
 
-                            </tr>
-                        @endforeach
+
+                                    @foreach ($sectors as $s)
+                                        @if ($s->id == $i->sector_id)
+                                            <td>{{ $s->titulo }}</td>
+                                        @endif
+                                    @endforeach
+
+
+                                    <td>
+                                        <a href="{{ route('image.edit', $i) }}" class="btn btn-secondary btn-sm"
+                                            title="Editar"><i class="fa fa-pen"></i></a>
+
+
+                                        <a class="btn btn-danger btn-sm" title="Eliminar" data-toggle="modal"
+                                            data-target="#modalEliminar" data-href="{{ route('image.destroy', $i) }}"
+                                            href='#'><i class='fa fa-trash'></i></a>
+
+                                    </td>
+
+                                </tr>
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th>Url</th>
                                 <th>Principal</th>
-                                <th>Acciones</th> 
+                                <th>Sector</th>
+                                <th>Acciones</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -126,17 +136,16 @@
 
 
 @section('modalEliminar')
-
     <!-- Dialogo modal eliminar -->
 
     <div class="modal modal-danger fade" id="modalEliminar" name="modalEliminar" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel">
+        aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content bg-danger">
                 <div class="modal-header" id="titl">
                     <h4 class="modal-title" id="titleModalEliminar">¡Eliminar imagen!</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
+                            aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <h5 style="font-family:Verdana; font-size: 14px;" id="bodyModalEliminar" class="debug-url">
@@ -165,7 +174,7 @@
 
     <!-- page script -->
     <script>
-        $(function () {
+        $(function() {
             $('#image').DataTable({
                 "language": {
                     "decimal": "",
@@ -193,13 +202,11 @@
 
     <!-- Modal Eliminar -->
     <script>
-        $('#modalEliminar').on('show.bs.modal', function (e) {
+        $('#modalEliminar').on('show.bs.modal', function(e) {
             $(this).find('.form-modal').attr('action', $(e.relatedTarget).data('href'));
-            $(this).find('.btn-ok').click(function () {
+            $(this).find('.btn-ok').click(function() {
                 $("form").submit();
             });
         });
     </script>
-
 @endsection
-

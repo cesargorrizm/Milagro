@@ -86,9 +86,8 @@
                             
                             {{--<td width="10px">--}}
                             @foreach($tipos as $tipo)
-                                @if($tipo->id == $sector->tipo_id)
+                                @if($tipo->id == $sector->tipo_id) 
                             <td>{{ $tipo->nombre}}</td>
-                                 @else
                                  @endif
                             @endforeach
                             <td>{{ $sector->capacidad_id}}</td>

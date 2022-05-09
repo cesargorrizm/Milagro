@@ -34,5 +34,16 @@
             <span class="text-danger">{{ $message }}</span>
         @enderror
     </div>
+    <div class="col-lg-6 form-group">
+        {!! Form::label('sector', 'Tipo', ['class' => 'is-required']) !!}
+        {!! Form::select('sector', $sector, [], ['class' => 'form-control', 'required']) !!}
+    
+        
+    
+        @error('sector')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
+    
+    </div>
 </div>
 </div>
