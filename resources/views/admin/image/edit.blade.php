@@ -37,7 +37,7 @@
 @endsection
 
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-12"> 
 
         @include('includes.error')
 
@@ -46,14 +46,13 @@
                 <h3 class="card-title">{{ __($title) }}</h3>
             </div>
 
-            {!! Form::model($image, ['route' => ['image.update', $image], 'method' => 'put']) !!}
+            {{-- {!! Form::model($image, ['route' => ['image.update', $image], 'method' => 'put']) !!} --}}
+            {!! Form::model($image,[ 'route' => ['image.update', $image], 'files' => 'true', 'enctype'=>'multipart/form-data', 'method' => 'put']) !!}
             <div class="card-body">
                 @include('admin.image.partials.form')
-                {{--{!! Form::submit('Actualizar image', ['class' => 'btn btn-primary']) !!}--}}
-                {{--{!! Form::close() !!}--}}
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">{{ __('Actualizar image') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('Actualizar imagen') }}</button>
 
                 <a class="btn btn-link" href="{{ url()->previous() }}">{{ __('Volver') }}</a>
             </div>

@@ -63,16 +63,13 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        $nuevo =  $request->principal;
-       // $image = new Image();
-        
-        
-        //Si se quiere subir una imagen
-        // if (isset($_POST['subir'])) {
+        $request->validate([
+            'archivo' => 'required',
+        ]);
+        $fotoPrincipal =  $request->principal;
+
             //Recogemos el archivo enviado por el formulario
             $archivo = $_FILES['archivo']['name'];
-            // $image->url = ("images/post/" . $archivo);
-            //return $archivo;
             //Si el archivo contiene algo y es diferente de vacio
             if (isset($archivo) && $archivo != "") {
                 //Obtenemos algunos datos necesarios sobre el archivo
@@ -101,56 +98,16 @@ class ImageController extends Controller
                     }
                 }
             }
-        // }
 
-
-        // $imagen = $request->file($request->url);
-        // $nombreimagen = $imagen->getClientOriginalName();
-        // $ruta = public_path("images/post/" . $nombreimagen);
-        // $img = Image::make($request->file('ruta')->getRealPath());
-        // $img->save($ruta);
-
-        // if($request->hasFile("url")){
-
-        //     $image = new Image();
-        //     $image = $request->file("url");
-        //     $nombreimagen = Str::slug($request->url).".".$image->guessExtension();
-        //     $ruta = public_path("images/post/");
-
-        //     //$imagen->move($ruta,$nombreimagen);
-        //     copy($imagen->getRealPath(),$ruta.$nombreimagen);
-        //     $post->imagen = $nombreimagen;            
-        // }
-
-
-        // return $request->all();
-        // $file = $request->file($request->url);
-        // $filename = time() . '-' . $file->getClientOriginalName();
-        // return $archivo;
         $image = new Image();
         $image->url = ("images/post/" . $_FILES['archivo']['name']);
-        //return $_FILES['archivo']['name'];
-        
-        // return [$request]'fotoPrincipal'];
-        if ($nuevo == 1) {
+        if ($fotoPrincipal == 1) {
             $image->principal = 1;
         } else {
              $image->principal = 0;
         }
         $image->save();
 
-
-
-
-
-
-        // if($request->hasFile('url')){
-        //     $file = $request->file('url');
-        //     $destinationPath = 'images/featureds/';
-        //     $filename = time() . '-' .$file->getClientOriginalName();
-        //     $uploadSuccess = $request->file('url')->move($destinationPath,$filename);
-        //     $image->url = $request->$destinationPath . $filename;
-        // }
 
         return redirect()->route('image.index')
             ->with('status', '¡Se ha creado la imagen ' . $image->url . ' correctamente!');
@@ -188,40 +145,53 @@ class ImageController extends Controller
      */
     public function update(Request $request, Image $image)
     {
-        // $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required|email',
-        //     'password' => 'required|min:6',
-        //     'role' => 'required',
-        // ]);
-        $file = $request->file($request->url);
-        $nombreimagen = $file->getClientOriginalName();
-        $ruta = public_path("images/post/" . $nombreimagen);
-        $img = Image::make($request->file('url')->getRealPath());
-        $img->save($ruta);
-        $image->ruta = asset('images/post/' . $request->url);
-        $image->principal = $request->principal;
-        $image->save();
+        $request->validate([
+            'archivo' => 'required',
+        ]);
+        $fotoPrincipal =  $request->principal;
+        
+
+        // return $image->id;
+            //Recogemos el archivo enviado por el formulario
+            $archivo = $_FILES['archivo']['name'];
+
+            //Si el archivo contiene algo y es diferente de vacio
+            if (isset($archivo) && $archivo != "") {
+                //Obtenemos algunos datos necesarios sobre el archivo
+                $tipo = $_FILES['archivo']['type'];
+                
+                $tamano = $_FILES['archivo']['size'];
+                $temp = $_FILES['archivo']['tmp_name'];
+                // return $temp . $tamano . $tipo;
+                //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+                if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+                    echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+         - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+                } else {
+                    //Si la imagen es correcta en tamaño y tipo
+                    //Se intenta subir al servidor
+                    if (move_uploaded_file($temp, 'images/post/' . $archivo)) {
+                        //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                        chmod('images/post/' . $archivo, 0777);
+                        //Mostramos el mensaje de que se ha subido co éxito
+                        echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
+                        //Mostramos la imagen subida
+                        echo '<p><img src="images/post/' . $archivo . '"></p>';
+                    } else {
+                        //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                        echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
+                    }
+                }
+            }
 
 
-
-
-
-
-        // $image = new Image();
-        // if($request->hasFile('url')){
-        //     $file = $request->file('url');
-        //     $destinationPath = 'images/post/';
-        //     $filename = time() . '-' .$file->getClientOriginalName();
-        //     $uploadSuccess = $request->file('url')->move($destinationPath,$filename);
-        //     $image->url = $request->$destinationPath . $filename;
-        //     $image->principal = $request->principal;
-        // }else{
-        //     $image->url = 'nada';
-        //     $image->principal = $request->principal;
-
-        // }
-
+            // return $_FILES['archivo']['name'];
+        $image->url = asset('images/post/' . $_FILES['archivo']['name']);
+        if ($fotoPrincipal == 1) {
+            $image->principal = 1;
+        } else {
+             $image->principal = 0;
+        }
         $image->update();
 
         return redirect()->route('image.index')
@@ -240,6 +210,6 @@ class ImageController extends Controller
     {
         $image->delete();
         return redirect()->route('image.index')
-            ->with('status', '¡Se ha eliminado al image ' . $image->url . ' correctamente!');
+            ->with('status', '¡Se ha eliminado la imagen ' . $image->url . ' correctamente!');
     }
 }

@@ -26,7 +26,7 @@
 </div>
 <div class="row">
     <div class="col-lg-6 form-group">
-        {!! Form::label('principal', 'Principal', ['class' => 'is-required']) !!}
+        {!! Form::label('principal', 'Principal') !!}
         <input type="checkbox" name="principal" id="fotoPrincipal" class="form-control" value="1"
             {{ old('principal') ? 'checked="checked"' : '0' }} />
 
