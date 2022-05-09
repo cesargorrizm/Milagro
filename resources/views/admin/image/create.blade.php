@@ -47,8 +47,8 @@
                 <h3 class="card-title">{{ __($title) }}</h3>
             </div>
 
-            {!! Form::open(['route' => 'image.store']) !!}
-             {{-- {!! Form::open(['route' => ['image.store'], 'files' => 'true', 'enctype'=>'multipart/form-data', 'method' => 'POST']) !!} --}}
+            {{-- {!! Form::open(['route' => 'image.store']) !!} --}}
+             {!! Form::open(['route' => 'image.store', 'files' => 'true', 'enctype'=>'multipart/form-data', 'method' => 'POST']) !!}
             <div class="card-body">
                 @include('admin.image.partials.form')
             </div>

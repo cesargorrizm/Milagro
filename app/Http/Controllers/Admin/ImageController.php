@@ -15,13 +15,13 @@ use Spatie\Permission\Models\Role;
 
 class ImageController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
 
         $this->middleware('can:image.index')->only('index');
         $this->middleware('can:image.create')->only('create', 'store');
         $this->middleware('can:image.edit')->only('edit', 'update');
         $this->middleware('can:image.destroy')->only('destroy');
-
     }
 
     /**
@@ -37,7 +37,7 @@ class ImageController extends Controller
 
         $image = Image::all();
 
-        return view('admin.image.index', compact('titlePage','title'))->with('image', $image);
+        return view('admin.image.index', compact('titlePage', 'title'))->with('image', $image);
     }
 
     /**
@@ -45,13 +45,13 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() 
+    public function create()
     {
         $titlePage = "Crear Nuevo imagen";
         $title = "Formulario Crear imagen";
 
 
-        return view('admin.image.create', compact('titlePage','title'));
+        return view('admin.image.create', compact('titlePage', 'title'));
     }
 
     /**
@@ -63,6 +63,45 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
+        $nuevo =  $request->principal;
+       // $image = new Image();
+        
+        
+        //Si se quiere subir una imagen
+        // if (isset($_POST['subir'])) {
+            //Recogemos el archivo enviado por el formulario
+            $archivo = $_FILES['archivo']['name'];
+            // $image->url = ("images/post/" . $archivo);
+            //return $archivo;
+            //Si el archivo contiene algo y es diferente de vacio
+            if (isset($archivo) && $archivo != "") {
+                //Obtenemos algunos datos necesarios sobre el archivo
+                $tipo = $_FILES['archivo']['type'];
+                
+                $tamano = $_FILES['archivo']['size'];
+                $temp = $_FILES['archivo']['tmp_name'];
+                // return $temp . $tamano . $tipo;
+                //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+                if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+                    echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+         - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+                } else {
+                    //Si la imagen es correcta en tamaño y tipo
+                    //Se intenta subir al servidor
+                    if (move_uploaded_file($temp, 'images/post/' . $archivo)) {
+                        //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                        chmod('images/post/' . $archivo, 0777);
+                        //Mostramos el mensaje de que se ha subido co éxito
+                        echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
+                        //Mostramos la imagen subida
+                        echo '<p><img src="images/post/' . $archivo . '"></p>';
+                    } else {
+                        //Si no se ha podido subir la imagen, mostramos un mensaje de error
+                        echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
+                    }
+                }
+            }
+        // }
 
 
         // $imagen = $request->file($request->url);
@@ -80,31 +119,31 @@ class ImageController extends Controller
 
         //     //$imagen->move($ruta,$nombreimagen);
         //     copy($imagen->getRealPath(),$ruta.$nombreimagen);
-
         //     $post->imagen = $nombreimagen;            
-            
         // }
 
 
         // return $request->all();
+        // $file = $request->file($request->url);
+        // $filename = time() . '-' . $file->getClientOriginalName();
+        // return $archivo;
         $image = new Image();
-            // $file = $request->file($request->url);
-            // $filename = time() . '-' . $file->getClientOriginalName();
-        $image->url = ("images/post/" . $request->url);
-        if($request->principal==1){
-            $image->principal = $request->principal;
-            
+        $image->url = ("images/post/" . $_FILES['archivo']['name']);
+        //return $_FILES['archivo']['name'];
+        
+        // return [$request]'fotoPrincipal'];
+        if ($nuevo == 1) {
+            $image->principal = 1;
         } else {
-            $image->principal = 0;
-
+             $image->principal = 0;
         }
         $image->save();
 
 
-        
 
 
-        
+
+
         // if($request->hasFile('url')){
         //     $file = $request->file('url');
         //     $destinationPath = 'images/featureds/';
@@ -115,8 +154,6 @@ class ImageController extends Controller
 
         return redirect()->route('image.index')
             ->with('status', '¡Se ha creado la imagen ' . $image->url . ' correctamente!');
-
-
     }
 
     /**
@@ -139,7 +176,6 @@ class ImageController extends Controller
 
         return view('admin.image.edit', compact('titlePage', 'title', 'image'))
             ->with('image', $image);
-
     }
 
     /**
@@ -190,7 +226,6 @@ class ImageController extends Controller
 
         return redirect()->route('image.index')
             ->with('status', '¡Se ha actualizado la imagen ' . $image->url . ' correctamente!');
-
     }
 
     /**
@@ -207,5 +242,4 @@ class ImageController extends Controller
         return redirect()->route('image.index')
             ->with('status', '¡Se ha eliminado al image ' . $image->url . ' correctamente!');
     }
-
 }
