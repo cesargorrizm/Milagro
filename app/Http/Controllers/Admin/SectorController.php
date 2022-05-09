@@ -35,10 +35,12 @@ class SectorController extends Controller
     {
         $titlePage = "Actualizar Sector";
         $title = "Formulario Actualizar Sector";
+        $sectores = Sector::all();
+        $tipos = Tipo::pluck('nombre','id');
 
       // $sector = Sector::pluck('titulo','id');
 
-        return view('admin.sector.edit', compact('titlePage', 'title','sector'));
+        return view('admin.sector.edit', compact('titlePage', 'title','sector','sectores','tipos'));
     }
 
 

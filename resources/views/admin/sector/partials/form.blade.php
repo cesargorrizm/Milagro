@@ -33,7 +33,7 @@
 
     <div class="col-lg-6 form-group">
         {!! Form::label('tipo_id', 'Tipo', ['class' => 'is-required']) !!}
-        {!! Form::number('tipo_id', null, ['class' => 'form-control', 'placeholder' => 'Seleccione', 'autocomplete' => 'off', 'required' ]) !!}
+        {!! Form::select('role', $tipos, [], ['class' => 'form-control', 'required']) !!}
 
         
 
@@ -52,7 +52,7 @@
         @error('capacidad_id')
             <span class="text-danger">{{$message}}</span>
         @enderror
-
+ 
     </div>
 </div>
 
