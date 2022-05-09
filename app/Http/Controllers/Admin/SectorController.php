@@ -62,15 +62,21 @@ class SectorController extends Controller
         $request->validate([
             'titulo' => 'required',
             'descripcion' => 'required',
-            'tipo_id' => 'required|integer',
-            'capacidad_id' => 'required|integer',
+            'tipo_id' => 'required',
         ]);
 
         // $sector-> Sector::find($id);
+
         $sector->titulo = $request->titulo;
         $sector->descripcion = $request->descripcion;
         $sector->tipo_id = $request->tipo_id;
-        $sector->capacidad_id = $request->capacidad_id;
+    
+        if ( $request->checkbox=='on') {
+    
+            $sector->capacidad_id = $request->mapaCapacidades;
+        }else{
+            $sector->capacidad_id =null;
+        }
 
 
 

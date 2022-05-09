@@ -45,15 +45,14 @@
             <div class="card-header">
                 <h3 class="card-title">{{ __($title) }}</h3>
             </div>
-
+            
             {!! Form::model($sector, ['route' => ['sector.update', $sector], 'method' => 'put']) !!}
             <div class="card-body">
+                <button type="submit" class="btn btn-primary">{{ __('Actualizar sector') }}</button>
                 @include('admin.sector.partials.form')
-               
+                
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">{{ __('Actualizar sector') }}</button>
-
                 <a class="btn btn-link" href="{{ url()->previous() }}">{{ __('Volver') }}</a>
             </div>
             {!! Form::close() !!}

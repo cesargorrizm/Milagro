@@ -43,7 +43,7 @@
 </div>
 <div class="row">
     {!! Form::label('localizacion', 'Localizacion') !!}
-    <input type="checkbox" onclick="mostrarCapacidad();" id="checkboxLocate">
+    <input type="checkbox" name="checkbox" onclick="mostrarCapacidad();" id="checkboxLocate",>
 </div>
 
 
@@ -71,7 +71,7 @@
 </div>
 
 
-</div>
+
 <script type="text/javascript">
     function mostrarCapacidad() {
     if ( document.getElementById("checkboxLocate").checked) {
