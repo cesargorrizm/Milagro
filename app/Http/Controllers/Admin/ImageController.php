@@ -182,6 +182,7 @@ class ImageController extends Controller
                         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
                     }
                 }
+                // pasarle la url a la imagen
                 $image->url = asset('images/post/' . $_FILES['archivo']['name']);
             }
 

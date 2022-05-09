@@ -17,6 +17,9 @@ class CreateImagesTable extends Migration
             $table->id(); 
             $table->string('url');
             $table->boolean('principal');
+            $table->unsignedBigInteger('sector_id')->nullable();
+            $table->foreign('sector_id')->references('id')->on('sectors')->onDelete('set null');
+
             $table->timestamps();
         });
     }
