@@ -21,7 +21,7 @@
     </div>
     <div class="col-lg-6 form-group">
         {!! Form::label('tipo_id', 'Tipo', ['class' => 'is-required']) !!}
-        {!! Form::select('role', $tipos, [], ['class' => 'form-control', 'required']) !!}
+        {!! Form::select('tipo_id', $tipos, [], ['class' => 'form-control', 'required']) !!}
     
         
     
@@ -42,29 +42,46 @@
     </div>
 </div>
 <div class="row">
-    <p>{!! Form::label('localizacion', 'Localizacion', ['class' => 'is-required']) !!}</p>
-    {!! Form::checkbox('localizacion',  null, ['required']) !!}
+    {!! Form::label('localizacion', 'Localizacion') !!}
+    <input type="checkbox" onclick="mostrarCapacidad();" id="checkboxLocate">
 </div>
 
-@if ('localizacion'==1)
+
+
+<div class="row" id="bloqueCapacidad">
     
-<div class="row">
     
-    
-    <div class="col-lg-6 form-group">
-        {!! Form::label('capacidad_id', 'Capacidad', ['class' => 'is-required']) !!}
-        {!! Form::number('capacidad_id', null, ['class' => 'form-control', 'placeholder' => 'Introduzca la capacidad', 'autocomplete' => 'off', 'required' ]) !!}
+    <div class="col-lg-12 form-group">
+        {!! Form::label('mapaCapacidades', 'Tipo') !!}
+        {{-- {!! Form::select('mapaCapacidades', $fruits, [], ['class' => 'form-control', 'required']) !!} --}}
+        <select name="mapaCapacidades" class = 'form-control'>
+        @foreach($capacidades as $capacidad)
+            
+        <option value='{{$capacidad->id}}'>
+            Banquete Sin Baile: {{$capacidad->banqueteSinBaile}} Banquete Con Baile: {{$capacidad->banqueteConBaile}} Cocktail: {{$capacidad ->cocktail}} Actos: {{$capacidad ->actos}}
+        </option>
         
-        
-        
-        @error('capacidad_id')
-        <span class="text-danger">{{$message}}</span>
+        @endforeach
+
+        @error('mapaCapacidades')
+            <span class="text-danger">{{$message}}</span>
         @enderror
         
     </div>
 </div>
 
-@endif
+
 </div>
+<script type="text/javascript">
+    function mostrarCapacidad() {
+    if ( document.getElementById("checkboxLocate").checked) {
+        document.getElementById("bloqueCapacidad").style.display = 'block';
+        
+    } else {
+        
+        document.getElementById("bloqueCapacidad").style.display = 'none';
+    }
+    }
+</script>
 
 

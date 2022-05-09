@@ -17,5 +17,5 @@ class Capacidad extends Model
         'banqueteSinBaile', 'banqueteConBaile', 'cocktail','actos','buffet'
     ];
 
-    
+
 }

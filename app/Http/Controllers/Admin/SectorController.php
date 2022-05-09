@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Models\Sector;
 
 use App\Http\Controllers\Controller;
@@ -10,17 +11,17 @@ use App\Models\Capacidad;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SectorController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
 
         $this->middleware('can:sector.index')->only('index');
-
-
     }
-    
-    
+
+
     public function index()
     {
         $titlePage = "Listado Sector";
@@ -28,23 +29,35 @@ class SectorController extends Controller
         $sectores = Sector::all();
         //return view('admin.roles.index',compact('roles', 'title', 'titlePage', 'permissions'));
         $tipos = Tipo::all();
-        
-        return view('admin.sector.index', compact('titlePage','sectores','tipos'));
+
+        return view('admin.sector.index', compact('titlePage', 'sectores', 'tipos'));
     }
     public function edit(Sector $sector)
     {
         $titlePage = "Actualizar Sector";
         $title = "Formulario Actualizar Sector";
-        $sectores = Sector::all();
-        $tipos = Tipo::pluck('nombre','id');
+        $capacidades = Capacidad::all();
 
-      // $sector = Sector::pluck('titulo','id');
+        // $mapaCapacidades = $capacidades2->map(function ($capacidad) {
+        //     return [
 
-        return view('admin.sector.edit', compact('titlePage', 'title','sector','sectores','tipos'));
+        //         'frase' => "Banquete Sin Baile: {$capacidad->banqueteSinBaile} Banquete Con Baile: {$capacidad->banqueteConBaile} "
+        //     ];
+        // });
+
+
+        
+        
+        $tipos = Tipo::pluck('nombre', 'id');
+
+
+        //$sector = Sector::pluck('titulo','id');
+
+        return view('admin.sector.edit', compact('titlePage', 'title', 'sector', 'tipos', 'capacidades'));
     }
 
 
-    public function update(Request $request,Sector $sector )
+    public function update(Request $request, Sector $sector)
     {
         $request->validate([
             'titulo' => 'required',
@@ -59,17 +72,16 @@ class SectorController extends Controller
         $sector->tipo_id = $request->tipo_id;
         $sector->capacidad_id = $request->capacidad_id;
 
-        
+
 
         $sector->update();
 
-        
+
 
         //asignamos al usuario el rol seleccionado
         //$user->assignRole($request->input('roles'));
 
         return redirect()->route('contacto.index')
             ->with('status', '¡Se ha actualizado el contacto ' . $sector->titulo . ' correctamente!');
-
     }
 }

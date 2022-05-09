@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Str;
 
 class CapacidadController extends Controller
 {
@@ -31,6 +32,7 @@ class CapacidadController extends Controller
      */
     public function index()
     {
+        
         $titlePage = "Gestión de capacidad";
         $title = "Listado de capacidad";
 
