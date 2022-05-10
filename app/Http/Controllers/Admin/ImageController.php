@@ -103,7 +103,7 @@ class ImageController extends Controller
         $image = new Image();
         $image->sector_id = $request->sector;
         $image->url = asset("images/post/" . $_FILES['archivo']['name']);
-        if ($fotoPrincipal == 1) {
+        if ($fotoPrincipal == 'on') {
             $image->principal = 1;
         } else {
              $image->principal = 0;
@@ -191,7 +191,7 @@ class ImageController extends Controller
             $image->sector_id = $request->sector;
 
             // return $_FILES['archivo']['name'];
-        if ($fotoPrincipal == 1) {
+        if ($fotoPrincipal == 'on') {
             $image->principal = 1;
         } else {
              $image->principal = 0;

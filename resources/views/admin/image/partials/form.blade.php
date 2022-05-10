@@ -6,9 +6,14 @@
  * Time: 10:25
  */
 if (isset($image)) {
-
     $valor = $image->sector_id;
-} else{
+    if ($image->principal == 1) {
+        $checkbox = true;
+    } else {
+        $checkbox = false;
+    }
+} else {
+    $checkbox = false;
     $valor = 0;
 }
 
@@ -18,7 +23,7 @@ if (isset($image)) {
 
     <div class="col-lg-6 form-group">
         {{-- <form action="index.php" method="POST" enctype="multipart/form-data"> --}}
-            {!! Form::label('imagen', 'Añadir imagen:') !!}
+        {!! Form::label('imagen', 'Añadir imagen:') !!}
         <input name="archivo" class="form-control" id="archivo" type="file" />
         {{-- <input type="submit" name="subir" value="Subir imagen" /> --}}
         {{-- </form> --}}
@@ -35,8 +40,12 @@ if (isset($image)) {
 <div class="row">
     <div class="col-lg-6 form-group">
         {!! Form::label('principal', 'Principal') !!}
-        <input type="checkbox" name="principal" id="fotoPrincipal" class="form-control" value="1"
-            {{ old('principal') ? 'checked="checked"' : '0' }} />
+        <input type="checkbox" name="principal" id="fotoPrincipal" class="form-control"/>
+        {{-- <input type="checkbox" name="principal" id="fotoPrincipal" class="form-control" value="0" checked="checked" 
+            {{ old('principal') ? 'checked="checked"' : '0' }} /> --}}
+
+
+
 
         @error('principal')
             <span class="text-danger">{{ $message }}</span>
@@ -56,3 +65,12 @@ if (isset($image)) {
     </div>
 </div>
 </div>
+<script type="text/javascript">
+var check = '<?=$checkbox?>';
+if(check== true){
+    document.getElementById("fotoPrincipal").checked = 1;
+} else {
+    document.getElementById("fotoPrincipal").checked = 0;
+}
+	
+</script>
