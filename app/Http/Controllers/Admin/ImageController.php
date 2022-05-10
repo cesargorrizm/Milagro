@@ -63,7 +63,7 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $sectores = Sector::all();
         $request->validate([
             'archivo' => 'required',
         ]);
@@ -86,13 +86,23 @@ class ImageController extends Controller
                 } else {
                     //Si la imagen es correcta en tamaño y tipo
                     //Se intenta subir al servidor
-                    if (move_uploaded_file($temp, 'images/post/' . $archivo)) {
+                    $estructura = "images/img/";
+                    // poner el nombre a la carpeta segun el sector
+                    foreach ($sectores as $sector) {
+                        if($sector->id == $request->sector){
+                            $estructura = "images/" . $sector->titulo . '/';
+                        } 
+                    }
+                    // crear la carpeta si no existe
+                    if(!is_dir($estructura)){
+                        mkdir($estructura, 0777, true);
+                    }
+                    // moverl el archivo
+                    if (move_uploaded_file($temp,  $estructura  . $archivo)) {
                         //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-                        chmod('images/post/' . $archivo, 0777);
+                        chmod($estructura . $archivo, 0777);
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
-                        //Mostramos la imagen subida
-                        echo '<p><img src="images/post/' . $archivo . '"></p>';
                     } else {
                         //Si no se ha podido subir la imagen, mostramos un mensaje de error
                         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
@@ -102,7 +112,7 @@ class ImageController extends Controller
 
         $image = new Image();
         $image->sector_id = $request->sector;
-        $image->url = asset("images/post/" . $_FILES['archivo']['name']);
+        $image->url = asset($estructura . $_FILES['archivo']['name']);
         if ($fotoPrincipal == 'on') {
             $image->principal = 1;
         } else {
@@ -174,9 +184,22 @@ class ImageController extends Controller
                 } else {
                     //Si la imagen es correcta en tamaño y tipo
                     //Se intenta subir al servidor
-                    if (move_uploaded_file($temp, 'images/post/' . $archivo)) {
+                     //Se intenta subir al servidor
+                     $sectores = Sector::all();
+                     $estructura = "images/img/";
+                     // poner el nombre a la carpeta segun el sector
+                     foreach ($sectores as $sector) {
+                         if($sector->id == $request->sector){
+                             $estructura = "images/" . $sector->titulo . '/';
+                         } 
+                     }
+                     // crear la carpeta si no existe
+                     if(!is_dir($estructura)){
+                         mkdir($estructura, 0777, true);
+                     }
+                    if (move_uploaded_file($temp, $estructura . $archivo)) {
                         //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-                        chmod('images/post/' . $archivo, 0777);
+                        chmod($estructura . $archivo, 0777);
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
                     } else {
@@ -185,7 +208,7 @@ class ImageController extends Controller
                     }
                 }
                 // pasarle la url a la imagen
-                $image->url = asset('images/post/' . $_FILES['archivo']['name']);
+                $image->url = asset($estructura . $_FILES['archivo']['name']);
             }
             
             $image->sector_id = $request->sector;
