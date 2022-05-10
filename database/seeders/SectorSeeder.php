@@ -14,37 +14,44 @@ class SectorSeeder extends Seeder
      */
     public function run()
     {
-    
+    // Espacios
         Sector::create([
-            'titulo'=>'Esto es un titulo',
-            'descripcion'=>'Esto es una descripcion', 
-            'tipo_id'=>1,
-            'capacidad_id'=>1
-
-        ]);
-        Sector::create([
-            'titulo'=>'Espacio 2',
+            'titulo'=>'Finca Santa Ana',
             'descripcion'=>'Esto es una descripcion', 
             'tipo_id'=>2,
             'capacidad_id'=>1
 
         ]);
         Sector::create([
-            'titulo'=>'Espacio 3',
+            'titulo'=>'Navarrete del río',
             'descripcion'=>'Esto es una descripcion', 
             'tipo_id'=>2,
             'capacidad_id'=>1
 
         ]);
         Sector::create([
-            'titulo'=>'Espacio 4',
+            'titulo'=>'Escaleruela',
             'descripcion'=>'Esto es una descripcion', 
             'tipo_id'=>2,
             'capacidad_id'=>1
 
         ]);
         Sector::create([
-            'titulo'=>'Espacio 5',
+            'titulo'=>'Lago Azul',
+            'descripcion'=>'Esto es una descripcion', 
+            'tipo_id'=>2,
+            'capacidad_id'=>1
+
+        ]);
+        Sector::create([
+            'titulo'=>'El Mercao',
+            'descripcion'=>'Esto es una descripcion', 
+            'tipo_id'=>2,
+            'capacidad_id'=>1
+
+        ]);
+        Sector::create([
+            'titulo'=>'Bonet',
             'descripcion'=>'Esto es una descripcion', 
             'tipo_id'=>2,
             'capacidad_id'=>1
