@@ -55,8 +55,7 @@
     
     
     <div class="col-lg-12 form-group"  id="bloqueCapacidad">
-        {!! Form::label('mapaCapacidades', 'Tipo') !!} 
-        {{-- {!! Form::select('mapaCapacidades', $fruits, [], ['class' => 'form-control', 'required']) !!} --}}
+        {!! Form::label('mapaCapacidades', 'Tipo') !!}
          <select name="mapaCapacidades" class = 'form-control'>
         @foreach($capacidades as $capacidad)
             
@@ -65,14 +64,15 @@
         </option>
         
         @endforeach
+         </select>
 
         @error('mapaCapacidades')
             <span class="text-danger">{{$message}}</span>
         @enderror
-        
     </div>
 
 </div>
+<div></div>
 </div>
 
         <script type="text/javascript">

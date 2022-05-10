@@ -60,6 +60,8 @@
 
             <div class="d-flex justify-content-between align-items-end">
                 <h3 class="card-title pb-2">{{ __($titlePage) }}</h3>
+                <a href="{{ route('sector.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                    {{ __('Nuevo Sector') }}</a>
             </div>
         </div>
         <!-- /.card-header -->
@@ -156,7 +158,6 @@
                     }
                 }
             });
-        });
     </script>
     
 
