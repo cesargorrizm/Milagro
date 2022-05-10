@@ -8,6 +8,7 @@
 ?>
 
 <div class="row">
+    
     <div class="column col-lg-6 form-group">
     <div class="col-lg-6 form-group">
         {!! Form::label('titulo', 'Titulo', ['class' => 'is-required']) !!}
@@ -42,19 +43,21 @@
     </div>
 </div>
 <div class="row">
-    {!! Form::label('localizacion', 'Localizacion') !!}
+    {!! Form::label('Capacidades', 'Capacidades') !!}
     <input type="checkbox" name="checkbox" onclick="mostrarCapacidad();" id="checkboxLocate",>
 </div>
 
 
 
-<div class="row" id="bloqueCapacidad">
+
+
+<div class="row">
     
     
-    <div class="col-lg-12 form-group">
-        {!! Form::label('mapaCapacidades', 'Tipo') !!}
+    <div class="col-lg-12 form-group"  id="bloqueCapacidad">
+        {!! Form::label('mapaCapacidades', 'Tipo') !!} 
         {{-- {!! Form::select('mapaCapacidades', $fruits, [], ['class' => 'form-control', 'required']) !!} --}}
-        <select name="mapaCapacidades" class = 'form-control'>
+         <select name="mapaCapacidades" class = 'form-control'>
         @foreach($capacidades as $capacidad)
             
         <option value='{{$capacidad->id}}'>
@@ -68,20 +71,35 @@
         @enderror
         
     </div>
+
+</div>
 </div>
 
+        <script type="text/javascript">
+            function mostrarCapacidad() {
+            if ( document.getElementById("checkboxLocate").checked) {
+                document.getElementById("bloqueCapacidad").style.visibility = 'visible';
+                
+            } else {
+                
+                document.getElementById("bloqueCapacidad").style.visibility = 'hidden';
+            }
+            }
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                if ( document.getElementById("checkboxLocate").checked) {
+                document.getElementById("bloqueCapacidad").style.visibility = 'visible';
+                
+            } else {
+                
+                document.getElementById("bloqueCapacidad").style.visibility = 'hidden';
+            }
+        }
+        </script>
 
 
-<script type="text/javascript">
-    function mostrarCapacidad() {
-    if ( document.getElementById("checkboxLocate").checked) {
-        document.getElementById("bloqueCapacidad").style.display = 'block';
-        
-    } else {
-        
-        document.getElementById("bloqueCapacidad").style.display = 'none';
-    }
-    }
-</script>
+
+
 
 
