@@ -13,14 +13,14 @@ class CreateSectoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('sectors', function (Blueprint $table) {
+        Schema::create('sectores', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
             $table->longText('descripcion');
             $table->unsignedBigInteger('tipo_id');
             $table->unsignedBigInteger('capacidad_id')->nullable();
             $table->foreign('tipo_id')->references('id')->on('tipos');
-            $table->foreign('capacidad_id')->references('id')->on('capacidads')->onDelete('set null');
+            $table->foreign('capacidad_id')->references('id')->on('capacidades')->onDelete('set null');
             $table->timestamps();
 
         });
@@ -33,6 +33,6 @@ class CreateSectoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sectors');
+        Schema::dropIfExists('sectores');
     }
 }

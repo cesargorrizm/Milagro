@@ -301,21 +301,32 @@
                 <div class="media-wrapper row">
                     <div class="col-left col-xs-12 col-sm-12">
                         <div id="links" class="row">
-                            <div class="col-xs-12 col-sm-4">    
-                                <div class="media-item">
-                                    <div class="media-item-inner">
-                                        <img class="img-responsive" src="{{ asset('images/espacios/barra-mercaocentral.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/espacios/barra-mercaocentral.jpg')}}" data-gallery>
-                                            <span class="mask-inner">
-                                                <span class="item-title script">El Mercao</span>
-                                                <span class="desc">Situado en la Plaza Amantes, en pleno centro de la ciudad de Teruel, goza de una privacidad y unas vistas incomparables a los pies de la Torre de San Pedro</span>
-                                                {{-- <span class="price">400 personas</span> --}}
-                                            </span><!--//mask-inner-->
-                                        </a><!--//mask-->
-                                    </div><!--//media-item-inner-->
-                                </div><!--//media-item-->
-                            </div>
-                            <div class="col-xs-12 col-sm-4"> 
+                            @foreach($espacios as $espacio)
+                                
+                                <div class="col-xs-12 col-sm-4">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$espacio->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$espacio->titulo}}</span>    
+                                                    <span class="desc">{{$espacio->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+
+                            @endforeach
+
+                            {{-- <div class="col-xs-12 col-sm-4"> 
                                 <div class="media-item">
                                     <div class="media-item-inner">
                                         <img class="img-responsive" src="{{ asset('images/espacios/lago-azul-vista-al-lago.jpg') }}" alt="">
@@ -323,13 +334,13 @@
                                             <span class="mask-inner">
                                                 <span class="item-title script">EL LAGO AZUL</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                {{-- <span class="price">400 personas</span> --}}
-                                            </span><!--//mask-inner-->
+                                                <span class="price">400 personas</span> --}}
+                                            {{-- </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
                                 </div><!--//media-item-->
-                            </div>
-                            <div class="col-xs-12 col-sm-4"> 
+                            </div> --}}
+                            {{-- <div class="col-xs-12 col-sm-4"> 
                                 <div class="media-item">
                                     <div class="media-item-inner">
                                         <img class="img-responsive" src="{{ asset('images/espacios/mesa-central.jpg') }}" alt="">
@@ -337,14 +348,14 @@
                                             <span class="mask-inner">
                                                 <span class="item-title script">La Escaleruela</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                {{-- <span class="price">400 personas</span> --}}
+                                                <span class="price">400 personas</span>
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
                                 </div><!--//media-item-->
-                            </div>
-                        </div><!--//row-->
-                        <div id="links" class="row">
+                            </div> --}}
+                        {{-- </div><!--//row--> --}}
+                        {{-- <div id="links" class="row">
                             <div class="col-xs-12 col-sm-4">    
                                 <div class="media-item">
                                     <div class="media-item-inner">
@@ -354,7 +365,7 @@
                                             <span class="mask-inner">
                                                 <span class="item-title script">FINCA SANTA ANA</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                {{-- <span class="price">400 personas</span> --}}
+                                                <span class="price">400 personas</span>
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
@@ -368,7 +379,7 @@
                                             <span class="mask-inner">
                                                 <span class="item-title script">RINCON DE NAVARRETE</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                {{-- <span class="price">400 personas</span> --}}
+                                                <span class="price">400 personas</span>
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
@@ -382,13 +393,13 @@
                                             <span class="mask-inner">
                                                 <span class="item-title script">HUERTO DE BONET</span>
                                                 <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                {{-- <span class="price">400 personas</span> --}}
+                                                <span class="price">400 personas</span>
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
                                 </div><!--//media-item-->
                             </div>
-                        </div><!--//row-->
+                        </div><!--//row--> --}}
                     </div>
                 </div><!--//media-wrapper-->
             </div><!--//featured-->
@@ -569,13 +580,13 @@
                                         <span class="street-address">Carretera Sagunto-Burgos Km. 123</span><br>
                                         <span class="city">Teruel</span><br>
                                         <span class="postal-code">44195</span><br>
-                                        <span class="country-name">Teruel</span>
+                                        <span class="country-name">España</span>
                                     </div>
                                     <div class="contact-methods">
                                         <h5 class="subtitle">Correo y teléfono</h5>
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@restauranteelmilagro.com">info@restauranteelmilagro.com</a></li>
-                                            <li><i class="fa fa-phone"></i> <a href="tel:0800123456"> +34 978 60 30 95</a></li>
+                                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@restauranteelmilagro.com">{{$contacto->email}}</a></li>
+                                            <li><i class="fa fa-phone"></i> <a href="tel:0800123456">{{$contacto->telefono}}</a></li>
                                         </ul>
                                     </div>
                                     <div class="contact-reserve">
@@ -611,9 +622,9 @@
                         <div class="footer-col-inner">
                             <h3 class="title">Contacto</h3>
                             <ul class="list-unstyled">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> CTRA. SAGUNTO-BURGOS KM, 123, 44195 Teruel</li>
-                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@restauranteelmilagro.com">info@restauranteelmilagro.com</a></li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i> +34 978 60 30 95</li>
+                                {{-- <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{$contacto->direccion}}</li> --}}
+                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@restauranteelmilagro.com">{{$contacto->email}}</a></li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i>{{$contacto->telefono}}</li>
                             </ul>
                         </div><!--//footer-col-inner-->
                     </div>
@@ -635,11 +646,12 @@
                         <div class="footer-col-inner">
                             <h3 class="title">Redes sociales</h3> 
                             <ul class="social-icons list-inline">
-                                <li><a href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i></a></li>                        
-                                <li><a href="https://www.facebook.com/3rdwavethemes" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="{{ $contacto->miNube }}" target="_blank"><i class="fa fa-twitter"></i></a></li>                        
+                                <li><a href="{{ $contacto->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{ $contacto->tripadvisor }}" target="_blank"><i class="fa fa-tria"></i></a></li>
+                                {{-- <li><a href=""><i class="fa fa-google-plus"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li class="last"><a href="#"><i class="fa fa-pinterest"></i></a></li>                     
+                                <li class="last"><a href="#"><i class="fa fa-pinterest"></i></a></li>                      --}}
                             </ul>                                     
                         </div><!--//footer-col-inner-->
                     </div><!--//foooter-col--> 
@@ -709,7 +721,7 @@
                     </h2>
                     <div class="intro text-center">
                         <p class="blurb">Llámanos para concertar una cita</p>
-                        <p class="phone subtitle">+34 978 60 30 95</p>
+                        <p class="phone subtitle">{{$contacto->telefono}}</p>
                         <hr>
                         <p class="booking-intro">O envíanos un correo</p>
                     </div>

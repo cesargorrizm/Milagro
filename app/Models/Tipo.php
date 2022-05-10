@@ -18,4 +18,9 @@ class Tipo extends Model
     protected $fillable = [
         'nombre'
     ];
+    public function sectores(){
+        return $this->hasMany(Sector::class);
+    }
+
+
 }

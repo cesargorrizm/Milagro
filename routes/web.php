@@ -32,7 +32,7 @@ Route::get('/', function () {
 /*
  * Home
  */
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*
  * Contacto

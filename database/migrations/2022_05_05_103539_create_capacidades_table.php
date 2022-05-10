@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCapacidadsTable extends Migration
+class CreateCapacidadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCapacidadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('capacidads', function (Blueprint $table) {
+        Schema::create('capacidades', function (Blueprint $table) {
             $table->id();
 
             $table->integer('banqueteSinBaile')->nullable();
@@ -36,6 +36,6 @@ class CreateCapacidadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('capacidads');
+        Schema::dropIfExists('capacidades');
     }
 }

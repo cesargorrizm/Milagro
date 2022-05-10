@@ -16,4 +16,9 @@ class Image extends Model
          // ,'idInstancia'
     ];
 
+    
+    public function sector(){
+        return $this->belongsTo(Sector::class);
+    }
+
 }

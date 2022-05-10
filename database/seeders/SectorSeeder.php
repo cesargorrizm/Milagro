@@ -22,5 +22,33 @@ class SectorSeeder extends Seeder
             'capacidad_id'=>1
 
         ]);
+        Sector::create([
+            'titulo'=>'Espacio 2',
+            'descripcion'=>'Esto es una descripcion', 
+            'tipo_id'=>2,
+            'capacidad_id'=>1
+
+        ]);
+        Sector::create([
+            'titulo'=>'Espacio 3',
+            'descripcion'=>'Esto es una descripcion', 
+            'tipo_id'=>2,
+            'capacidad_id'=>1
+
+        ]);
+        Sector::create([
+            'titulo'=>'Espacio 4',
+            'descripcion'=>'Esto es una descripcion', 
+            'tipo_id'=>2,
+            'capacidad_id'=>1
+
+        ]);
+        Sector::create([
+            'titulo'=>'Espacio 5',
+            'descripcion'=>'Esto es una descripcion', 
+            'tipo_id'=>2,
+            'capacidad_id'=>1
+
+        ]);
     }
 }

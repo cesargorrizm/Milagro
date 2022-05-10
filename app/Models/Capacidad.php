@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Capacidad extends Model
 {
+
+    protected $table = 'capacidades';
     use HasFactory;
     /**
      * The attributes that are mass assignable.
@@ -16,6 +18,10 @@ class Capacidad extends Model
     protected $fillable = [
         'banqueteSinBaile', 'banqueteConBaile', 'cocktail','actos','buffet'
     ];
+
+    public function sectores(){
+        return $this->hasMany(Sector::class);
+    }
 
 
 }
