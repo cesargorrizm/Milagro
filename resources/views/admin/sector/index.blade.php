@@ -75,7 +75,7 @@
                         <th>Titulo</th>
                         <th>Descripcion</th>
                         <th>Tipo</th>
-                        <th>Capcidad</th>
+                        <th>Capacidad</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -108,7 +108,7 @@
                         <th>Titulo</th>
                         <th>Descripcion</th>
                         <th>Tipo</th>
-                        <th>Capcidad</th>
+                        <th>Capacidad</th>
                         <th>Acciones</th>
                     </tr>
                     </tfoot>
