@@ -6,6 +6,8 @@
  * Time: 10:25
  */
 if (isset($sector)) {
+    $capacidad_id = 0;
+    $checkbox = false;
     $tipo_id = $sector->tipo_id;
     if ($sector->capacidad_id != null) {
         $checkbox = true;
