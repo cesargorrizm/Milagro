@@ -5,15 +5,16 @@
  * Date: 24/02/2021
  * Time: 10:25
  */
- if (isset($sector)) {
+if (isset($sector)) {
     $tipo_id = $sector->tipo_id;
-     $checkbox = false;
-     if ($sector->capacidad_id != null) {
+    if ($sector->capacidad_id != null) {
         $checkbox = true;
         $capacidad_id = $sector->capacidad_id;
     } 
 } else {
-   
+    
+    $checkbox = false;
+    $capacidad_id=0;
     $tipo_id = 0;
 }
 ?>

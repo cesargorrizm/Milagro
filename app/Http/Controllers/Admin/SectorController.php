@@ -19,6 +19,9 @@ class SectorController extends Controller
     {
 
         $this->middleware('can:sector.index')->only('index');
+        $this->middleware('can:sector.create')->only('create', 'store');
+        $this->middleware('can:sector.edit')->only('edit', 'update');
+        $this->middleware('can:sector.destroy')->only('destroy');
     }
 
 
@@ -135,6 +138,12 @@ class SectorController extends Controller
 
         return redirect()->route('sector.index')
             ->with('status', '¡Se ha actualizado el contacto ' . $sector->titulo . ' correctamente!');
+    }
+    public function destroy(Sector $sector)
+    {
+        $sector->delete();
+        return redirect()->route('sector.index')
+            ->with('status', '¡Se ha eliminado el sector ' . $sector->id . ' correctamente!');
     }
 
 }
