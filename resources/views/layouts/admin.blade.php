@@ -58,6 +58,21 @@
                 <a href="{{ route('tipo.index') }}" class="nav-link">Tipo</a>
             </li>
             @endcan
+            @can('sector.index')
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('sector.index') }}" class="nav-link">Sector</a>
+            </li>
+            @endcan
+            @can('capacidad.index')
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('capacidad.index') }}" class="nav-link">Capacidad</a>
+            </li>
+            @endcan
+            @can('image.index')
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('image.index') }}" class="nav-link">Imagen</a>
+            </li>
+            @endcan
         </ul>
 
         <ul class="navbar-nav ml-auto">
