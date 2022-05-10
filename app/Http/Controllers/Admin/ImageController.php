@@ -5,13 +5,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Image;
+use App\Models\Sector;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Str;
-use Spatie\Permission\Models\Role;
 
 class ImageController extends Controller
 {
@@ -36,8 +32,9 @@ class ImageController extends Controller
         $title = "Listado de imagen";
 
         $image = Image::all();
+        $sectors = Sector::all();
 
-        return view('admin.image.index', compact('titlePage', 'title'))->with('image', $image);
+        return view('admin.image.index', compact('titlePage', 'title','sectors'))->with('image', $image);
     }
 
     /**
@@ -47,11 +44,14 @@ class ImageController extends Controller
      */
     public function create()
     {
+
         $titlePage = "Crear Nuevo imagen";
         $title = "Formulario Crear imagen";
+        $sector = Sector::pluck('titulo','id');
+        
 
 
-        return view('admin.image.create', compact('titlePage', 'title'));
+        return view('admin.image.create', compact('titlePage', 'title','sector'));
     }
 
     /**
@@ -63,6 +63,7 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'archivo' => 'required',
         ]);
@@ -100,6 +101,7 @@ class ImageController extends Controller
             }
 
         $image = new Image();
+        $image->sector_id = $request->sector;
         $image->url = asset("images/post/" . $_FILES['archivo']['name']);
         if ($fotoPrincipal == 1) {
             $image->principal = 1;
@@ -131,13 +133,15 @@ class ImageController extends Controller
         $titlePage = "Actualizar imagen";
         $title = "Formulario Actualizar imagen";
 
-        return view('admin.image.edit', compact('titlePage', 'title', 'image'))
-            ->with('image', $image);
-    }
+        $sector = Sector::pluck('titulo','id');
 
-    /**
-     * Update the specified resource in storage.
-     *
+        return view('admin.image.edit', compact('titlePage', 'title', 'image','sector'))
+            ->with('image', $image);
+        }
+        
+        /**
+         * Update the specified resource in storage.
+         *
      * @param Request $request
      * @param Image $image
      * @return Response
@@ -175,8 +179,6 @@ class ImageController extends Controller
                         chmod('images/post/' . $archivo, 0777);
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
-                        //Mostramos la imagen subida
-                        echo '<p><img src="images/post/' . $archivo . '"></p>';
                     } else {
                         //Si no se ha podido subir la imagen, mostramos un mensaje de error
                         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
@@ -185,7 +187,8 @@ class ImageController extends Controller
                 // pasarle la url a la imagen
                 $image->url = asset('images/post/' . $_FILES['archivo']['name']);
             }
-
+            
+            $image->sector_id = $request->sector;
 
             // return $_FILES['archivo']['name'];
         if ($fotoPrincipal == 1) {
