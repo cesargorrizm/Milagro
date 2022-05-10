@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Starglob2
- * Date: 02/02/2021
- * Time: 13:03
+ * Date: 27/01/2021
+ * Time: 12:10
  */
 ?>
 @extends('layouts.admin')
@@ -27,8 +27,8 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin') }}">Página Principal</a></li>
-                        <li class="breadcrumb-item active"><a href="{{ route('sector.index') }}">Instancia</a></li>
-                        <li class="breadcrumb-item active">Editar Instancia</li>
+                        <li class="breadcrumb-item active"><a href="{{ route('sector.index') }}">{{ __('Imagenes') }}</a></li>
+                        <li class="breadcrumb-item active">Nuevo sector</li>
                     </ol>
                 </div>
             </div>
@@ -42,22 +42,22 @@
         @include('includes.error')
 
         <div class="card">
+
             <div class="card-header">
                 <h3 class="card-title">{{ __($title) }}</h3>
             </div>
-            
-            {!! Form::model($sector, ['route' => ['sector.update', $sector], 'method' => 'put']) !!}
+
+            {{-- {!! Form::open(['route' => 'image.store']) !!} --}}
+             {!! Form::open(['route' => 'sector.store', 'files' => 'true', 'enctype'=>'multipart/form-data', 'method' => 'POST']) !!}
             <div class="card-body">
                 @include('admin.sector.partials.form')
-                
             </div>
             <div class="card-footer">
+                <button type="submit" class="btn btn-primary">{{ __('Crear sector') }}</button>
                 <a class="btn btn-link" href="{{ url()->previous() }}">{{ __('Volver') }}</a>
-                <button type="submit" class="btn btn-primary">{{ __('Actualizar sector') }}</button>
             </div>
-            
             {!! Form::close() !!}
-            
+
         </div>
     </div>
 @endsection

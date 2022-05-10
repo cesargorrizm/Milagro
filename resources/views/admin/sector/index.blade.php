@@ -51,6 +51,14 @@
         <h4><i class="fas fa-exclamation-triangle"></i> Alert!</h4>
         No existen datos que mostrar
     </div>
+    <div class="card-header">
+
+        <div class="d-flex justify-content-between align-items-end">
+            <h3 class="card-title pb-2">{{ __($titlePage) }}</h3>
+            <a href="{{ route('sector.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                {{ __('Nuevo Sector') }}</a>
+        </div>
+    </div>
     <br>
 
 @else
@@ -60,6 +68,8 @@
 
             <div class="d-flex justify-content-between align-items-end">
                 <h3 class="card-title pb-2">{{ __($titlePage) }}</h3>
+                <a href="{{ route('sector.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                    {{ __('Nuevo Sector') }}</a>
             </div>
         </div>
         <!-- /.card-header -->
@@ -73,7 +83,7 @@
                         <th>Titulo</th>
                         <th>Descripcion</th>
                         <th>Tipo</th>
-                        <th>Capcidad</th>
+                        <th>Capacidad</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -95,6 +105,10 @@
                                 <a href="{{ route('sector.edit', $sector) }}" 
                                 class="btn btn-secondary btn-sm" title="Editar">
                                 <i class="fa fa-pen"></i></a>
+
+                                <a class="btn btn-danger btn-sm" title="Eliminar" data-toggle="modal"
+                                data-target="#modalEliminar" data-href="{{ route('sector.destroy', $sector) }}"
+                                href='#'><i class='fa fa-trash'></i></a>
                             </td>
     
                         </tr>
@@ -106,7 +120,7 @@
                         <th>Titulo</th>
                         <th>Descripcion</th>
                         <th>Tipo</th>
-                        <th>Capcidad</th>
+                        <th>Capacidad</th>
                         <th>Acciones</th>
                     </tr>
                     </tfoot>
@@ -119,6 +133,39 @@
 
 </div> <!-- /col-lg-12 -->
 @endsection
+
+@section('modalEliminar')
+    <!-- Dialogo modal eliminar -->
+
+    <div class="modal modal-danger fade" id="modalEliminar" name="modalEliminar" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-danger">
+                <div class="modal-header" id="titl">
+                    <h4 class="modal-title" id="titleModalEliminar">¡Eliminar sector!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <h5 style="font-family:Verdana; font-size: 14px;" id="bodyModalEliminar" class="debug-url">
+                        ¿Está seguro de que desea eliminar un sector?
+                    </h5>
+                    <form action="" class="form-modal" method="POST">
+                        @method('DELETE')
+                        @csrf
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-outline-light btn-ok">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
 @section('scripts')
     @parent
 
@@ -156,9 +203,16 @@
                     }
                 }
             });
+    </script>
+    <!-- Modal Eliminar -->
+    <script>
+        $('#modalEliminar').on('show.bs.modal', function(e) {
+            $(this).find('.form-modal').attr('action', $(e.relatedTarget).data('href'));
+            $(this).find('.btn-ok').click(function() {
+                $("form").submit();
+            });
         });
     </script>
-    
 
 @endsection
 

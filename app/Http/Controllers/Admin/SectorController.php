@@ -19,6 +19,9 @@ class SectorController extends Controller
     {
 
         $this->middleware('can:sector.index')->only('index');
+        $this->middleware('can:sector.create')->only('create', 'store');
+        $this->middleware('can:sector.edit')->only('edit', 'update');
+        $this->middleware('can:sector.destroy')->only('destroy');
     }
 
 
@@ -87,7 +90,60 @@ class SectorController extends Controller
         //asignamos al usuario el rol seleccionado
         //$user->assignRole($request->input('roles'));
 
-        return redirect()->route('contacto.index')
+        return redirect()->route('sector.index')
             ->with('status', '¡Se ha actualizado el contacto ' . $sector->titulo . ' correctamente!');
     }
+    public function create()
+    {
+
+        $titlePage = "Crear Nuevo sector";
+        $title = "Formulario Crear imagen";
+        $capacidades = Capacidad::all();
+
+        
+        $tipos = Tipo::pluck('nombre', 'id');
+
+        return view('admin.sector.create', compact('titlePage', 'title','capacidades','tipos'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'tipo_id' => 'required',
+        ]);
+
+        // $sector-> Sector::find($id);
+        $sector = new Sector();
+        $sector->titulo = $request->titulo;
+        $sector->descripcion = $request->descripcion;
+        $sector->tipo_id = $request->tipo_id;
+    
+        if ( $request->checkbox=='on') {
+    
+            $sector->capacidad_id = $request->mapaCapacidades;
+        }else{
+            $sector->capacidad_id =null;
+        }
+
+
+
+        $sector->save();
+
+
+
+        //asignamos al usuario el rol seleccionado
+        //$user->assignRole($request->input('roles'));
+
+        return redirect()->route('sector.index')
+            ->with('status', '¡Se ha actualizado el contacto ' . $sector->titulo . ' correctamente!');
+    }
+    public function destroy(Sector $sector)
+    {
+        $sector->delete();
+        return redirect()->route('sector.index')
+            ->with('status', '¡Se ha eliminado el sector ' . $sector->id . ' correctamente!');
+    }
+
 }
