@@ -136,7 +136,7 @@
         $(function () {
             $('#contactos').DataTable({
                 columnDefs: [ {
-        targets: [2,3,4],
+        targets: [2,3,4,5],
         render: function ( data, type, row ) {
             return data.substr( 0, 10 )+'…';
         }
