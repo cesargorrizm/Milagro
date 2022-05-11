@@ -215,67 +215,210 @@
             <div class="featured">
                 <h3 class="title script">Nuestros salones</h3>
                 <div class="media-wrapper row">
-                    <div class="col-left col-xs-12 col-sm-7">
+                    {{-- {{$salas[$sala]['titulo']}} --}}
+                    {{-- @foreach($salas as $sala) --}}
+                    <div class="col-left col-xs-12 col-sm-12">
                         <div id="links" class="row">
+                            {{-- {{count($salas)}}
+                            {{$salas[$sala]}} --}}
+                            
+                            @for($sala = 0; $sala<count($salas); ++$sala)
+                            @if(count($salas)%3==0)
+                            <div class="col-xs-12 col-sm-4">    
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        @foreach($imagenes as $image)
+                                            @if($image->sector_id==$salas[$sala]->id)
+                                                <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                <a class="mask" href="{{ $image->url}}" data-gallery>
+                                            @endif
+                                            @endforeach
+                                        {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                        <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                            <span class="mask-inner">
+                                                <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
+                                                <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            @elseif((count($salas)+1)%3==0)
+                                @if($sala==0 || $sala==1)
+                                <div class="col-xs-12 col-sm-6">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[$sala]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
+                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @else
+                                <div class="col-xs-12 col-sm-4">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[$sala]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
+                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @endif
+                            @elseif((count($salas)+2)%3==0)
+                                    @if($sala==0 || $sala==1 || $sala==count($salas)-1 || $sala==count($salas)-2)
+                                <div class="col-xs-12 col-sm-6">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[$sala]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
+                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @else
+                                <div class="col-xs-12 col-sm-4">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[$sala]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
+                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @endif
+                                
+                            @endif
+
+
+
+
+                            {{-- @if($sala+1==1)
                             <div class="col-xs-12"> 
                                 <div class="media-item">
                                     <div class="media-item-inner">
-                                        <img class="img-responsive" src="{{ asset('images/salones/35-san-pedro.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/salones/35-san-pedro.jpg')}}" data-gallery>
+                                        @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[$sala]->id)
+                                                    <img class="img-responsive"  src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                        @endforeach
+                                                    <span class="mask-inner">
+                                                        <span class="item-title script">{{$salas[$sala]->titulo}}</span>
+                                                        <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                        <span class="price">400 personas</span>
+                                                    </span><!--//mask-inner-->
+                                                        
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            @endif
+                            @if($sala+1==2 | )
+                            
+                            <div class="col-xs-12 col-sm-6">    
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[$sala]->id)
+                                                    <img class="img-responsive"  src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                        @endforeach
                                             <span class="mask-inner">
-                                                <span class="item-title script">Salon San Pedro</span>
-                                                <span class="desc">
-                                                    Un ambiente cálido y acogedor
-                                                    Un salón con un estilo marcadamente contemporáneo e innovador donde la elegancia y la estética se funden</span>
+                                                <span class="item-title script">{{$salas[$sala]['titulo']}}</span>
+                                                <span class="desc">{{$salas[$sala]['descripcion']}}</span>
                                                 <span class="price">400 personas</span>
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
                                     </div><!--//media-item-inner-->
                                 </div><!--//media-item-->
                             </div>
-                            
-                            <div class="clearfix"></div>
-                            
-                            <div class="col-xs-12 col-sm-6">    
-                                <div class="media-item">
-                                    <div class="media-item-inner">
-                                        <img class="img-responsive" src="{{ asset('images/salones/39-virgen-del-pilar.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/salones/39-virgen-del-pilar.jpg')}}" data-gallery>
-                                            <span class="mask-inner">
-                                                <span class="item-title script">Salón Virgen del Pilar</span>
-                                                <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                {{-- <span class="price">400 personas</span> --}}
-                                            </span><!--//mask-inner-->
-                                        </a><!--//mask-->
-                                    </div><!--//media-item-inner-->
-                                </div><!--//media-item-->
-                            </div>
+                            @endif
+                            @if($sala+1==3)
+                       
                             <div class="col-xs-12 col-sm-6"> 
                                 <div class="media-item">
                                     <div class="media-item-inner">
-                                        <img class="img-responsive" src="{{ asset('images/salones/San-Fernando.jpg') }}" alt="">
-                                        <a class="mask" href="{{ asset('images/salones/San-Fernando.jpg') }}" data-gallery>
-                                            <span class="mask-inner">
-                                                <span class="item-title script">Salón San Fernando</span>
-                                                <span class="desc">Description about the dish goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.</span>
-                                                {{-- <span class="price">400 personas</span> --}}
-                                            </span><!--//mask-inner-->
-                                        </a><!--//mask-->
-                                    </div><!--//media-item-inner-->
-                                </div><!--//media-item-->
-                            </div>
-                        </div><!--//row-->
-                    </div>
-                    
-                    <div class="col-right col-xs-12 col-sm-5">
+                                        @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[$sala]->id)
+                                                    <img class="img-responsive"  src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                        @endforeach
+                                        <span class="mask-inner">
+                                            <span class="item-title script">{{$salas[$sala]['titulo']}}</span>
+                                            <span class="desc">{{$salas[$sala]['descripcion']}}</span>
+                                            <span class="price">400 personas</span>
+                                        </span><!--//mask-inner-->
+                                    </a><!--//mask-->
+                                </div><!--//media-item-inner-->
+                            </div><!--//media-item-->
+                        </div>
+                        @endif --}}
+                        {{-- @endforeach --}}
+                        @endfor
+                    </div><!--//row-->
+                </div>
+
+                    {{-- <div class="col-right col-xs-12 col-sm-5">
                         <div class="media-item">
                             <div class="media-item-inner">
-                                <img class="img-responsive" src="{{ asset('images/salones/garden2.jpg') }}" alt="">
-                                <a class="mask" href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">
+                                @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[3]->id)
+                                                    <img class="img-responsive"  src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                        @endforeach
                                     <span class="mask-inner">
-                                        <span class="item-title script">Sala Garden</span>
-                                        <span class="desc">Un salón con un estilo marcadamente contemporáneo e innovador donde la elegancia y la estética se funden</span>
-                                        {{-- <span class="price">£32</span> --}}
+                                        <span class="item-title script">{{$salas[3]['titulo']}}</span>
+                                        <span class="desc">{{$salas[3]['descripcion']}}</span>
+                                        <span class="price">£32</span>
                                     </span><!--//mask-inner-->
                                 </a><!--//mask-->
                             </div><!--//media-item-inner-->
@@ -284,16 +427,20 @@
                         <div class="media-item">
                             <div class="media-item-inner">
                                 <img class="img-responsive" src="{{ asset('images/salones/jardin2.jpg') }}" alt="">
-                                <a class="mask" href="{{ asset('images/salones/jardin2.jpg') }}" data-gallery>
-                                    <span class="mask-inner">
-                                        <span class="item-title script">Terraza Jardín</span>
-                                        <span class="desc">El Jardín de El Restaurante El Milagro es un marco incomparable y excepcional, a tan solo 5 minutos de Teruel. Un espacio de ensueño que hace de cada visita al Milagro una experiencia diferente.</span>
+                                @foreach($imagenes as $image)
+                                                @if($image->sector_id==$salas[4]->id)
+                                                    <img class="img-responsive"  src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                        @endforeach
+                                        <span class="item-title script">{{$salas[4]['titulo']}}</span>
+                                        <span class="desc">{{$salas[4]['descripcion']}}</span>
                                         <span class="price">£36</span>
                                     </span><!--//mask-inner-->
                                 </a><!--//mask-->
                             </div><!--//media-item-inner-->
                         </div><!--//media-item-->
-                    </div><!--//col-right-->
+                    </div><!--//col-right--> --}}
 
                 </div><!--//media-wrapper-->
             </div><!--//featured-->
@@ -429,7 +576,7 @@
                                         {{substr($evento->descripcion,0,150)}}...
                                         {{-- {{$evento->descripcion}} --}}
                                     </p><!--//excerpt-->
-                                    <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">Read more</a>
+                                    <a href="{{ route('detalle') }}" >Read more</a>
                                     <div class="date-badge">
                                         {{-- <span class="month">AUG</span> --}}
                                         <span class="date">{{$i = $i +1}}</span>

@@ -44,5 +44,31 @@ class ImageSeeder extends Seeder
             'principal'=>1,
             'sector_id'=>6, 
         ]);
+        // imagen salones
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Sala San Pedro/35-san-pedro.jpg',
+            'principal'=>1,
+            'sector_id'=>7, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Salón Virgen del Pilar/39-virgen-del-pilar.jpg',
+            'principal'=>1,
+            'sector_id'=>8, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Sala Garden/garden2.jpg',
+            'principal'=>1,
+            'sector_id'=>10, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Salón San Fernando/San-Fernando.jpg',
+            'principal'=>1,
+            'sector_id'=>9, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardin2.jpg',
+            'principal'=>1,
+            'sector_id'=>11, 
+        ]);
     }
 }

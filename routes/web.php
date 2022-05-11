@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\TipoController;
 use App\Http\Controllers\Admin\SectorController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\DetalleController;
 use App\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::get('/', function () {
 /*
  * Home
  */
+Route::get('/detalle', [DetalleController::class, 'index'])->name('detalle');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*
