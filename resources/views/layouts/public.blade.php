@@ -6,6 +6,7 @@
  * Date: 28/04/2022
  * Time: 10:40
  */
+ $i = 0;
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
@@ -415,6 +416,31 @@
                 <span class="title-border"></span>
             </h2>
             <div class="row text-left">
+                <div class="news-wrapper col-left col-xs-12 col-sm-12">
+                    <div id="links" class="row">
+                        
+                        @foreach($eventos as $evento)
+                        
+                            <div class="col-xs-12 col-sm-6">    
+                                <div class="item">
+                                    <h4 class="title">{{$evento->titulo}}</h4>
+                                    {{-- <div class="meta">Saturday, 17th August</div> --}}
+                                    <p class="excerpt">
+                                        {{substr($evento->descripcion,0,150)}}...
+                                        {{-- {{$evento->descripcion}} --}}
+                                    </p><!--//excerpt-->
+                                    <a href="#" class="more-link" data-toggle="modal" data-target="#news-modal-1">Read more</a>
+                                    <div class="date-badge">
+                                        {{-- <span class="month">AUG</span> --}}
+                                        <span class="date">{{$i = $i +1}}</span>
+                                    </div><!--/date-badge-->
+                                </div><!--//item-->
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div><!--//media-wrapper-->
+            {{-- <div class="row text-left">
                 <div class="news-wrapper col-sm-6 col-xs-10 ">
                     <div class="item">
                         <h4 class="title">Wine Tasting</h4>
@@ -493,7 +519,7 @@
                         </div><!--/date-badge-->
                     </div><!--//item-->
                 </div><!--//col-news-->
-            </div><!--//row-->
+            </div><!--//row--> --}}
         </div><!--//container-->
     </div><!--//news-section-->
 
