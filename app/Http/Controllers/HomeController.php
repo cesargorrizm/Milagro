@@ -15,6 +15,7 @@ class HomeController extends Controller
     public function index() {
 
 
+        $salas = Sector::where('tipo_id','=','1')->get();
         $espacios = Sector::where('tipo_id','=','2')->get();
         $eventos = Sector::where('tipo_id','=','3')->get();
 
@@ -26,6 +27,6 @@ class HomeController extends Controller
         //dd($contacto);
 
 
-        return view('layouts.public',compact('contacto','espacios','imagenes','eventos'));
+        return view('layouts.public',compact('contacto','espacios','imagenes','eventos','salas'));
     }
 }

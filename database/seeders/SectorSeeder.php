@@ -15,43 +15,6 @@ class SectorSeeder extends Seeder
     public function run()
     {
 
-        // Salas 
-
-        Sector::create([
-            'titulo' => 'Sala San Pedro',
-            'descripcion' => 'Esto es una descripcion',
-            'tipo_id' => 1,
-            'capacidad_id' => 1
-
-        ]);
-        Sector::create([
-            'titulo' => 'Salón Virgen del Pilar',
-            'descripcion' => 'Esto es una descripcion',
-            'tipo_id' => 1,
-            'capacidad_id' => 1
-
-        ]);
-        Sector::create([
-            'titulo' => 'Salón San Fernando',
-            'descripcion' => 'Esto es una descripcion',
-            'tipo_id' => 1,
-            'capacidad_id' => 1
-
-        ]);
-        Sector::create([
-            'titulo' => 'Sala Garden',
-            'descripcion' => 'Esto es una descripcion',
-            'tipo_id' => 1,
-            'capacidad_id' => 1
-
-        ]);
-        Sector::create([
-            'titulo' => 'Terraza Jardín',
-            'descripcion' => 'Esto es una descripcion',
-            'tipo_id' => 1,
-            'capacidad_id' => 1
-
-        ]);
         // Espacios
         Sector::create([
             'titulo' => 'Finca Santa Ana',
@@ -92,6 +55,44 @@ class SectorSeeder extends Seeder
             'titulo' => 'Bonet',
             'descripcion' => 'Esto es una descripcion',
             'tipo_id' => 2,
+            'capacidad_id' => 1
+
+        ]);
+
+        // Salas 
+
+        Sector::create([
+            'titulo' => 'Sala San Pedro',
+            'descripcion' => 'Esto es una descripcion',
+            'tipo_id' => 1,
+            'capacidad_id' => 1
+
+        ]);
+        Sector::create([
+            'titulo' => 'Salón Virgen del Pilar',
+            'descripcion' => 'Esto es una descripcion',
+            'tipo_id' => 1,
+            'capacidad_id' => 1
+
+        ]);
+        Sector::create([
+            'titulo' => 'Salón San Fernando',
+            'descripcion' => 'Esto es una descripcion',
+            'tipo_id' => 1,
+            'capacidad_id' => 1
+
+        ]);
+        Sector::create([
+            'titulo' => 'Sala Garden',
+            'descripcion' => 'Esto es una descripcion',
+            'tipo_id' => 1,
+            'capacidad_id' => 1
+
+        ]);
+        Sector::create([
+            'titulo' => 'Terraza Jardin',
+            'descripcion' => 'Esto es una descripcion',
+            'tipo_id' => 1,
             'capacidad_id' => 1
 
         ]);
