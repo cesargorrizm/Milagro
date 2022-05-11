@@ -65,6 +65,38 @@
         @enderror
 
     </div>
+    <div class="col-lg-6 form-group">
+        {!! Form::label('direccion', 'Direccion', ['class' => 'is-required']) !!}
+        {!! Form::textarea('direccion', null, ['class' => 'form-control', 'placeholder' => 'Introduzca el nombre del rol', 'autocomplete' => 'off', 'required' ]) !!}
+
+        
+
+        @error('direccion')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 form-group">
+        {!! Form::label('horarioEntreSemana', 'Horario Entre Semana', ['class' => 'is-required']) !!}
+        {!! Form::text('horarioEntreSemana', null, ['class' => 'form-control', 'placeholder' => 'Introduzca numero de telefono', 'autocomplete' => 'off', 'required']) !!}
+
+        @error('horarioEntreSemana')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong></span>
+        @enderror
+
+    </div>
+    <div class="col-lg-6 form-group">
+        {!! Form::label('horarioFinSemana', 'Horario Fin de Semana', ['class' => 'is-required']) !!}
+        {!! Form::text('horarioFinSemana', null, ['class' => 'form-control', 'placeholder' => 'Introduzca el email del usuario', 'autocomplete' => 'off', 'required']) !!}
+    
+        @error('horarioFinSemana')
+            <span class="text-danger">{{$message}}</span>
+        @enderror
+    
+    </div>
 </div>
 
 </div>

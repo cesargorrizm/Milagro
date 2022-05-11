@@ -17,7 +17,7 @@ class Contacto extends Model
      * @var array
      */
     protected $fillable = [
-        'email','tripadvisor','facebook','miNube','telefono'
+        'email','tripadvisor','facebook','miNube','telefono','direccion','horarioEntreSemana','horarioFinSemana',
     ];
 
 

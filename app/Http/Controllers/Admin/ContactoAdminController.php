@@ -30,6 +30,9 @@ class ContactoAdminController extends Controller
             'tripadvisor' => 'required',
             'facebook' => 'required',
             'miNube' => 'required',
+            'direccion' => 'required',
+            'horarioEntreSemana' => 'required',
+            'horarioFinSemana' => 'required',
         ]);
 
         $contacto->telefono = $request->telefono;
@@ -37,6 +40,9 @@ class ContactoAdminController extends Controller
         $contacto->tripadvisor = $request->tripadvisor;
         $contacto->facebook = $request->facebook;
         $contacto->miNube = $request->miNube;
+        $contacto->direccion = $request->direccion;
+        $contacto->horarioEntreSemana = $request->horarioEntreSemana;
+        $contacto->horarioFinSemana = $request->horarioFinSemana;
 
         
 

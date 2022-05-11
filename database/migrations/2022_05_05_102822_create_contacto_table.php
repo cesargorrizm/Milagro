@@ -20,6 +20,9 @@ class CreateContactoTable extends Migration
             $table->string('tripadvisor');
             $table->string('facebook');
             $table->string('miNube');
+            $table->string('direccion');
+            $table->string('horarioEntreSemana');
+            $table->string('horarioFinSemana');
          });
     }
 

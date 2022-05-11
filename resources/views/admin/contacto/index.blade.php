@@ -74,6 +74,9 @@
                         <th>Tripadvisor</th>
                         <th>Facebook</th>
                         <th>MiNube</th>
+                        <th>Dirección</th>
+                        <th>Horario Semana</th>
+                        <th>Horario Findesemana</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -87,6 +90,9 @@
                             {{--<td width="10px">--}}
                             <td>{{ $contacto->facebook}}</td>
                             <td>{{ $contacto->miNube}}</td>
+                            <td>{{ $contacto->direccion}}</td>
+                            <td>{{ $contacto->horarioEntreSemana}}</td>
+                            <td>{{ $contacto->horarioFinSemana}}</td>
                             <td>
                                 <a href="{{ route('contacto.edit', $contacto) }}" 
                                 class="btn btn-secondary btn-sm" title="Editar">
@@ -103,6 +109,9 @@
                         <th>Tripadvisor</th>
                         <th>Facebook</th>
                         <th>MiNube</th>
+                        <th>Dirección</th>
+                        <th>Horario Semana</th>
+                        <th>Horario Findesemana</th>
                         <th>Acciones</th>
                     </tr>
                     </tfoot>
@@ -129,7 +138,7 @@
                 columnDefs: [ {
         targets: [2,3,4],
         render: function ( data, type, row ) {
-            return data.substr( 0, 20 )+'…';
+            return data.substr( 0, 10 )+'…';
         }
     } ],
                 "language": {
