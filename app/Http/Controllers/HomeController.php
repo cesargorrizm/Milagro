@@ -16,6 +16,8 @@ class HomeController extends Controller
 
 
         $espacios = Sector::where('tipo_id','=','2')->get();
+        $eventos = Sector::where('tipo_id','=','3')->get();
+
         $imagenes = Image::where('principal','=','1')->get();
         //dd($espacios);
        // $sectores = Sector::all();
@@ -24,6 +26,6 @@ class HomeController extends Controller
         //dd($contacto);
 
 
-        return view('layouts.public',compact('contacto','espacios','imagenes'));
+        return view('layouts.public',compact('contacto','espacios','imagenes','eventos'));
     }
 }
