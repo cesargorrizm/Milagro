@@ -886,10 +886,10 @@
                                 <div class="general">
                                     <h4 class="title"><b>Visita nuestras instalaciones</b></h4>
                                     <div class="adr-group">       
-                                        <span class="street-address">Carretera Sagunto-Burgos Km. 123</span><br>
-                                        <span class="city">Teruel</span><br>
+                                        <span class="street-address">{{$contacto->direccion}}</span><br>
+                                        {{-- <span class="city">Teruel</span><br>
                                         <span class="postal-code">44195</span><br>
-                                        <span class="country-name">España</span>
+                                        <span class="country-name">España</span> --}}
                                     </div>
                                     <div class="contact-methods">
                                         <h5 class="subtitle">Correo y teléfono</h5>
@@ -920,8 +920,8 @@
                         <div class="footer-col-inner">
                             <h3 class="title">Horario</h3>
                             <ul>
-                                <li><span>Lunes a Viernes:</span> 08:00 - 17:00</li>
-                                <li><span>Sábados:</span>08:00 - CIERRE</li>
+                                <li><span>Lunes a Viernes:</span>  {{$contacto->horarioEntreSemana}}</li>
+                                <li><span>Sábados:</span> {{$contacto->horarioFinSemana}}</li>
                             </ul>
                             <span>PARA RESERVAS FUERA DE ESTOS HORARIOS PÓNGASE EN CONTACTO CON NOSOTROS</span>
                         </div><!--//footer-col-inner-->
@@ -932,7 +932,7 @@
                             <h3 class="title">Contacto</h3>
                             <ul class="list-unstyled">
                                 {{-- <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{$contacto->direccion}}</li> --}}
-                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@restauranteelmilagro.com">{{$contacto->email}}</a></li>
+                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:{{$contacto->email}}">{{$contacto->email}}</a></li>
                                 <li><i class="fa fa-phone" aria-hidden="true"></i>{{$contacto->telefono}}</li>
                             </ul>
                         </div><!--//footer-col-inner-->
@@ -955,9 +955,9 @@
                         <div class="footer-col-inner">
                             <h3 class="title">Redes sociales</h3> 
                             <ul class="social-icons list-inline">
-                                <li><a href="{{ $contacto->miNube }}" target="_blank"><i class="fa fa-twitter"></i></a></li>                        
-                                <li><a href="{{ $contacto->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="{{ $contacto->tripadvisor }}" target="_blank"><i class="fa fa-tria"></i></a></li>
+                                <li><a href="{{ $contacto->miNube }}" target="_blank"><i class="fa fa-cloud tooltipped"></i></a></li>                        
+                                <li><a href="{{ $contacto->facebook }}" target="_blank"><i class="fa fa-facebook" ></i></a></li>
+                                <li><a href="{{ $contacto->tripadvisor }}" target="_blank"><i class="fa fa-tripadvisor tooltipped"></i></a></li>
                                 {{-- <li><a href=""><i class="fa fa-google-plus"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li class="last"><a href="#"><i class="fa fa-pinterest"></i></a></li>                      --}}
@@ -1039,11 +1039,11 @@
                     <form id="reserve-form" class="reserve-form form" method="post" action="mailer.php">
                         <div id="form-messages"></div>              
                         <div class="row text-center">
-                            <div class="datepicker-group col-xs-12 col-sm-6 form-group">
-                                <div class="form-group-inner">
-                                    <i class="fa fa-calendar-o"></i>
-                                    <label class="sr-only" for="cdate">Fecha</label>
-                                    <input type='text' id="cdate" class="form-control add-padding make-datepicker" name="date" required="" aria-required="true">
+                                <div class="datepicker-group col-xs-12 col-sm-6 form-group">
+                                    <div class="form-group-inner">
+                                        <i class="fa fa-calendar-o"></i>
+                                        <label class="sr-only" for="datetime">Fecha</label>
+                                        <input type='text' id="fecha" class="form-control add-padding make-datepicker" name="date" required="" aria-required="true">
                                 </div>
                             </div>    
                             <div class="timepicker-group col-xs-12 col-sm-6 form-group">
@@ -1056,11 +1056,26 @@
                             <div class="guest-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-users"></i>
+                                    <label class="sr-only" for="sala">Sala</label>
+                                    <select class="form-control add-padding" id="sala" name="sala" aria-required="true" required>
+                                      <option value="" selected>Elige sala</option>
+                                      @foreach($salas as $sala)
+                                        <option value="1">{{$sala->titulo}}</option>
+                                      @endforeach
+                                    </select>   
+                                </div>       
+                            </div>         
+                            <div class="guest-group col-xs-12 col-sm-6 form-group">
+                                <div class="form-group-inner">
+                                    <i class="fa fa-users"></i>
                                     <label class="sr-only" for="cguests">Guests</label>
                                     <select class="form-control add-padding" id="cguests" name="guests" aria-required="true" required>
-                                      <option value="" selected>Please select</option>
-                                      <option value="1">1 People</option>
-                                      <option value="2">2 People</option>
+                                      <option value="" selected>Por favor seleccione</option>
+                                      <option value="1">1 Persona</option>
+                                      @for($persona = 2; $persona<25; ++$persona)
+                                        <option value="{{$persona}}">{{$persona}} Personas</option>
+                                      @endfor
+                                      {{-- <option value="2">2 People</option>
                                       <option value="3">3 People</option>
                                       <option value="4">4 People</option>
                                       <option value="5">5 People</option>
@@ -1079,7 +1094,7 @@
                                       <option value="18">18 People</option>
                                       <option value="19">19 People</option>
                                       <option value="20">20 People</option>
-                                      <option value="20+">20+ People</option>
+                                      <option value="20+">20+ People</option> --}}
                                     </select>   
                                 </div>       
                             </div>         
@@ -1088,21 +1103,29 @@
                                 <div class="form-group-inner">
                                     <i class="fa fa-user"></i>
                                     <label class="sr-only" for="cname">Nombre</label>
-                                    <input type="text" class="form-control add-padding" id="cname" name="name" placeholder="Your name" minlength="2" aria-required="true" required>
+                                    <input type="text" class="form-control add-padding" id="cname" name="name" placeholder="Nombre" minlength="2" aria-required="true" required>
                                 </div>
                             </div>                    
                             <div class="email-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-envelope"></i>
                                     <label class="sr-only" for="cemail">Correo</label>
-                                    <input type="email" class="form-control add-padding" id="cemail" name="email" placeholder="Email Address" aria-required="true" required>
+                                    <input type="email" class="form-control add-padding" id="cemail" name="email" placeholder="Correo electronico" aria-required="true" required>
                                 </div>
                             </div>
                             <div class="phone-group col-xs-12 col-sm-6 form-group">
                                 <div class="form-group-inner">
                                     <i class="fa fa-phone"></i>
                                     <label class="sr-only" for="cphone">Telefono</label>
-                                    <input type="tel" class="form-control add-padding" id="cphone" name="phone" placeholder="Phone Number" aria-required="true" required>
+                                    <input type="tel" class="form-control add-padding" id="cphone" name="phone" placeholder="Numero de telefono" aria-required="true" required>
+                                </div>
+                            </div>
+                            <div class="observacion-group col-xs-12 col-sm-12 form-group">
+                                <div class="form-group-inner">
+                                    <i class="fa fa-phone"></i>
+                                    <label class="sr-only" for="cphone">Observaciones</label>
+                                    {!! Form::textarea('descripcion', null, ['class' => 'form-control add-padding', 'placeholder' => 'Introduzca las observaciones', 'autocomplete' => 'off', 'required']) !!}
+                                    {{-- <input type="textarea" class="form-control add-padding" id="observacion" name="observacion" placeholder="Observaciones" aria-required="true" required> --}}
                                 </div>
                             </div>
                              <div class="col-xs-12 form-group">
@@ -1222,6 +1245,7 @@
     <script type="text/javascript" src="{{ asset('plugins/back-to-top.js') }}"></script>             
     <script type="text/javascript" src="{{ asset('plugins/jquery-placeholder/jquery.placeholder.js') }}"></script> 
     <script type="text/javascript" src="{{ asset('plugins/flexslider/jquery.flexslider-min.js') }}"></script>
+
 
     <!--//form related JS -->
     <script type="text/javascript" src="{{ asset('plugins/moment.min.js') }}"></script>
