@@ -64,7 +64,6 @@ class SectorController extends Controller
     {
         $request->validate([
             'titulo' => 'required',
-            'descripcion' => 'required',
             'tipo_id' => 'required',
         ]);
 
@@ -73,13 +72,21 @@ class SectorController extends Controller
         $sector->titulo = $request->titulo;
         $sector->descripcion = $request->descripcion;
         $sector->tipo_id = $request->tipo_id;
+        $sector->capacidad_id = $request->mapaCapacidades;
+        if($sector->tipo_id=='4' || $sector->tipo_id=='5'){
+            
+            $sector->descripcion = null;
+            $sector->capacidad_id = null;
+        }else if($sector->tipo_id=='3'){
+            $sector->capacidad_id = null;
+        } 
     
-        if ( $request->checkbox=='on') {
+        // if ( $request->checkbox=='on') {
     
-            $sector->capacidad_id = $request->mapaCapacidades;
-        }else{
-            $sector->capacidad_id =null;
-        }
+        //     $sector->capacidad_id = $request->mapaCapacidades;
+        // }else{
+        //     $sector->capacidad_id =null;
+        // }
 
 
 
@@ -110,7 +117,6 @@ class SectorController extends Controller
     {
         $request->validate([
             'titulo' => 'required',
-            'descripcion' => 'required',
             'tipo_id' => 'required',
         ]);
 
@@ -119,16 +125,14 @@ class SectorController extends Controller
         $sector->titulo = $request->titulo;
         $sector->descripcion = $request->descripcion;
         $sector->tipo_id = $request->tipo_id;
-    
-        if ( $request->checkbox=='on') {
-    
-            $sector->capacidad_id = $request->mapaCapacidades;
-        }else{
-            $sector->capacidad_id =null;
-        }
-
-
-
+        $sector->capacidad_id = $request->mapaCapacidades;
+        if($sector->tipo_id=='4' || $sector->tipo_id=='5'){
+            
+            $sector->descripcion = null;
+            $sector->capacidad_id = null;
+        }else if($sector->tipo_id=='3'){
+            $sector->capacidad_id = null;
+        } 
         $sector->save();
 
 
