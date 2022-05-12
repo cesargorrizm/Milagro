@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class DetalleController extends Controller
 {
-    public function index() {
+    public function index( $detalle) {
         
 
-        
+
         $salas = Sector::where('tipo_id','=','1')->get();
         $espacios = Sector::where('tipo_id','=','2')->get();
         $eventos = Sector::where('tipo_id','=','3')->get();
