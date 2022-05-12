@@ -68,9 +68,9 @@ class SectorController extends Controller
         ]);
 
         // $sector-> Sector::find($id);
-
+        // return $request;
         $sector->titulo = $request->titulo;
-        $sector->descripcion = $request->descripcion;
+        $sector->descripcion = $request['summary-ckeditor'];
         $sector->tipo_id = $request->tipo_id;
         $sector->capacidad_id = $request->mapaCapacidades;
         if($sector->tipo_id=='4' || $sector->tipo_id=='5'){
@@ -87,8 +87,6 @@ class SectorController extends Controller
         // }else{
         //     $sector->capacidad_id =null;
         // }
-
-
 
         $sector->update();
 
@@ -123,7 +121,7 @@ class SectorController extends Controller
         // $sector-> Sector::find($id);
         $sector = new Sector();
         $sector->titulo = $request->titulo;
-        $sector->descripcion = $request->descripcion;
+        $sector->descripcion = $request['summary-ckeditor'];
         $sector->tipo_id = $request->tipo_id;
         $sector->capacidad_id = $request->mapaCapacidades;
         if($sector->tipo_id=='4' || $sector->tipo_id=='5'){

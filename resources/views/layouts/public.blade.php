@@ -235,7 +235,7 @@
                                             @endforeach
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -254,7 +254,7 @@
                                             @endforeach
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -274,7 +274,7 @@
                                                 @endforeach
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -293,7 +293,7 @@
                                                 @endforeach
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -314,7 +314,7 @@
                                                 @endforeach
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -335,7 +335,7 @@
                                             <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -361,7 +361,7 @@
                                         @endforeach
                                                     <span class="mask-inner">
                                                         <span class="item-title script">{{$salas[$sala]->titulo}}</span>
-                                                        <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                        <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
                                                         <span class="price">400 personas</span>
                                                     </span><!--//mask-inner-->
                                                         
@@ -473,7 +473,7 @@
                                             @endforeach
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -493,7 +493,7 @@
                                             @endforeach
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -512,8 +512,9 @@
                                                 @endif
                                                 @endforeach
                                                 <span class="mask-inner">
-                                                    <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>  
+                                                      
+                                                    <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -532,7 +533,7 @@
                                                 @endforeach
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -553,7 +554,7 @@
                                                 @endforeach
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -574,7 +575,7 @@
                                             <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
