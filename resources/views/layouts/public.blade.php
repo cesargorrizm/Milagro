@@ -230,9 +230,9 @@
                                         @foreach($imagenes as $image)
                                             @if($image->sector_id==$salas[$sala]->id)
                                                 <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                <a class="mask" href="{{ $image->url}}" data-gallery>
-                                            @endif
-                                            @endforeach
+                                                @endif
+                                                @endforeach
+                                                <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                 <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
@@ -249,9 +249,9 @@
                                         @foreach($imagenes as $image)
                                             @if($image->sector_id==$salas[$sala]->id)
                                                 <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                <a class="mask" href="{{ $image->url}}" data-gallery>
-                                            @endif
-                                            @endforeach
+                                                @endif
+                                                @endforeach
+                                                <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                 <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
@@ -269,9 +269,9 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$salas[$sala]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
+                                                    @endif
+                                                    @endforeach
+                                                    <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                     <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
@@ -288,9 +288,9 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$salas[$sala]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
+                                                    @endif
+                                                    @endforeach
+                                                    <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                     <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
@@ -309,9 +309,9 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$salas[$sala]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
+                                                    @endif
+                                                    @endforeach
+                                                    <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                     <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
@@ -328,11 +328,11 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$salas[$sala]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
-                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
-                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                    @endif
+                                                    @endforeach
+                                                    {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                                    <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}">
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                     <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
@@ -468,9 +468,9 @@
                                         @foreach($imagenes as $image)
                                             @if($image->sector_id==$espacios[$espacio]->id)
                                                 <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                <a class="mask" href="{{ $image->url}}" data-gallery>
-                                            @endif
-                                            @endforeach
+                                                @endif
+                                                @endforeach
+                                        <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
                                                 <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
@@ -488,9 +488,9 @@
                                         @foreach($imagenes as $image)
                                             @if($image->sector_id==$espacios[$espacio]->id)
                                                 <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                <a class="mask" href="{{ $image->url}}" data-gallery>
-                                            @endif
-                                            @endforeach
+                                                @endif
+                                                @endforeach
+                                             <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
                                                 <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
@@ -508,9 +508,9 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$espacios[$espacio]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
+                                                    @endif
+                                                    @endforeach
+                                              <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>  
                                                       
@@ -528,9 +528,9 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$espacios[$espacio]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
+                                                    @endif
+                                                    @endforeach
+                                             <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
                                                     <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
@@ -549,9 +549,9 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$espacios[$espacio]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
+                                                    @endif
+                                                    @endforeach
+                                                 <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
                                                     <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
@@ -568,9 +568,9 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$espacios[$espacio]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
-                                                @endif
-                                                @endforeach
+                                                    @endif
+                                                    @endforeach
+                                                    <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                             {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
                                             <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
                                                 <span class="mask-inner">
@@ -712,7 +712,7 @@
                                         {{substr($evento->descripcion,0,150)}}...
                                         {{-- {{$evento->descripcion}} --}}
                                     </p><!--//excerpt-->
-                                    <a href="{{ route('detalle',$evento->id) }}" >Read more</a>
+                                    <a href="{{ route('detalle',$evento->id) }}" >Leer Mas</a>
                                     <div class="date-badge">
                                         {{-- <span class="month">AUG</span> --}}
                                         <span class="date">{{$i = $i +1}}</span>

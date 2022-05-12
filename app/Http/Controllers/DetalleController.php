@@ -9,22 +9,20 @@ use Illuminate\Http\Request;
 
 class DetalleController extends Controller
 {
-    public function index( $detalle) {
+    public function index(int $detalle) {
         
 
-
-        $salas = Sector::where('tipo_id','=','1')->get();
-        $espacios = Sector::where('tipo_id','=','2')->get();
-        $eventos = Sector::where('tipo_id','=','3')->get();
-
-        $imagenes = Image::where('principal','=','1')->get();
+        
+        $det = Sector::where('id','=',$detalle)->get();
+       
+        $imagenes = Image::where('sector_id','=',$detalle)->get();
         //dd($espacios);
-       // $sectores = Sector::all();
+        // $sectores = Sector::all();
         $contacto = Contacto::first();
         // $tipos = Tipo
         //dd($contacto);
 
 
-        return view('layouts.detalle',compact('contacto','espacios','imagenes','eventos','salas','e'));
+        return view('layouts.detalle',compact('contacto','det','imagenes'));
     }
 }
