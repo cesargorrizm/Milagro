@@ -711,8 +711,7 @@
                                         {{substr($evento->descripcion,0,150)}}...
                                         {{-- {{$evento->descripcion}} --}}
                                     </p><!--//excerpt-->
-                                   {{$hola = $evento->id}}
-                                    <a href="{{ route('detalle',$hola) }}" >Read more</a>
+                                    <a href="{{ route('detalle',$evento->id) }}" >Read more</a>
                                     <div class="date-badge">
                                         {{-- <span class="month">AUG</span> --}}
                                         <span class="date">{{$i = $i +1}}</span>
