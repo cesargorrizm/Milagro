@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class DetalleController extends Controller
 {
-    public function index() {
+    public function detalle(int $e) {
         
-
+        return $e;
         
         $salas = Sector::where('tipo_id','=','1')->get();
         $espacios = Sector::where('tipo_id','=','2')->get();
@@ -25,6 +25,6 @@ class DetalleController extends Controller
         //dd($contacto);
 
 
-        return view('layouts.detalle',compact('contacto','espacios','imagenes','eventos','salas'));
+        return view('layouts.detalle',compact('contacto','espacios','imagenes','eventos','salas','e'));
     }
 }

@@ -33,7 +33,7 @@ Route::get('/', function () {
 /*
  * Home
  */
-Route::get('/detalle', [DetalleController::class, 'index'])->name('detalle');
+Route::get('/detalle', [DetalleController::class, 'detalle'])->name('detalle');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*

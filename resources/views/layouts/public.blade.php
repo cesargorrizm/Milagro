@@ -222,8 +222,27 @@
                             {{-- {{count($salas)}}
                             {{$salas[$sala]}} --}}
                             
-                            @for($sala = 0; $sala<count($salas); ++$sala)
-                            @if(count($salas)%3==0)
+                        @for($sala = 0; $sala<count($salas); ++$sala)
+                            @if(count($salas)==1)
+                            <div class="col-xs-12 col-sm-12">    
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        @foreach($imagenes as $image)
+                                            @if($image->sector_id==$salas[$sala]->id)
+                                                <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                <a class="mask" href="{{ $image->url}}" data-gallery>
+                                            @endif
+                                            @endforeach
+                                            <span class="mask-inner">
+                                                <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
+                                                <span class="desc">{{$salas[$sala]->descripcion}}</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            @elseif(count($salas)%3==0)
                             <div class="col-xs-12 col-sm-4">    
                                 <div class="media-item">
                                     <div class="media-item-inner">
@@ -233,8 +252,6 @@
                                                 <a class="mask" href="{{ $image->url}}" data-gallery>
                                             @endif
                                             @endforeach
-                                        {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
-                                        <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                 <span class="desc">{{$salas[$sala]->descripcion}}</span>
@@ -255,8 +272,6 @@
                                                     <a class="mask" href="{{ $image->url}}" data-gallery>
                                                 @endif
                                                 @endforeach
-                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
-                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                     <span class="desc">{{$salas[$sala]->descripcion}}</span>
@@ -276,8 +291,6 @@
                                                     <a class="mask" href="{{ $image->url}}" data-gallery>
                                                 @endif
                                                 @endforeach
-                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
-                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                     <span class="desc">{{$salas[$sala]->descripcion}}</span>
@@ -299,8 +312,6 @@
                                                     <a class="mask" href="{{ $image->url}}" data-gallery>
                                                 @endif
                                                 @endforeach
-                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
-                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
                                                     <span class="desc">{{$salas[$sala]->descripcion}}</span>
@@ -448,8 +459,134 @@
                 <h3 class="title script">Nuestros espacios</h3>
                 <div class="media-wrapper row">
                     <div class="col-left col-xs-12 col-sm-12">
-                        <div id="links" class="row">
-                            @foreach($espacios as $espacio)
+                        <div id="links" class="row justify-content-center">
+                            @for($espacio = 0; $espacio<count($espacios); ++$espacio)
+                            @if(count($espacios)==1)
+                            <div class="col-xs-12 col-sm-12">    
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        @foreach($imagenes as $image)
+                                            @if($image->sector_id==$espacios[$espacio]->id)
+                                                <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                <a class="mask" href="{{ $image->url}}" data-gallery>
+                                            @endif
+                                            @endforeach
+                                            <span class="mask-inner">
+                                                <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
+                                                <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+
+                            @elseif(count($espacios)%3==0)
+                            <div class="col-xs-12 col-sm-4">    
+                                <div class="media-item">
+                                    <div class="media-item-inner">
+                                        @foreach($imagenes as $image)
+                                            @if($image->sector_id==$espacios[$espacio]->id)
+                                                <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                <a class="mask" href="{{ $image->url}}" data-gallery>
+                                            @endif
+                                            @endforeach
+                                            <span class="mask-inner">
+                                                <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
+                                                <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                {{-- <span class="price">400 personas</span> --}}
+                                            </span><!--//mask-inner-->
+                                        </a><!--//mask-->
+                                    </div><!--//media-item-inner-->
+                                </div><!--//media-item-->
+                            </div>
+                            @elseif((count($espacios)+1)%3==0)
+                                @if($espacio==0 || $espacio==1)
+                                <div class="col-xs-12 col-sm-6">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$espacios[$espacio]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
+                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @else
+                                <div class="col-xs-12 col-sm-4">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$espacios[$espacio]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
+                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @endif
+                            @elseif((count($espacios)+2)%3==0)
+                                    @if($espacio==0 || $espacio==1 || $espacio==count($espacios)-1 || $espacio==count($espacios)-2)
+                                <div class="col-xs-12 col-sm-6">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$espacios[$espacio]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
+                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @else
+                                <div class="col-xs-12 col-sm-4">    
+                                    <div class="media-item">
+                                        <div class="media-item-inner">
+                                            @foreach($imagenes as $image)
+                                                @if($image->sector_id==$espacios[$espacio]->id)
+                                                    <img class="img-responsive" src="{{ $image->url}}" alt="">
+                                                    <a class="mask" href="{{ $image->url}}" data-gallery>
+                                                @endif
+                                                @endforeach
+                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
+                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+                                                <span class="mask-inner">
+                                                    <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
+                                                    <span class="desc">{{$espacios[$espacio]->descripcion}}</span>
+                                                    {{-- <span class="price">400 personas</span> --}}
+                                                </span><!--//mask-inner-->
+                                            </a><!--//mask-->
+                                        </div><!--//media-item-inner-->
+                                    </div><!--//media-item-->
+                                </div>
+                                @endif
+                            @endif
+                        @endfor
+
+
+                            {{-- @foreach($espacios as $espacio)
                                 
                                 <div class="col-xs-12 col-sm-4">    
                                     <div class="media-item">
@@ -460,19 +597,17 @@
                                                     <a class="mask" href="{{ $image->url}}" data-gallery>
                                                 @endif
                                                 @endforeach
-                                            {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
-                                            <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
+
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacio->titulo}}</span>    
                                                     <span class="desc">{{$espacio->descripcion}}</span>
-                                                    {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
                                         </div><!--//media-item-inner-->
                                     </div><!--//media-item-->
                                 </div>
 
-                            @endforeach
+                            @endforeach --}}
 
                             {{-- <div class="col-xs-12 col-sm-4"> 
                                 <div class="media-item">
@@ -576,7 +711,8 @@
                                         {{substr($evento->descripcion,0,150)}}...
                                         {{-- {{$evento->descripcion}} --}}
                                     </p><!--//excerpt-->
-                                    <a href="{{ route('detalle') }}" >Read more</a>
+                                   {{$hola = $evento->id}}
+                                    <a href="{{ route('detalle',$hola) }}" >Read more</a>
                                     <div class="date-badge">
                                         {{-- <span class="month">AUG</span> --}}
                                         <span class="date">{{$i = $i +1}}</span>
