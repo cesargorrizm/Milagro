@@ -821,7 +821,10 @@
                 <div class="supplier-list" style="text-align:left">
                     <div class="supplier-type" style="text-align:left">
                         <ul>
-                    <li>                        
+                            @foreach($serviciosIncluidos as $servicioIncluido)
+                                <li>{{$servicioIncluido->titulo}}</li>
+                            @endforeach
+                    {{-- <li>                        
                         Degustación del Menú para 6 personas previamente elegido (para contrataciones superiores a 120 plazas)
                     </li>
                     <li>
@@ -844,7 +847,7 @@
                     </li>
                     <li>
                         Descuento en celebraciones especiales: San Valentín , Nochevieja , Reyes, etc
-                    </li>
+                    </li> --}}
                         </ul>
                     </div><!--//supplier-type-->
                 </div><!--//supplier-list-->
@@ -854,8 +857,11 @@
                 <div class="supplier-list" style="text-align:left">
                     <div class="supplier-type" style="text-align:left">
                         <ul style="text-align:left">
-                        <li>Aparcamiento amplio, vigilado y de fácil accesibilidad</li>
-                        <li>Tarifas especiales para el alojamiento de vuestros invitados en el Hotel Torico Plaza (Yagüe de Salas,5)</li>
+                            @foreach($vuestroInvitados as $invitado)
+                                <li>{{$invitado->titulo}}</li>
+                            @endforeach
+                        {{-- <li>Aparcamiento amplio, vigilado y de fácil accesibilidad</li>
+                        <li>Tarifas especiales para el alojamiento de vuestros invitados en el Hotel Torico Plaza (Yagüe de Salas,5)</li> --}}
                         </ul>
                     </div><!--//supplier-type-->
                 </div><!--//supplier-list-->

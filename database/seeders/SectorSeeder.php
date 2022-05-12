@@ -168,5 +168,51 @@ class SectorSeeder extends Seeder
             'capacidad_id' => null
 
         ]);
+
+        // Servicios incluidos
+        Sector::create([
+            'titulo' => 'Degustación del Menú para 6 personas previamente elegido (para contrataciones superiores a 120 plazas) ',
+            'tipo_id' => 4,
+        ]);
+        Sector::create([
+            'titulo' => 'Decoración floral para la presidencia así como para el resto de las mesas',
+            'tipo_id' => 4,
+        ]);
+        Sector::create([
+            'titulo' => 'Tarjetones de minuta para todos los comensales',
+            'tipo_id' => 4,
+        ]);
+        Sector::create([
+            'titulo' => 'Seating plan invitados',
+            'tipo_id' => 4,
+        ]);
+        Sector::create([
+            'titulo' => 'Habitación para los novios la noche de la boda en HOTEL TORICO PLAZA en régimen de alojamiento y desayuno. Check out 16.00 horas ',
+            'tipo_id' => 4,
+        ]);
+        Sector::create([
+            'titulo' => 'Zona infantil de juegos e hinchables con monitores',
+            'tipo_id' => 4,
+        ]);
+        Sector::create([
+            'titulo' => 'Impuestos SGAE',
+            'tipo_id' => 4,
+        ]);
+        Sector::create([
+            'titulo' => 'Descuento en celebraciones especiales: San Valentín , Nochevieja , Reyes, etc',
+            'tipo_id' => 4,
+        ]);
+
+        // Para vuestros invitados
+
+        Sector::create([
+            'titulo' => 'Aparcamiento amplio, vigilado y de fácil accesibilidad',
+            'tipo_id' => 5,
+        ]);
+        Sector::create([
+            'titulo' => 'Tarifas especiales para el alojamiento de vuestros invitados en el Hotel Torico Plaza (Yagüe de Salas,5)',
+            'tipo_id' => 5,
+        ]);
+
     }
 }

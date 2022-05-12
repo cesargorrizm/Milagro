@@ -47,8 +47,8 @@ if (isset($sector)) {
     </div>
 </div>
     <div class="col-lg-6 form-group">
-        {!! Form::label('descripcion', 'Descripcion', ['class' => 'is-required']) !!}
-        {!! Form::textarea('descripcion', null, ['class' => 'form-control', 'placeholder' => 'Introduzca la descripción de la instancia', 'autocomplete' => 'off', 'required']) !!}
+        {!! Form::label('descripcion', 'Descripcion') !!}
+        {!! Form::textarea('descripcion', null, ['class' => 'form-control', 'placeholder' => 'Introduzca la descripción de la instancia', 'autocomplete' => 'off']) !!}
     
         @error('descripcion')
             <span class="text-danger">{{$message}}</span>

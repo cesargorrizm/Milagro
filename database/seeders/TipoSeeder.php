@@ -18,6 +18,8 @@ class TipoSeeder extends Seeder
         Tipo::create(['nombre' => 'Salones',]);
         Tipo::create(['nombre' => 'Espacios',]);
         Tipo::create(['nombre' => 'Eventos',]);
+        Tipo::create(['nombre' => 'Servicios Incluidos',]);
+        Tipo::create(['nombre' => 'Para vuestro invitados',]);
         
 
     }

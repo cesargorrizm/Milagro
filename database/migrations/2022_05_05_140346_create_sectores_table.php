@@ -16,7 +16,7 @@ class CreateSectoresTable extends Migration
         Schema::create('sectores', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->longText('descripcion');
+            $table->longText('descripcion')->nullable();
             $table->unsignedBigInteger('tipo_id');
             $table->unsignedBigInteger('capacidad_id')->nullable();
             $table->foreign('tipo_id')->references('id')->on('tipos');

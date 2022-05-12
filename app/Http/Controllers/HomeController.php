@@ -18,6 +18,8 @@ class HomeController extends Controller
         $salas = Sector::where('tipo_id','=','1')->get();
         $espacios = Sector::where('tipo_id','=','2')->get();
         $eventos = Sector::where('tipo_id','=','3')->get();
+        $serviciosIncluidos = Sector::where('tipo_id','=','4')->get();
+        $vuestroInvitados = Sector::where('tipo_id','=','5')->get();
 
         $imagenes = Image::where('principal','=','1')->get();
         //dd($espacios);
@@ -27,6 +29,6 @@ class HomeController extends Controller
         //dd($contacto);
 
 
-        return view('layouts.public',compact('contacto','espacios','imagenes','eventos','salas'));
+        return view('layouts.public',compact('contacto','espacios','imagenes','eventos','salas','serviciosIncluidos','vuestroInvitados'));
     }
 }
