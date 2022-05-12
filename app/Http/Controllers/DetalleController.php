@@ -25,6 +25,6 @@ class DetalleController extends Controller
         //dd($contacto);
 
 
-        return view('layouts.detalle',compact('contacto','espacios','imagenes','eventos','salas'));
+        return view('layouts.detalle',compact('contacto','espacios','imagenes','eventos','salas','e'));
     }
 }
