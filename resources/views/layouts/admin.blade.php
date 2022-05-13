@@ -186,6 +186,14 @@
                         </a>
                     </li>
                     @endcan
+                    @can('sliderPrincipal.index')
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('sliderPrincipal.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-solid fa-images"></i>
+                            <p>Slider Principal</p>
+                        </a>
+                    </li>
+                    @endcan
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

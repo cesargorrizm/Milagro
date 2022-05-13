@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ContactoAdminController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\TipoController;
 use App\Http\Controllers\Admin\SectorController;
+use App\Http\Controllers\Admin\SliderPrincipalController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\DetalleController;
 use App\Http\Controllers\HomeController;
@@ -87,6 +88,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function (){
     Route::resource('/capacidad', CapacidadController::class)->names('capacidad');
 
     Route::resource('/image', ImageController::class)->names('image');
+
+    Route::resource('/sliderPrincipal', SliderPrincipalController::class)->names('sliderPrincipal');
     //Resto de rutas de Admin
 
 });

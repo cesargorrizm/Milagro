@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CapacidadSeeder::class);
         $this->call(SectorSeeder::class);
         $this->call(ImageSeeder::class);
+        $this->call(SliderPrincipalSeeder::class);
     }
 }

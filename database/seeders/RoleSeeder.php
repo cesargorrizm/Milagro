@@ -96,6 +96,15 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'image.destroy',
             'description' => 'Eliminar imagen']) -> syncRoles([$role1]);
 
+        Permission::create(['name' => 'sliderPrincipal.index',
+            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'sliderPrincipal.create',
+            'description' => 'Crear sliderPrincipal']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'sliderPrincipal.edit',
+            'description' => 'Editar sliderPrincipal']) -> syncRoles([$role1]);
+        Permission::create(['name' => 'sliderPrincipal.destroy',
+            'description' => 'Eliminar sliderPrincipal']) -> syncRoles([$role1]);
+
 
 
     }
