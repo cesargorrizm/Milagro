@@ -823,7 +823,7 @@
                     <div class="supplier-type" style="text-align:left">
                         <ul>
                             @foreach($serviciosIncluidos as $servicioIncluido)
-                                <li>{{$servicioIncluido->titulo}}</li>
+                                <li><h4>{{$servicioIncluido->titulo}}</h4></li>
                             @endforeach
                     {{-- <li>                        
                         Degustación del Menú para 6 personas previamente elegido (para contrataciones superiores a 120 plazas)
@@ -854,12 +854,12 @@
                 </div><!--//supplier-list-->
             </div><!--//suppliers-->
             <div class="suppliers">
-                <h3 class="title script">Para vuestros invitados</h3>
+                <h3 class="title script">PARA VUESTROS INVITADOS</h3>
                 <div class="supplier-list" style="text-align:left">
                     <div class="supplier-type" style="text-align:left">
                         <ul style="text-align:left">
                             @foreach($vuestroInvitados as $invitado)
-                                <li>{{$invitado->titulo}}</li>
+                                <li><h4>{{$invitado->titulo}}</h4></li>
                             @endforeach
                         {{-- <li>Aparcamiento amplio, vigilado y de fácil accesibilidad</li>
                         <li>Tarifas especiales para el alojamiento de vuestros invitados en el Hotel Torico Plaza (Yagüe de Salas,5)</li> --}}
