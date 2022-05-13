@@ -33,7 +33,7 @@
     
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="css/styles.css">
-    <link id="theme2-style" rel="stylesheet" href="public/css/slider.css">
+    {{-- <link id="theme2-style" rel="stylesheet" href="public/css/slider.css"> --}}
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
       <script src="{{ asset('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js') }}"></script>
@@ -117,12 +117,9 @@
 </head> 
 
 <body> <!-- News Modal 1-->
-    
-    <div  class="news-modal   modal-fullscreen">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title text-center" id="newsModal1Label">{{$det[0]->titulo}}</h4>
                 </div><!--//modal-header-->
                 <div class="modal-body">
@@ -131,6 +128,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6 col-center">
+                                    @if(count($imagenes)>0)
                                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                         <!-- Carousel indicators -->
                                         <ol class="carousel-indicators">
@@ -153,9 +151,7 @@
                                                 <div><img class="img-responsive"src="{{$imagenes[$i]->url}}"></div>
                                             </div>
                                             @endif
-                                             @endfor
-                                             
-                                            
+                                             @endfor    
                                         </div>
                                         <!-- Carousel controls -->
                                         <a class="carousel-control left" href="#myCarousel" data-slide="prev">
@@ -165,6 +161,7 @@
                                             <i class="fa fa-angle-right"></i>
                                         </a>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
