@@ -12,7 +12,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>Responsive website template for restaurants</title>
+    <title>{{$det[0]->titulo}}</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css') }}">
     
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="css/stylesDetalle.css">
     {{-- <link id="theme2-style" rel="stylesheet" href="public/css/slider.css"> --}}
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -45,9 +45,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-        .carousel {
-    	margin: 50px auto;
-    	padding: 0 70px;
+    .btn-primary {
+        background: #b98d36;
+        border: none;
+         color: #fff;
+         padding: 10px 30px;
+        text-transform: uppercase;
+        }
+    .modal-title {
+        font-weight: bold;
+        font-size: 28px;
+        padding-top: 26px;
+        margin-bottom: 30px;
+        color: #b98d36;
+        font-size: 26px;
+        margin-bottom: 10px;
+        }
+    .modal-body {
+        padding: 30px 30px;
+        }
+    .carousel {
+        align-items: center;
+    	margin: 20px auto;
+    	padding: 0 50px;
         }
     .carousel .item {
     	color: #999;
@@ -59,7 +79,7 @@
     .carousel .item .img-box {
     	width: 135px;
     	height: 135px;
-    	margin: 0 auto;
+    	margin: 20px auto;
     	padding: 5px;
     	border: 1px solid #ddd;
     	border-radius: 50%;
@@ -71,7 +91,7 @@
     	border-radius: 50%;
     }
     .carousel .testimonial {
-    	padding: 30px 0 10px;
+    	padding: 30px 0 0px;
     }
     .carousel .overview {	
     	font-style: italic;
@@ -89,7 +109,7 @@
     }
     .carousel-control i {
         font-size: 68px;
-    	line-height: 42px;
+    	line-height: 40%;
         position: absolute;
         display: inline-block;
     	color: rgba(0, 0, 0, 0.8);
@@ -113,6 +133,15 @@
     	background: #555;		
     	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
     }
+    .modal-dialog {
+        width: 760px;
+    }
+  
+.col-center {
+	margin: 0 auto;
+	float: center !important;
+}
+
 </style>
 </head> 
 
@@ -126,8 +155,8 @@
                     <div class="post">
                        
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 col-center">
+                            <div class="row  ">
+                                <div class="col-md-7 ">
                                     @if(count($imagenes)>0)
                                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                                         <!-- Carousel indicators -->
@@ -142,7 +171,7 @@
                                             <?php $i = 0; ?>
                                             @for($i =0 ; $i < count($imagenes); $i++)
                                              @if($i == 0)
-                                            <div class="item active">  
+                                            <div class="item active text-center">  
                                                 <div><img  class="img-responsive" src="{{$imagenes[$i]->url}}" ></div>
                                             </div>
                                             
@@ -157,7 +186,7 @@
                                         <a class="carousel-control left" href="#myCarousel" data-slide="prev">
                                             <i class="fa fa-angle-left"></i>
                                         </a>
-                                        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                                        <a class="carousel-control" style="right: 1.2em; left:auto;" href="#myCarousel" data-slide="next">
                                             <i class="fa fa-angle-right"></i>
                                         </a>
                                     </div>
@@ -165,7 +194,47 @@
                                 </div>
                             </div>
                         </div>
-                       <p>{{$det[0]->descripcion}}</p>
+                       <p>{!!$det[0]->descripcion!!}</p>
+                      @if(count($capacidad)>0)
+                       <div>
+                            <table class="table">
+                                <tr>
+                                    @if($capacidad[0]->banqueteSinBaile!=null)
+                                         <th>Banquete Sin Baile</th>
+                                    @endif
+                                    @if($capacidad[0]->banqueteConBaile!=null)
+                                        <th>Banquete Con Baile</th>
+                                    @endif
+                                    @if($capacidad[0]->cocktail!=null)
+                                        <th>Cocktail</th>
+                                    @endif
+                                    @if($capacidad[0]->actos!=null)
+                                        <th>Actos</th>
+                                    @endif
+                                    @if($capacidad[0]->buffet!=null)
+                                        <th>Buffet</th>
+                                    @endif
+                                </tr>
+                                <tr>
+                                    @if($capacidad[0]->banqueteSinBaile!=null)
+                                        <td>{{$capacidad[0]->banqueteSinBaile}}</td>
+                                    @endif
+                                    @if($capacidad[0]->banqueteConBaile!=null)
+                                        <td>{{$capacidad[0]->banqueteConBaile}}</td>
+                                    @endif
+                                    @if($capacidad[0]->cocktail!=null)
+                                        <td>{{$capacidad[0]->cocktail}}</td>
+                                    @endif
+                                    @if($capacidad[0]->actos!=null)
+                                        <td>{{$capacidad[0]->actos}}</td>
+                                    @endif
+                                    @if($capacidad[0]->buffet!=null)
+                                        <td>{{$capacidad[0]->buffet}}</td>
+                                    @endif
+                                </tr>
+                            </table>
+                       </div>
+                       @endif
                     </div>
                 </div><!--//modal-body-->
                 <div class="modal-footer text-center">
