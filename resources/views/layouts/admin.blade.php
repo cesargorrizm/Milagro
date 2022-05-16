@@ -73,6 +73,11 @@
                 <a href="{{ route('image.index') }}" class="nav-link">Imagen</a>
             </li>
             @endcan
+            @can('sliderPrincipal.index')
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('sliderPrincipal.index') }}" class="nav-link">Slider Principal</a>
+            </li>
+            @endcan
         </ul>
 
         <ul class="navbar-nav ml-auto">
@@ -108,7 +113,7 @@
             {{--<img src="{{ asset('icon/favicon.ico') }}"
                  alt="P Monty Logo"
                  class="brand-image img-circle elevation-3">--}}
-            <span class="brand-text font-weight-light">Admin Proyecto Web</span>
+            <span class="brand-text font-weight-light">El Milagro</span>
         </a>
 
         <!-- Sidebar -->
