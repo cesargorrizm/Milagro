@@ -709,7 +709,7 @@
                                     <h4 class="title">{{$evento->titulo}}</h4>
                                     {{-- <div class="meta">Saturday, 17th August</div> --}}
                                     <p class="excerpt">
-                                        {{substr($evento->descripcion,0,150)}}...
+                                        {!!substr($evento->descripcion,0,150)!!}...
                                         {{-- {{$evento->descripcion}} --}}
                                     </p><!--//excerpt-->
                                     <a href="{{ route('detalle',$evento->id) }}" >Leer Mas</a>
@@ -1043,7 +1043,9 @@
                     </div>
                 </div><!--//modal-header-->
                 <div class="modal-body">
-                    <form id="reserve-form" class="reserve-form form" method="post" action="mailer.php">
+                    <form id="reserve-form" class="reserve-form form" method="post" action="{{route('contactoWeb')}}">
+                        @csrf
+                    {{-- <form id="reserve-form" class="reserve-form form" method="post" action="mailer.php"> --}}
                         <div id="form-messages"></div>              
                         <div class="row text-center">
                                 <div class="datepicker-group col-xs-12 col-sm-6 form-group">
@@ -1064,7 +1066,7 @@
                                 <div class="form-group-inner">
                                     <i class="fa fa-users"></i>
                                     <label class="sr-only" for="sala">Sala</label>
-                                    <select class="form-control add-padding" id="sala" name="sala" aria-required="true" required>
+                                    <select class="form-control add-padding" id="csala" name="sala" aria-required="true" required>
                                       <option value="" selected>Elige sala</option>
                                       @foreach($salas as $sala)
                                         <option value="1">{{$sala->titulo}}</option>
