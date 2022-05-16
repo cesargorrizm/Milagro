@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <title>{{ $title }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Empresa Cliente" name="keywords">
+    <meta content="El Milagro" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
@@ -43,11 +43,11 @@
         <div class="container-fluid">
 
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('logo') }}" alt="Empresa Cliente" width="50%">
+                <img src="{{ asset('images/logo/logoGrande.png') }}" alt="El Milagro" width="50%">
             </a>
             <div class="row">
                 <div class="col-lg-12 content">
-                    <p class="my-lg-5 my-3">Muchas gracias por contactar con Empresa Cliente.</p>
+                    <p class="my-lg-5 my-3">Muchas gracias por contactar con El Milagro.</p>
                     <p class="my-lg-5 my-3">Enseguida nos pondremos en contacto contigo para resolver todas tus dudas.</p>
                 </div>
 

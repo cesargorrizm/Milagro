@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Contacto;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
@@ -16,7 +18,7 @@ class ContactoController extends Controller
      */
     public function send(Request $request) {
 
-        //return $request->all();
+        return $request->all();
 
         $request->validate([
             'name' => 'required',
@@ -27,8 +29,9 @@ class ContactoController extends Controller
 
         $details = $request;
         $emailContacto = $request->email;
+        $contacto = Contacto::all();
 
-        Mail::to('emailCliente@gmail.com')->send(new \App\Mail\Contacto($details));
+        Mail::to($contacto->email)->send(new \App\Mail\Contacto($details));
         Mail::to($emailContacto)->send(new \App\Mail\Respuesta());
 
         return back()->with('success', 'Tu mensaje se ha enviado correctamente');

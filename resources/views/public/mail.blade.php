@@ -42,7 +42,7 @@
     <div class="top-bar">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('logo') }}" alt="Empresa Cliente" width="50%">
+                <img src="{{ asset('images/logo/logoGrande.png') }}" alt="El Milagro" width="50%">
             </a>
             <div class="row">
                 <div class="col-lg-12 content">
