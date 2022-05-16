@@ -30,9 +30,9 @@ class Respuesta extends Mailable
     {
         //return $this->view('view.name');
 
-        $title = "Respuesta desde la web de empresa Cliente";
+        $title = "Respuesta desde la web El Milagro";
 
-        return $this->subject('Respuesta desde la web de empresa Cliente')
+        return $this->subject('Respuesta desde la web El Milagro')
             ->view('public.mailRespuesta', compact('title'));
     }
 }

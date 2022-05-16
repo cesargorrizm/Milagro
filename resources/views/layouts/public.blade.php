@@ -814,8 +814,9 @@
                 <span class="title-text">¿Qué te ofrecemos?</span>
                 <span class="title-border"></span>
             </h2>
-            <div class="intro center-block">
-                <p>“Si quiero”… todo empieza con una simple frase. A partir de ese momento comienza una carrera a contra-reloj con el objetivo de que todo esté a punto para el gran día. Por el simple motivo de que cada persona es completamente diferente, creemos que cada celebración debe ser totalmente diferente, poniendo en valor los gustos y detalles de cada pareja. </p>
+            {{-- <div class="intro center-block"> --}}
+            <div class="  center-block">
+                <p><h4>“Si quiero”… todo empieza con una simple frase. A partir de ese momento comienza una carrera a contra-reloj con el objetivo de que todo esté a punto para el gran día. Por el simple motivo de que cada persona es completamente diferente, creemos que cada celebración debe ser totalmente diferente, poniendo en valor los gustos y detalles de cada pareja. </h4></p>
             </div>
             <div class="suppliers">
                 <h3 class="title script">SERVICIOS INCLUIDOS</h3>
@@ -1078,29 +1079,9 @@
                                     <select class="form-control add-padding" id="cguests" name="guests" aria-required="true" required>
                                       <option value="" selected>Por favor seleccione</option>
                                       <option value="1">1 Persona</option>
-                                      @for($persona = 2; $persona<25; ++$persona)
+                                      @for($persona = 2; $persona<30; ++$persona)
                                         <option value="{{$persona}}">{{$persona}} Personas</option>
                                       @endfor
-                                      {{-- <option value="2">2 People</option>
-                                      <option value="3">3 People</option>
-                                      <option value="4">4 People</option>
-                                      <option value="5">5 People</option>
-                                      <option value="6">6 People</option>
-                                      <option value="7">7 People</option>
-                                      <option value="8">8 People</option>
-                                      <option value="9">9 People</option>
-                                      <option value="10">10 People</option>
-                                      <option value="11">11 People</option>
-                                      <option value="12">12 People</option>
-                                      <option value="13">13 People</option>
-                                      <option value="14">14 People</option>
-                                      <option value="15">15 People</option>
-                                      <option value="16">16 People</option>
-                                      <option value="17">17 People</option>
-                                      <option value="18">18 People</option>
-                                      <option value="19">19 People</option>
-                                      <option value="20">20 People</option>
-                                      <option value="20+">20+ People</option> --}}
                                     </select>   
                                 </div>       
                             </div>         

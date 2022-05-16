@@ -31,4 +31,6 @@ class HomeController extends Controller
 
         return view('layouts.public',compact('contacto','espacios','imagenes','eventos','salas','serviciosIncluidos','vuestroInvitados'));
     }
+
+
 }

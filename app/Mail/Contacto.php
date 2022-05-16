@@ -30,9 +30,9 @@ class Contacto extends Mailable
      */
     public function build()
     {
-        $title = "Contacto desde empresa Cliente";
+        $title = "Contacto desde El Milagro";
 
-        return $this->subject('Consulta desde la web empresa Cliente')
+        return $this->subject('Consulta desde la web El Milagro')
             ->view('public.mail', compact('title'));
     }
 }

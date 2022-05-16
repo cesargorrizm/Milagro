@@ -43,6 +43,7 @@
 @endsection
 
 @section('content')
+<div class="col-lg-12">
 @include('includes.message')
 
 @if($sectores->isEmpty())
@@ -62,7 +63,7 @@
     <br>
 
 @else
-    <div class="card"  class="col-sm-12">
+    <div class="card" >
 
         <div class="card-header">
 
@@ -130,6 +131,7 @@
     </div>
     <!-- /.card -->
 @endif
+</div>
 
 </div> <!-- /col-lg-12 -->
 @endsection
@@ -176,12 +178,7 @@
     <!-- page script -->
     <script>
         $(function () {
-            // $('#sector').DataTable({
-        //         columnDefs: [ {
-        // targets: [2,3,4],
-        // render: function ( data, type, row ) {
-        //     return data.substr( 0, 20 )+'…';}
-        //  } ],
+            $('#sector').DataTable({
                 "language": {
                     "decimal": "",
                     "emptyTable": "No hay registros",
@@ -203,6 +200,7 @@
                     }
                 }
             });
+        });
     </script>
     <!-- Modal Eliminar -->
     <script>

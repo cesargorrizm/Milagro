@@ -157,7 +157,8 @@
                     @can('tipo.index')
                     <li class="nav-item has-treeview">
                         <a href="{{ route('tipo.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-solid fa-user-secret"></i>
+
+                            <i class="nav-icon fas fa-warehouse"></i>
                             <p>Tipo</p>
                         </a>
                     </li>
@@ -165,7 +166,8 @@
                     @can('sector.index')
                     <li class="nav-item has-treeview">
                         <a href="{{ route('sector.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-solid fa-user-secret"></i>
+                            {{-- <i class="fa-solid fa-house-blank"></i> --}}
+                            <i class="nav-icon fas fa-home"></i>
                             <p>Sector</p>
                         </a>
                     </li>
@@ -173,7 +175,7 @@
                     @can('capacidad.index')
                     <li class="nav-item has-treeview">
                         <a href="{{ route('capacidad.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-solid fa-user-secret"></i>
+                            <i class="nav-icon fas fa-warehouse"></i>
                             <p>Capacidad</p>
                         </a>
                     </li>
@@ -181,7 +183,8 @@
                     @can('image.index')
                     <li class="nav-item has-treeview">
                         <a href="{{ route('image.index') }}" class="nav-link">
-                            <i class="nav-icon fas fa-solid fa-images"></i>
+                            <i class="nav-icon fas fa-solid fa-image"></i>
+                            {{-- <i class="nav-icon fas fa-solid fa-folder-image"></i> --}}
                             <p>Imagenes</p>
                         </a>
                     </li>
