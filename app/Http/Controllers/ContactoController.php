@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 
 class ContactoController extends Controller
 {
+    public function __construct() {
+
+        $this->middleware('can:tipo.create')->only('send', 'request');
+    }
     // Envio de correo electrónico
 
     /**
@@ -18,23 +22,26 @@ class ContactoController extends Controller
      */
     public function send(Request $request) {
 
-        return $request->all();
-
+        
+        // return $request->all();
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'subject' => 'required',
-            'message' => 'required'
-        ]);
-
-        $details = $request;
-        $emailContacto = $request->email;
-        $contacto = Contacto::all();
-
+                'name' => 'required',
+                'email' => 'required',
+                'phone' => 'required',
+                'date' => 'required'
+            ]);
+            
+            $details = $request;
+            // $emailContacto = $request->email;
+            $contacto = Contacto::first();
+            // return $contacto->email;
+            $emailContacto = $contacto->email;
+            
         Mail::to($contacto->email)->send(new \App\Mail\Contacto($details));
         Mail::to($emailContacto)->send(new \App\Mail\Respuesta());
 
-        return back()->with('success', 'Tu mensaje se ha enviado correctamente');
+        return 'Tu mensaje se ha enviado correctamente';
+        // return back()->with('success', 'Tu mensaje se ha enviado correctamente');
 
     }
 }

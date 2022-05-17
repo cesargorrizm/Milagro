@@ -50,6 +50,12 @@
 
                     <p><b>Cliente: </b>{{ $details['name'] }}</p>
                     <p><b>Email del cliente: </b>{{ $details['email'] }}</p>
+                    <p><b>Telefono del cliente: </b>{{ $details['phone'] }}</p>
+                    <p><b>Hora del cliente: </b>{{ $details['time'] }}</p>
+                    <p><b>Sala del cliente: </b>{{ $details['sala'] }}</p>
+                    <p><b>Fecha del cliente: </b>{{ $details['date'] }}</p>
+                    <p><b>Observaciones del cliente: </b>{{ $details['descripcion'] }}</p>
+
                     <p>{{ $details['message'] }}</p>
                 </div>
             </div>
