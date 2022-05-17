@@ -141,6 +141,17 @@
 	margin: 0 auto;
 	float: center !important;
 }
+a.btn-primary:hover,
+.btn-primary:hover,
+a.btn-primary:active,
+.btn-primary:active,
+a.btn-primary:focus,
+.btn-primary:focus {
+  background: #a57e30;
+  border: none;
+  color: #fff;
+  outline: none;
+}
 
 </style>
 </head> 
@@ -238,7 +249,7 @@
                     </div>
                 </div><!--//modal-body-->
                 <div class="modal-footer text-center">
-                    <button type="button" class="btn btn-primary center-block" data-dismiss="modal"
+                    <button type="button" class="btn btn-primary center-block" 
                     onclick="window.location='{{ route('home')}}'">Cerrar</button>
                     {{-- <div class="col-xs-12 col-sm-4 row justify-content-center">
                         <button type="submit" class="btn btn-block btn-primary">Reservar ahora</button>
