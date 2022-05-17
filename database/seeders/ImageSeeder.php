@@ -14,36 +14,145 @@ class ImageSeeder extends Seeder
      */
     public function run()
     {
+        //finca santa ana
         Image::create([
             'url'=>'http://127.0.0.1:8000/images/Finca Santa Ana/finca.jpg',
             'principal'=>1,
             'sector_id'=>1, 
         ]);
         Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Finca Santa Ana/BODA EL POBO 025.jpg',
+            'principal'=>0,
+            'sector_id'=>1, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Finca Santa Ana/BODA EL POBO 034.jpg',
+            'principal'=>0,
+            'sector_id'=>1, 
+        ]);
+        
+        //navarrete del rio
+        Image::create([
             'url'=>'http://127.0.0.1:8000/images/Navarrete del río/navarrete2.JPG',
             'principal'=>1,
             'sector_id'=>2, 
         ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Navarrete del río/20160702_194325.jpg',
+            'principal'=>0,
+            'sector_id'=>2, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Navarrete del río/20160702_194410.jpg',
+            'principal'=>0,
+            'sector_id'=>2, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Navarrete del río/20160702_194413.jpg',
+            'principal'=>0,
+            'sector_id'=>2, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Navarrete del río/20160702_194434.jpg',
+            'principal'=>0,
+            'sector_id'=>2, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Navarrete del río/IMG_0063.JPG',
+            'principal'=>0,
+            'sector_id'=>2, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Navarrete del río/navarrete1.jpg',
+            'principal'=>0,
+            'sector_id'=>2, 
+        ]);
+        //lago Azul
         Image::create([
             'url'=>'http://127.0.0.1:8000/images/Lago Azul/lagoAzul.jpg',
             'principal'=>1,
             'sector_id'=>4, 
         ]);
         Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Lago Azul/lagoAzul (1).JPG',
+            'principal'=>0,
+            'sector_id'=>4, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Lago Azul/lagoAzul (2).JPG',
+            'principal'=>0,
+            'sector_id'=>4, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Lago Azul/lagoAzul (3).JPG',
+            'principal'=>0,
+            'sector_id'=>4, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Lago Azul/lagoAzul (5).JPG',
+            'principal'=>0,
+            'sector_id'=>4, 
+        ]);
+
+        //Escaleruela
+        Image::create([
             'url'=>'http://127.0.0.1:8000/images/Escaleruela/mesa-central.jpg',
             'principal'=>1,
             'sector_id'=>3, 
         ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Escaleruela/_DOS6426.JPG',
+            'principal'=>0,
+            'sector_id'=>3, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Escaleruela/agua.jpg',
+            'principal'=>0,
+            'sector_id'=>3, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Escaleruela/carrico.jpg',
+            'principal'=>0,
+            'sector_id'=>3, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Escaleruela/chill-out.jpg',
+            'principal'=>0,
+            'sector_id'=>3, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Escaleruela/mesa-cuadrada.jpg',
+            'principal'=>0,
+            'sector_id'=>3, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Escaleruela/zona-piscina.jpg',
+            'principal'=>0,
+            'sector_id'=>3, 
+        ]);
+        //Mercado Central
         Image::create([
             'url'=>'http://127.0.0.1:8000/images/El Mercao/mercaocentral.jpg',
             'principal'=>1,
             'sector_id'=>5, 
         ]);
         Image::create([
+            'url'=>'http://127.0.0.1:8000/images/El Mercao/bodegadelmercao.jpg',
+            'principal'=>0,
+            'sector_id'=>5, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/El Mercao/pantalla-bodegadelmercao.jpg',
+            'principal'=>0,
+            'sector_id'=>5, 
+        ]);
+        //Bonet
+        Image::create([
             'url'=>'http://127.0.0.1:8000/images/Bonet/bonet6.jpg',
             'principal'=>1,
             'sector_id'=>6, 
         ]);
+        
         // imagen salones
         Image::create([
             'url'=>'http://127.0.0.1:8000/images/Sala San Pedro/35-san-pedro.jpg',
