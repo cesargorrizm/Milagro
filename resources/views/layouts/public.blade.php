@@ -1069,7 +1069,7 @@
                                     <select class="form-control add-padding" id="csala" name="sala" aria-required="true" required>
                                       <option value="" selected>Elige sala</option>
                                       @foreach($salas as $sala)
-                                        <option value="1">{{$sala->titulo}}</option>
+                                        <option value="{{$sala->titulo}}">{{$sala->titulo}}</option>
                                       @endforeach
                                     </select>   
                                 </div>       
