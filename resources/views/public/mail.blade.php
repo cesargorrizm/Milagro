@@ -54,6 +54,7 @@
                     <p><b>Hora del cliente: </b>{{ $details['time'] }}</p>
                     <p><b>Sala del cliente: </b>{{ $details['sala'] }}</p>
                     <p><b>Fecha del cliente: </b>{{ $details['date'] }}</p>
+                    <p><b>Personas del cliente: </b>{{ $details['guests'] }}</p>
                     <p><b>Observaciones del cliente: </b>{{ $details['descripcion'] }}</p>
 
                     <p>{{ $details['message'] }}</p>

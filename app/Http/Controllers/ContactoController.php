@@ -10,10 +10,10 @@ use Illuminate\Http\Request;
 
 class ContactoController extends Controller
 {
-    public function __construct() {
+    // public function __construct() {
 
-        $this->middleware('can:tipo.create')->only('send', 'request');
-    }
+    //     $this->middleware('can:tipo.create')->only('send', 'request');
+    // }
     // Envio de correo electrónico
 
     /**
