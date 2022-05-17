@@ -26,9 +26,16 @@ class ContactoController extends Controller
         // return $request->all();
          $request->validate([
                 'name' => 'required',
+<<<<<<< HEAD
                 'email' => 'required|email',
                 'phone' => 'required|min:9',
                 'date' => 'required'
+=======
+                'email' => 'required',
+                'phone' => 'required',
+                'date' => 'required',
+                'guests' => 'required'
+>>>>>>> 5082b0789a48dfabe353d919a2b26d1cda3f6f07
             ]);
             
             $details = $request;
