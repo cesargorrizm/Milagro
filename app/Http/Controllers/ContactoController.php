@@ -41,7 +41,7 @@ class ContactoController extends Controller
             // $emailContacto = $request->email;
             $contacto = Contacto::first();
             // return $contacto->email;
-            $emailContacto = $contacto->email;
+            $emailContacto = $details['email'];
             
         Mail::to($contacto->email)->send(new \App\Mail\Contacto($details));
         Mail::to($emailContacto)->send(new \App\Mail\Respuesta());

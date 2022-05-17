@@ -42,7 +42,7 @@
     <div class="top-bar">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('images/logo/logoGrande.png') }}" alt="El Milagro" width="50%">
+                <img src="https://cdn0.bodas.net/vendor/15356/3_2/960/jpg/logotipo-el-milagro_1_15356.jpeg" alt="El Milagro" width="15%">
             </a>
             <div class="row">
                 <div class="col-lg-12 content">

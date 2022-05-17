@@ -16,7 +16,7 @@ class ContactoSeeder extends Seeder
     public function run()
     {
         Contacto::create([
-            'email' => 'prueba@gmail.com',
+            'email' => 'pruebajesusatado@gmail.com',
             'telefono'=>978603095,
             'tripadvisor'=>'https://www.tripadvisor.es/Restaurant_Review-g580279-d2168558-Reviews-Restaurante_El_Milagro-Teruel_Province_of_Teruel_Aragon.html',
             'facebook'=>'https://www.facebook.com/RestauranteElMilagro/',
