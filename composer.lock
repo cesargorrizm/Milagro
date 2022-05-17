@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67afe126e0b0ed53ecc5ec492901c20a",
+    "content-hash": "918bd510112a26b2cccd4b8f263d6808",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1795,6 +1795,68 @@
                 }
             ],
             "time": "2021-01-21T14:01:48+00:00"
+        },
+        {
+            "name": "lukeraymonddowning/honey",
+            "version": "0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lukeraymonddowning/honey.git",
+                "reference": "3b46c5ad77fd32b38c18b556421c810184ac641b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lukeraymonddowning/honey/zipball/3b46c5ad77fd32b38c18b556421c810184ac641b",
+                "reference": "3b46c5ad77fd32b38c18b556421c810184ac641b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3|^7.2",
+                "illuminate/support": "^7.0|^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "livewire/livewire": "^2.3",
+                "orchestra/testbench": "^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lukeraymonddowning\\Honey\\Providers\\HoneyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Honey": "Lukeraymonddowning\\Honey\\Facades\\Honey"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lukeraymonddowning\\Honey\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "luke",
+                    "email": "lukeraymonddowning@gmail.com"
+                }
+            ],
+            "description": "Reduce spam on your Laravel site.",
+            "support": {
+                "issues": "https://github.com/lukeraymonddowning/honey/issues",
+                "source": "https://github.com/lukeraymonddowning/honey/tree/0.3.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/lukeraymonddowning",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-07-07T08:08:09+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",

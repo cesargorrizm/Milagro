@@ -30,11 +30,11 @@ class ContactoController extends Controller
                 'phone' => 'required|min:9',
                 'date' => 'required',
                 'guests' => 'required',
-                'g-recaptcha-response' => function ($attribute, $value, $fail) {
-                    if ($value === 'foo') {
-                        $fail('The '.$attribute.' is invalid.');
-                    }
-                },
+                // 'g-recaptcha-response' => function ($attribute, $value, $fail) {
+                //     if ($value === 'foo') {
+                //         $fail('The '.$attribute.' is invalid.');
+                //     }
+                // },
             ]);
             
             $details = $request;

@@ -1115,10 +1115,12 @@
                                     {{-- <input type="textarea" class="form-control add-padding" id="observacion" name="observacion" placeholder="Observaciones" aria-required="true" required> --}}
                                 </div>
                             </div>
-                            <div>
+
+                            {{-- <div>
                                 <div class="g-recaptcha" data-sitekey="6LfJ5vYfAAAAABbvkZ2uWYt99NykOBtB6sDZOMW1"></div>
                                  <br/>
-                            </div>
+                            </div> --}}
+                            <x-honey-recaptcha/> 
                              <div class="col-xs-12 form-group">
                                 <button type="submit" class="btn btn-block btn-primary">Reservar ahora</button>
                             </div>                           
@@ -1256,7 +1258,7 @@
     
     <script type="text/javascript" src="{{ asset('js/main.js') }}"></script> 
     {{-- Captcha --}}
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
         
     <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
     <script src="{{ asset('js/demo/style-switcher.js') }}"></script>
