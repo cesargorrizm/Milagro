@@ -152,7 +152,21 @@ a.btn-primary:focus,
   color: #fff;
   outline: none;
 }
-
+.box img{
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  min-height: 500px;
+}
+@supports(object-fit: cover){
+    .box img{
+      height: 100%;
+      max-height: 500px;
+      min-height: 500px;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
 </style>
 </head> 
 
@@ -165,47 +179,51 @@ a.btn-primary:focus,
                 <div class="modal-body">
                     <div class="post">
                        
-                        <div class="container">
-                            <div class="row  ">
-                                <div class="col-md-7 ">
-                                    @if(count($imagenes)>0)
-                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                        <!-- Carousel indicators -->
-                                        <ol class="carousel-indicators">
-                                            
-                                            @for($i =0 ; $i < count($imagenes); $i++)
-                                            <li data-target="#myCarousel" data-slide-to={{$i}} class="active"></li>
-                                            @endfor
-                                        </ol>   
-                                        <!-- Wrapper for carousel items -->
-                                        <div class="carousel-inner"  >
-                                            <?php $i = 0; ?>
-                                            @for($i =0 ; $i < count($imagenes); $i++)
-                                             @if($i == 0)
-                                            <div class="item active text-center">  
-                                                <div><img  class="img-responsive" src="{{$imagenes[$i]->url}}" ></div>
+                        <div class="container ">
+                            <div class="row ">
+                                @if(count($imagenes)>0)
+                                <div class="box" style="height: 550px"> 
+                                    
+                                    <div class="col-md-7 ">
+                                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                            <!-- Carousel indicators -->
+                                            <ol class="carousel-indicators">
+                                                @for($i =0 ; $i < count($imagenes); $i++)
+                                                <li data-target="#myCarousel" data-slide-to={{$i}} class="active"></li>
+                                                @endfor
+                                            </ol>   
+                                            <!-- Wrapper for carousel items -->
+                                            <div class="carousel-inner">
+                                                <?php $i = 0; ?>
+                                                @for($i =0 ; $i < count($imagenes); $i++)
+                                                @if($i == 0)
+                                                <div class="item active text-center">  
+                                                    <div><img  class="img-responsive" src="{{$imagenes[$i]->url}}"></div>
+                                                </div>
+                                                
+                                                @else
+                                                <div class="item text-center ">
+                                                    <div><img class="img-responsive"src="{{$imagenes[$i]->url}}" width="290" height="552.5" ></div>
+                                                </div>
+                                                @endif
+                                                @endfor    
                                             </div>
-                                            
-                                             @else
-                                            <div class="item ">
-                                                <div><img class="img-responsive"src="{{$imagenes[$i]->url}}"></div>
-                                            </div>
-                                            @endif
-                                             @endfor    
+                                            <!-- Carousel controls -->
+                                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a>
+                                            <a class="carousel-control" style="right: 1.2em; left:auto;" href="#myCarousel" data-slide="next">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
                                         </div>
-                                        <!-- Carousel controls -->
-                                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                                            <i class="fa fa-angle-left"></i>
-                                        </a>
-                                        <a class="carousel-control" style="right: 1.2em; left:auto;" href="#myCarousel" data-slide="next">
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
                                     </div>
                                     @endif
                                 </div>
                             </div>
                         </div>
-                       <p>{!!$det[0]->descripcion!!}</p>
+                        <div style="margin: 50px">
+                            <p>{!!$det[0]->descripcion!!}</p>
+                        </div>
                       @if(count($capacidad)>0)
                        <div>
                             <table class="table">

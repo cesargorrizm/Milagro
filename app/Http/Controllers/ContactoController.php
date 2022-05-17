@@ -28,7 +28,8 @@ class ContactoController extends Controller
                 'name' => 'required',
                 'email' => 'required',
                 'phone' => 'required',
-                'date' => 'required'
+                'date' => 'required',
+                'guests' => 'required'
             ]);
             
             $details = $request;

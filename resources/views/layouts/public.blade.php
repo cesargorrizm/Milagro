@@ -568,8 +568,8 @@
                                             @foreach($imagenes as $image)
                                                 @if($image->sector_id==$espacios[$espacio]->id)
                                                     <img class="img-responsive" src="{{ $image->url}}" alt="">
-                                                    @endif
-                                                    @endforeach
+                                                 @endif
+                                             @endforeach
                                                     <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                             {{-- <img class="img-responsive" src="{{$espacio->image}}" alt="">
                                             <a class="mask" href="{{ $espacio->image}}" data-gallery> --}}
@@ -977,11 +977,9 @@
         <div class="bottom-bar">
             <div class="container text-center">                                   
                 <ul class="list-inline links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li role="presentation">|</li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    
                 </ul>
-                <small class="copyright text-center">Copyright @ 2015 <a href="http://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>                 
+
             </div><!--//container-->
         </div><!--//bottom-bar-->
     </footer><!--//footer-->

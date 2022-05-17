@@ -70,5 +70,246 @@ class ImageSeeder extends Seeder
             'principal'=>1,
             'sector_id'=>11, 
         ]);
+        //Boda civil
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Boda Civil/1- BODA CIVIL JARDINFRENTE.JPG',
+            'principal'=>0,
+            'sector_id'=>12,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Boda Civil/2- BODA CIVIL CATERING  FUNDAS NEGRAS.jpg',
+            'principal'=>0,
+            'sector_id'=>12,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Boda Civil/3 - BODA CIVL DETALLE FLOR  RECORTADA.jpg',
+            'principal'=>0,
+            'sector_id'=>12,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Boda Civil/4- BODA CIVL CATERING  FUNDAS BLANCAS .jpg',
+            'principal'=>0,
+            'sector_id'=>12,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Boda Civil/5- BODA CIVIL JARDIN  DESDE ARRIBA.JPG',
+            'principal'=>0,
+            'sector_id'=>12,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Boda Civil/BODA CIVL DETALLE FLOR.jpg',
+            'principal'=>0,
+            'sector_id'=>12,
+        ]);
+        //Barra Premium
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Barra Premium/1- BARRA PREMIUM.JPG',
+            'principal'=>0,
+            'sector_id'=>13,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Barra Premium/2- BARRA PREMIUM.JPG',
+            'principal'=>0,
+            'sector_id'=>13,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Barra Premium/bodamadrid1301_1_30525.jpg',
+            'principal'=>0,
+            'sector_id'=>13,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Barra Premium/Gin tonic bodas net.jpg',
+            'principal'=>0,
+            'sector_id'=>13,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Barra Premium/Gin Tonic Coto Real 005.JPG',
+            'principal'=>0,
+            'sector_id'=>13,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Barra Premium/premium-vs-ultimate-drinks-hero.jpg',
+            'principal'=>0,
+            'sector_id'=>13,
+        ]);
+        //Candy
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Candy/2- CANDY.JPG',
+            'principal'=>0,
+            'sector_id'=>14,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Candy/4- CANDY .jpg',
+            'principal'=>0,
+            'sector_id'=>14,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Candy/7 CANDY .JPG',
+            'principal'=>0,
+            'sector_id'=>14,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Candy/chuches1.jpg',
+            'principal'=>0,
+            'sector_id'=>14,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Candy/IMG_6147.JPG',
+            'principal'=>0,
+            'sector_id'=>14,
+        ]);
+        //Fuente de chocolate
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Fuente de chocolate/4ca9072047e86e0e1f05edaaf3f9320c.jpg',
+            'principal'=>0,
+            'sector_id'=>15,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Fuente de chocolate/alquiler-de-fuentes-de-chocolate-para-eventos-1002.jpg',
+            'principal'=>0,
+            'sector_id'=>15,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Fuente de chocolate/BARRA-CHOCOLATE-5362.jpg',
+            'principal'=>0,
+            'sector_id'=>15,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Fuente de chocolate/Fotos-de-fuentes-de-chocolate.jpg',
+            'principal'=>0,
+            'sector_id'=>15,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Fuente de chocolate/fuentedechocolate.jpg',
+            'principal'=>0,
+            'sector_id'=>15,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Fuente de chocolate/IMG-20160605-WA0000.jpg',
+            'principal'=>0,
+            'sector_id'=>15,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Fuente de chocolate/IMG-20160605-WA0039.jpg',
+            'principal'=>0,
+            'sector_id'=>15,
+        ]);
+        //Decoración floral especial
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Decoración floral especial/1 - FLORES.JPG',
+            'principal'=>0,
+            'sector_id'=>16,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Decoración floral especial/2 CENTRO FLORES.JPG',
+            'principal'=>0,
+            'sector_id'=>16,
+        ]);
+      
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Decoración floral especial/3- CENTRO FLORAL.JPG',
+            'principal'=>0,
+            'sector_id'=>16,
+        ]);
+       
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Decoración floral especial/12- CENTRO MESA .JPG',
+            'principal'=>0,
+            'sector_id'=>16,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Decoración floral especial/20140705_140927.jpg',
+            'principal'=>0,
+            'sector_id'=>16,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Decoración floral especial/centro presidencia ovalada.JPG',
+            'principal'=>0,
+            'sector_id'=>16,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Decoración floral especial/Centro.jpg',
+            'principal'=>0,
+            'sector_id'=>16,
+        ]);
+        //Meseros
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Meseros/1 - MESERO.jpg',
+            'principal'=>0,
+            'sector_id'=>17,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Meseros/2 -MESEROS.JPG',
+            'principal'=>0,
+            'sector_id'=>17,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Meseros/3- MESEROS .JPG',
+            'principal'=>0,
+            'sector_id'=>17,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Meseros/4- MESERO .jpg',
+            'principal'=>0,
+            'sector_id'=>17,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Meseros/5- MESERO .JPG',
+            'principal'=>0,
+            'sector_id'=>17,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Meseros/DSC_0641.JPG',
+            'principal'=>0,
+            'sector_id'=>17,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Meseros/MESEROS .JPG',
+            'principal'=>0,
+            'sector_id'=>17,
+        ]);
+        //Seating
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/_DOS6426.JPG',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/_DSC0394.JPG',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/_DSC0735.JPG',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/20160423_121932.jpg',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/20160702_105745.jpg',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/DSC00235.JPG',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/seatting botellas.jpg',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Seating/seatting pale blanco.jpg',
+            'principal'=>0,
+            'sector_id'=>18,
+        ]);
+
+       
     }
 }
