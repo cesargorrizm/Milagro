@@ -509,6 +509,42 @@ class ImageSeeder extends Seeder
             'principal'=>0,
             'sector_id'=>18,
         ]);
+        // Minutas
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Minutas/1 MINUTA .JPG',
+            'principal'=>0,
+            'sector_id'=>19,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Minutas/2 MINUTA.jpg',
+            'principal'=>0,
+            'sector_id'=>19,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Minutas/3 MINUTA.jpg',
+            'principal'=>0,
+            'sector_id'=>19,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Minutas/invitaciones-de-boda-detalle-clasica-minuta-ANV.jpg',
+            'principal'=>0,
+            'sector_id'=>19,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Minutas/menu.jpg',
+            'principal'=>0,
+            'sector_id'=>19,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Minutas/menu-silueta-novios.jpg',
+            'principal'=>0,
+            'sector_id'=>19,
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Minutas/minutas-boda.jpg',
+            'principal'=>0,
+            'sector_id'=>19,
+        ]);
 
        
     }

@@ -94,8 +94,8 @@
                         <tr>
                             <td>{{$sector->id}}</td>
                             <td>{{ $sector->titulo }}</td>
-                            {{-- <td>{!!substr($sector->descripcion,0,150)!!}...</td> --}}
-                            <td>{{$sector->descripcion}}</td>
+                            <td>{!!substr($sector->descripcion,0,150)!!}...</td>
+                            {{-- <td>{{$sector->descripcion}}</td> --}}
                             <td>{{ $sector->subtitulo}}</td>
                             
                             {{--<td width="10px">--}}
