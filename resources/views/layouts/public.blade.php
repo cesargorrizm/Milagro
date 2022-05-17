@@ -709,8 +709,8 @@
                                     <h4 class="title">{{$evento->titulo}}</h4>
                                     {{-- <div class="meta">Saturday, 17th August</div> --}}
                                     <p class="excerpt">
-                                        {!!substr($evento->descripcion,0,150)!!}...
-                                        {{-- {{$evento->descripcion}} --}}
+                                        {{-- {!!substr($evento->descripcion,0,150)!!}... --}}
+                                        {{$evento->subtitulo}}
                                     </p><!--//excerpt-->
                                     <a href="{{ route('detalle',$evento->id) }}" >Leer Mas</a>
                                     <div class="date-badge">

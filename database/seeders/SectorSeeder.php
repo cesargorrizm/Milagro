@@ -113,53 +113,40 @@ class SectorSeeder extends Seeder
         // Eventos
         Sector::create([
             'titulo' => 'Boda Civil',
-            'descripcion' => 'Es la ocasión perfecta para compartir con los familiares y amigos un día tan señalado, en un ambiente íntimo y especial. 
-            
-            Las bodas con un ritual civil son las más personalizables ya que sois vosotros los que decidís en todo momento cómo será vuestra ceremonia. Con nuestra experiencia os guiaremos, adaptándonos a vuestras ideas y gustos.
-
-            Contamos con varias posibilidades de ambientación y ubicación de la misma, te ayudaremos a definir tu estilo de ceremonia.
-            
-            Ponemos a vuestra disposición nuestros jardines, con la posibilidad de tener todo el equipamiento necesario: sillas enfundadas, sombrillas, mesa para el oficiante, atril, megafonía……. Si queréis que además te ayudemos a decorarlo, podemos ponerte en contacto con profesionales que pondrán a tu disposición un amplio abanico de opciones. ',
+            'descripcion' => '<p>Las bodas con un ritual civil son las m&aacute;s personalizables ya que sois vosotros los que decid&iacute;s en todo momento c&oacute;mo ser&aacute; vuestra ceremonia. Con nuestra experiencia os guiaremos, adapt&aacute;ndonos a vuestras ideas y gustos.<br /> <br /> Contamos con varias posibilidades de ambientaci&oacute;n y ubicaci&oacute;n de la misma, te ayudaremos a definir tu estilo de ceremonia.<br /> <br /> Ponemos a vuestra disposici&oacute;n nuestros jardines, con la posibilidad de tener todo el equipamiento necesario: sillas enfundadas, sombrillas, mesa para el oficiante, atril, megafon&iacute;a&hellip;&hellip;. Si quer&eacute;is que adem&aacute;s te ayudemos a decorarlo, podemos ponerte en contacto con profesionales que pondr&aacute;n a tu disposici&oacute;n un amplio abanico de opciones.</p>',
+            'subtitulo' => 'Es la ocasión perfecta para compartir con los familiares y amigos un día tan señalado, en un ambiente íntimo y especial. ',
             'tipo_id' => 3,
             'capacidad_id' => null
 
         ]);
         Sector::create([
             'titulo' => 'Barra Premium',
-            'descripcion' => 'Tenéis la posibilidad de ofrecer a vuestros invitados un servicio de copas más elaboradas de la mano de un profesional cocktelero.
-
-            Barra Gin y Tónica Premium
-            Barra Mojito, Mojito Golden
-            Barra Caipirinhas, Daikiri
-        ',
+            'descripcion' => '<p>Ten&eacute;is la posibilidad de ofrecer a vuestros invitados un servicio de copas m&aacute;s elaboradas de la mano de un profesional cocktelero.</p> <ul> <li>Barra Gin y T&oacute;nica Premium</li> <li>Barra Mojito, Mojito Golden</li> <li>Barra Caipirinhas, Daikiri</li> </ul>',
+            'subtitulo' => 'Tenéis la posibilidad de ofrecer a vuestros invitados un servicio de copas más elaboradas de la mano de un profesional cocktelero.',
             'tipo_id' => 3,
             'capacidad_id' => null
 
         ]);
         Sector::create([
             'titulo' => 'Candy',
-            'descripcion' => 'Disfruta de un bonito y cuidado rincón de chucherías y dulces -presente en casi todos los eventos sociales de hoy en día- como perfecto complemento a tu evento y gánate a tus invitados a base de gominolas, cupcakes, cookies…
-
-            Para que se lleven un dulcísimo sabor de boca. Contenido y cantidad adaptado a tus gustos y número de asistentes. 
-        ',
+            'descripcion' => '<p>Disfruta de un bonito y cuidado rinc&oacute;n de chucher&iacute;as y dulces -presente en casi todos los eventos sociales de hoy en d&iacute;a- como perfecto complemento a tu evento y g&aacute;nate a tus invitados a base de gominolas, cupcakes, cookies&hellip;<br /> <br /> Para que se lleven un dulc&iacute;simo sabor de boca. Contenido y cantidad adaptado a tus gustos y n&uacute;mero de asistentes.</p>',
+            'subtitulo' => 'Disfruta de un bonito y cuidado rincón de chucherías y dulces. Gánate a tus invitados a base de gominolas, cupcakes, cookies…  ',
             'tipo_id' => 3,
             'capacidad_id' => null
 
         ]);
         Sector::create([
             'titulo' => 'Fuente de chocolate',
-            'descripcion' => 'Otra propuesta muy dulce. Las fuentes de chocolate (blanco o negro) son un plus en cualquier boda.
-
-            Este postre va acompañado por bandejas cargadas con dulces (nubes, gofres, barquillos…) o fruta fresca de temporada (fresa, plátano, kiwi, piña, melón…). 
-        ',
+            'descripcion' => '<p>Otra propuesta muy dulce. Las fuentes de chocolate (blanco o negro) son un plus en cualquier boda.<br /> <br /> Este postre va acompa&ntilde;ado por bandejas cargadas con dulces (nubes, gofres, barquillos&hellip;) o fruta fresca de temporada (fresa, pl&aacute;tano, kiwi, pi&ntilde;a, mel&oacute;n&hellip;).</p>',
+            'subtitulo' => 'Otra propuesta muy dulce. Las fuentes de chocolate (blanco o negro) son un plus en cualquier boda.',
             'tipo_id' => 3,
             'capacidad_id' => null
 
         ]);
         Sector::create([
             'titulo' => 'Decoración floral especial',
-            'descripcion' => 'Avanzan los tiempos, cambian las tendencias. En el Restaurante El Milagro innovamos constantemente en decoración floral y te ofrecemos la posibilidad de que seáis vosotros quien decida como decorar vuestra boda.
-        ',
+            'descripcion' => '<p>Avanzan los tiempos, cambian las tendencias. En el Restaurante El Milagro innovamos constantemente en decoraci&oacute;n floral y te ofrecemos la posibilidad de que se&aacute;is vosotros quien decida como decorar vuestra boda</p>',
+            'subtitulo' => 'Avanzan los tiempos, cambian las tendencias. Te ofrecemos la posibilidad de que seáis vosotros quien decida como decorar vuestra boda ',
             'tipo_id' => 3,
             'capacidad_id' => null
 
@@ -168,15 +155,25 @@ class SectorSeeder extends Seeder
             'titulo' => 'Meseros',
             'descripcion' => 'Llamamos meseros a la manera de numerar o nombrar las mesas en vuestra boda. Un tema que cada vez adquiere más importancia y que junto con el seating plan y las minutas de menú, es vuestra carta de presentación ante los invitados en el momento banquete. Las propuestas son infinitas y por lo general, la temática responde a vuestro gusto y personalidad. 
         ',
-            'tipo_id' => 3,
+        'subtitulo' => 'Llamamos meseros a la manera de numerar o nombrar las mesas en vuestra boda. Un tema que cada vez adquiere más importancia y que junto con el seating plan y las minutas de menú, es vuestra carta de presentación ante los invitados en el momento banquete.',    
+        'tipo_id' => 3,
             'capacidad_id' => null
 
         ]);
         Sector::create([
             'titulo' => 'Seating',
-            'descripcion' => 'El seating plan de una boda es un esquema hecho por los novios que informa a cada invitado dónde estará sentado.
-
-            Los seatings se convierten en parte esencial de la decoración, se juega con los detalles y se crean las formas más originales que puedas imaginarte, y en las que vosotros podéis aportar vuestras ideas. ',
+            'descripcion' => '<p>El seating plan de una boda es un esquema hecho por los novios que informa a cada invitado d&oacute;nde estar&aacute; sentado.<br />
+            <br />
+            Los seatings se convierten en parte esencial de la decoraci&oacute;n, se juega con los detalles y se crean las formas m&aacute;s originales que puedas imaginarte, y en las que vosotros pod&eacute;is aportar vuestras ideas.</p>',
+            'subtitulo' => 'El seating plan de una boda es un esquema hecho por los novios que informa a cada invitado dónde estará sentado.',
+            'tipo_id' => 3,
+            'capacidad_id' => null
+            
+        ]);
+        Sector::create([
+            'titulo' => 'Minutas',
+            'descripcion' => '<p>El seating plan de una boda es un esquema hecho por los novios que informa a cada invitado d&oacute;nde estar&aacute; sentado.<br /> <br /> Los seatings se convierten en parte esencial de la decoraci&oacute;n, se juega con los detalles y se crean las formas m&aacute;s originales que puedas imaginarte, y en las que vosotros pod&eacute;is aportar vuestras ideas.</p>',
+            'subtitulo' => 'Las minutas son los papeles que indican, en cada mesa del banquete, el menú nupcial. Cada vez sois más las parejas que escogéis la opción de personalizarlas',
             'tipo_id' => 3,
             'capacidad_id' => null
 
