@@ -24,10 +24,10 @@ class ContactoController extends Controller
 
         
         // return $request->all();
-        $request->validate([
+         $request->validate([
                 'name' => 'required',
-                'email' => 'required',
-                'phone' => 'required',
+                'email' => 'required|email',
+                'phone' => 'required|min:9',
                 'date' => 'required'
             ]);
             
