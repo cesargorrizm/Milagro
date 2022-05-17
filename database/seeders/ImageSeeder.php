@@ -152,33 +152,124 @@ class ImageSeeder extends Seeder
             'principal'=>1,
             'sector_id'=>6, 
         ]);
-        
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Bonet/bonet5.jpg',
+            'principal'=>0,
+            'sector_id'=>6, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Bonet/bonet7.jpg',
+            'principal'=>0,
+            'sector_id'=>6, 
+        ]);
+
         // imagen salones
+        //San pedro
         Image::create([
             'url'=>'http://127.0.0.1:8000/images/Sala San Pedro/35-san-pedro.jpg',
             'principal'=>1,
             'sector_id'=>7, 
         ]);
         Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Sala San Pedro/29sanpedro.jpg',
+            'principal'=>0,
+            'sector_id'=>7, 
+        ]);
+        //virgen del pilar
+        Image::create([
             'url'=>'http://127.0.0.1:8000/images/Salón Virgen del Pilar/39-virgen-del-pilar.jpg',
             'principal'=>1,
             'sector_id'=>8, 
         ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Salón Virgen del Pilar/43virgendelpilar.JPG',
+            'principal'=>0,
+            'sector_id'=>8, 
+        ]);
+        //Garden
         Image::create([
             'url'=>'http://127.0.0.1:8000/images/Sala Garden/garden2.jpg',
             'principal'=>1,
             'sector_id'=>10, 
         ]);
         Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Sala Garden/garden_1.JPG',
+            'principal'=>0,
+            'sector_id'=>10, 
+        ]);
+        //san Fernando
+        Image::create([
             'url'=>'http://127.0.0.1:8000/images/Salón San Fernando/San-Fernando.jpg',
             'principal'=>1,
             'sector_id'=>9, 
         ]);
         Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Salón San Fernando/21sanfernando.jpg',
+            'principal'=>0,
+            'sector_id'=>9, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Salón San Fernando/sanfernando.jpg',
+            'principal'=>0,
+            'sector_id'=>9, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Salón San Fernando/sanfernando2.jpg',
+            'principal'=>0,
+            'sector_id'=>9, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Salón San Fernando/12sanfernando.jpg',
+            'principal'=>0,
+            'sector_id'=>9, 
+        ]);
+        //Terraza Jardin
+        Image::create([
             'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardin2.jpg',
             'principal'=>1,
             'sector_id'=>11, 
         ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardin1.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardin6.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardin7.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardin8.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardines1.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardines2.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardines3.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        Image::create([
+            'url'=>'http://127.0.0.1:8000/images/Terraza Jardin/jardines5.jpg',
+            'principal'=>0,
+            'sector_id'=>11, 
+        ]);
+        
         //Boda civil
         Image::create([
             'url'=>'http://127.0.0.1:8000/images/Boda Civil/1- BODA CIVIL JARDINFRENTE.JPG',
