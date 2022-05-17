@@ -73,8 +73,9 @@ class SectorController extends Controller
         $sector->descripcion = $request['summary-ckeditor'];
         $sector->tipo_id = $request->tipo_id;
         $sector->capacidad_id = $request->mapaCapacidades;
+        $sector->subtitulo = $request->subtitulo;
         if($sector->tipo_id=='4' || $sector->tipo_id=='5'){
-            
+            $sector->subtitulo = null;
             $sector->descripcion = null;
             $sector->capacidad_id = null;
         }else if($sector->tipo_id=='3'){
@@ -124,8 +125,9 @@ class SectorController extends Controller
         $sector->descripcion = $request['summary-ckeditor'];
         $sector->tipo_id = $request->tipo_id;
         $sector->capacidad_id = $request->mapaCapacidades;
+        $sector->subtitulo = $request->subtitulo;
         if($sector->tipo_id=='4' || $sector->tipo_id=='5'){
-            
+            $sector->subtitulo = null;
             $sector->descripcion = null;
             $sector->capacidad_id = null;
         }else if($sector->tipo_id=='3'){

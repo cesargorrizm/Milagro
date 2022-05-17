@@ -17,6 +17,7 @@ class CreateSectoresTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->longText('descripcion')->nullable();
+            $table->Text('subtitulo')->nullable();
             $table->unsignedBigInteger('tipo_id');
             $table->unsignedBigInteger('capacidad_id')->nullable();
             $table->foreign('tipo_id')->references('id')->on('tipos');

@@ -17,7 +17,7 @@ class Sector extends Model
 
 
     protected $fillable = [
-        'titulo', 'descripcion', 'tipo_id','capacidad_id'
+        'titulo', 'descripcion','subtitulo', 'tipo_id','capacidad_id'
     ];
 
 

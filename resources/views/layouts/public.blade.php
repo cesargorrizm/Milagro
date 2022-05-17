@@ -103,7 +103,7 @@
         </div><!--//content-wrapper-->
         
         <div class="scroll-link text-center">
-            <p><a class="scrollto" href="#menus">View Our Menus</a></p>
+            <p><a class="scrollto" href="#menus">¿Que te ofrecemos?</a></p>
             <a class="arrow-holder animate scrollto" href="#menus"><img src="{{ asset('images/arrow.svg') }}" alt="" /></a>
         </div>
         
@@ -235,7 +235,7 @@
                                                 <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
+                                                <span class="desc">{{$salas[$sala]->subtitulo}}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -254,7 +254,7 @@
                                                 <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
+                                                <span class="desc">{{$salas[$sala]->subtitulo}}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -274,7 +274,7 @@
                                                     <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
+                                                    <span class="desc">{{$salas[$sala]->subtitulo}}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -293,7 +293,7 @@
                                                     <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
+                                                    <span class="desc">{{$salas[$sala]->subtitulo}}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -314,7 +314,7 @@
                                                     <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}" >
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
+                                                    <span class="desc">{{$salas[$sala]->subtitulo}}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -335,7 +335,7 @@
                                                 <a class="mask" href="{{ route('detalle',$salas[$sala]->id) }}">
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$salas[$sala]->titulo}}</span>    
-                                                    <span class="desc">{!!$salas[$sala]->descripcion!!}</span>
+                                                    <span class="desc">{{$salas[$sala]->subtitulo}}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -473,7 +473,7 @@
                                         <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
+                                                <span class="desc">{{ $espacios[$espacio]->subtitulo }}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -493,7 +493,7 @@
                                              <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                             <span class="mask-inner">
                                                 <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
+                                                <span class="desc">{{ $espacios[$espacio]->subtitulo }}</span>
                                                 {{-- <span class="price">400 personas</span> --}}
                                             </span><!--//mask-inner-->
                                         </a><!--//mask-->
@@ -514,7 +514,7 @@
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>  
                                                       
-                                                    <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
+                                                    <span class="desc">{{ $espacios[$espacio]->subtitulo }}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -533,7 +533,7 @@
                                              <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                    <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
+                                                    <span class="desc">{{ $espacios[$espacio]->subtitulo }}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->
@@ -554,7 +554,7 @@
                                                  <a class="mask"  href="{{ route('detalle',$espacios[$espacio]->id) }}">
                                                 <span class="mask-inner">
                                                     <span class="item-title script">{{$espacios[$espacio]->titulo}}</span>    
-                                                    <span class="desc">{!! $espacios[$espacio]->descripcion !!}</span>
+                                                    <span class="desc">{{ $espacios[$espacio]->subtitulo }}</span>
                                                     {{-- <span class="price">400 personas</span> --}}
                                                 </span><!--//mask-inner-->
                                             </a><!--//mask-->

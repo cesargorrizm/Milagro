@@ -83,6 +83,7 @@
                         <th>Id</th>
                         <th>Titulo</th>
                         <th>Descripcion</th>
+                        <th>Subtitulo</th>
                         <th>Tipo</th>
                         <th>Capacidad</th>
                         <th>Acciones</th>
@@ -94,6 +95,7 @@
                             <td>{{$sector->id}}</td>
                             <td>{{ $sector->titulo }}</td>
                             <td>{{ $sector->descripcion}}</td>
+                            <td>{{ $sector->subtitulo}}</td>
                             
                             {{--<td width="10px">--}}
                             @foreach($tipos as $tipo)
@@ -120,6 +122,7 @@
                         <th>Id</th>
                         <th>Titulo</th>
                         <th>Descripcion</th>
+                        <th>Subtitulo</th>
                         <th>Tipo</th>
                         <th>Capacidad</th>
                         <th>Acciones</th>

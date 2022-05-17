@@ -46,7 +46,7 @@ if (isset($sector)) {
                 <option value="evento">Evento</option>
                 <option value="servicioIncluido">Servicios Incluidos</option>
                 <option value="vuestrosInvitados">Para vuestros invitados</option>
-             </select>
+            </select>
         </form> --}}
         
         
@@ -54,6 +54,15 @@ if (isset($sector)) {
         <span class="text-danger">{{$message}}</span>
         @enderror
         
+    </div>
+    <div id="subtitulo" class="col-lg-6 form-group">
+        {!! Form::label('subtitulo', 'SubTitulo') !!}
+        {!! Form::text('subtitulo', null, ['class' => 'form-control', 'placeholder' => 'Introduzca el SubTitulo', 'autocomplete' => 'off']) !!}
+        @error('subtitulo')
+            <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong></span>
+        @enderror
+    
     </div>
 </div>
 {{-- <div id="estudiante" style="display: none;">
@@ -90,7 +99,7 @@ if (isset($sector)) {
     
     
     <div id="capacidad" class="col-lg-12 form-group"  id="bloqueCapacidad">
-        {!! Form::label('mapaCapacidades', 'Tipo') !!}
+        {!! Form::label('mapaCapacidades', 'Capacidad') !!}
          <select name="mapaCapacidades" class = 'form-control'>
         @foreach($capacidades as $capacidad)
             
@@ -148,12 +157,14 @@ if (isset($sector)) {
         if(id=='4' || id=='5'){
             $("#descripcion").hide();
             $('#capacidad').hide();
+            $('#subtitulo').hide();
         }else if(id=='3'){
-
-
+            
+            $('#subtitulo').show();
             $("#descripcion").show();
             $("#capacidad").hide();
         } else{
+            $('#subtitulo').show();
             $("#descripcion").show();
             $("#capacidad").show();
         }
