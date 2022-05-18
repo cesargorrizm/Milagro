@@ -239,7 +239,7 @@ class ImageController extends Controller
         } else {
              $image->principal = 0;
         }
-        $image->save();
+        $image->update();
 
         return redirect()->route('image.index')
             ->with('status', '¡Se ha actualizado la imagen ' . $image->url . ' correctamente!');
