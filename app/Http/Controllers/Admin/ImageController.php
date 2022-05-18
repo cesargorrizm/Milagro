@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -8,6 +7,7 @@ use App\Models\Image;
 use App\Models\Sector;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Images;
 
 class ImageController extends Controller
 {
@@ -98,10 +98,19 @@ class ImageController extends Controller
                     if(!is_dir($estructura)){
                         mkdir($estructura, 0777, true);
                     }
+
                     // moverl el archivo
                     if (move_uploaded_file($temp,  $estructura  . $archivo)) {
-                        //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                        // open an image file
                         chmod($estructura . $archivo, 0777);
+                        $nose= Images::class;
+                        //$manager = new $nose(array('driver' => 'imagick'));
+                        $image = $nose::make($estructura . $archivo)->resize(360, 240);
+
+                        
+                        // finally we save the image as a new file
+                        $image->save($estructura . $archivo);
+                         //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
                     } else {
@@ -199,9 +208,18 @@ class ImageController extends Controller
                      if(!is_dir($estructura)){
                          mkdir($estructura, 0777, true);
                      }
-                    if (move_uploaded_file($temp, $estructura . $archivo)) {
-                        //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+                     
+                     if (move_uploaded_file($temp,  $estructura  . $archivo)) {
+                        // open an image file
                         chmod($estructura . $archivo, 0777);
+                        $nose= Images::class;
+                        //$manager = new $nose(array('driver' => 'imagick'));
+                        $image = $nose::make($estructura . $archivo)->resize(360, 240);
+
+                        
+                        // finally we save the image as a new file
+                        $image->save($estructura . $archivo);
+                         //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
                     } else {
