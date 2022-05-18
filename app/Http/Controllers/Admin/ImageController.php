@@ -103,11 +103,13 @@ class ImageController extends Controller
                     if (move_uploaded_file($temp,  $estructura  . $archivo)) {
                         // open an image file
                         chmod($estructura . $archivo, 0777);
-                        $nose= Images::class;
-                        //$manager = new $nose(array('driver' => 'imagick'));
-                        $image = $nose::make($estructura . $archivo)->resize(360, 240);
-                        // finally we save the image as a new file
-                        $image->save($estructura . $archivo);
+                        if ($fotoPrincipal == 'on') {
+                            $nose= Images::class;
+                            //$manager = new $nose(array('driver' => 'imagick'));
+                            $image = $nose::make($estructura . $archivo)->resize(360, 240);
+                            // finally we save the image as a new file
+                            $image->save($estructura . $archivo);
+                        } 
                         
                         
                          //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
@@ -212,13 +214,15 @@ class ImageController extends Controller
                      if (move_uploaded_file($temp,  $estructura  . $archivo)) {
                         // open an image file
                         chmod($estructura . $archivo, 0777);
-                        $nose= Images::class;
+                        // $nose= Images::class;
                         //$manager = new $nose(array('driver' => 'imagick'));
-                        $imagen = $nose::make($estructura . $archivo)->resize(360, 240);
+                        if ($fotoPrincipal == 'on') {
+                            $imagen = (Images::class)::make($estructura . $archivo)->resize(360, 240);
+                            // finally we save the image as a new file
+                            $imagen->save($estructura . $archivo);
+                        } 
 
                         
-                        // finally we save the image as a new file
-                        $imagen->save($estructura . $archivo);
                          //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
