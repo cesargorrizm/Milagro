@@ -49,23 +49,23 @@ class RoleSeeder extends Seeder
 
 
         Permission::create(['name' => 'contacto.index',
-            'description' => 'Ver Contacto Index']) -> syncRoles([$role1]);
+            'description' => 'Ver Contacto Index']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'contacto.create',
             'description' => 'Crear Contacto']) -> syncRoles([$role1]);
         Permission::create(['name' => 'contacto.edit',
-            'description' => 'Editar Contacto']) -> syncRoles([$role1]);
+            'description' => 'Editar Contacto']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'contacto.destroy',
             'description' => 'Eliminar Contacto']) -> syncRoles([$role1]);
 
         
             Permission::create(['name' => 'capacidad.index',
-            'description' => 'Ver Capacidad Index']) -> syncRoles([$role1]);
+            'description' => 'Ver Capacidad Index']) -> syncRoles([$role1,$role2]);
             Permission::create(['name' => 'capacidad.create',
-            'description' => 'Crear Capacidad']) -> syncRoles([$role1]);
+            'description' => 'Crear Capacidad']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'capacidad.edit',
-            'description' => 'Editar Capacidad']) -> syncRoles([$role1]);
+            'description' => 'Editar Capacidad']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'capacidad.destroy',
-            'description' => 'Eliminar Capacidad']) -> syncRoles([$role1]);
+            'description' => 'Eliminar Capacidad']) -> syncRoles([$role1,$role2]);
 
 
             
@@ -79,29 +79,29 @@ class RoleSeeder extends Seeder
             'description' => 'Eliminar tipo']) -> syncRoles([$role1]);
 
         Permission::create(['name' => 'sector.index',
-            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1]);
+            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'sector.create',
-            'description' => 'Crear sector']) -> syncRoles([$role1]);
+            'description' => 'Crear sector']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'sector.edit',
-            'description' => 'Editar sector']) -> syncRoles([$role1]);
+            'description' => 'Editar sector']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'sector.destroy',
-            'description' => 'Eliminar sector']) -> syncRoles([$role1]);
+            'description' => 'Eliminar sector']) -> syncRoles([$role1,$role2]);
 
             Permission::create(['name' => 'image.index',
-            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1]);
+            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'image.create',
-            'description' => 'Crear imagen']) -> syncRoles([$role1]);
+            'description' => 'Crear imagen']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'image.edit',
-            'description' => 'Editar imagen']) -> syncRoles([$role1]);
+            'description' => 'Editar imagen']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'image.destroy',
-            'description' => 'Eliminar imagen']) -> syncRoles([$role1]);
+            'description' => 'Eliminar imagen']) -> syncRoles([$role1,$role2]);
 
         Permission::create(['name' => 'sliderPrincipal.index',
-            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1]);
+            'description' => 'Ver Listado de tipos']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'sliderPrincipal.create',
             'description' => 'Crear sliderPrincipal']) -> syncRoles([$role1]);
         Permission::create(['name' => 'sliderPrincipal.edit',
-            'description' => 'Editar sliderPrincipal']) -> syncRoles([$role1]);
+            'description' => 'Editar sliderPrincipal']) -> syncRoles([$role1,$role2]);
         Permission::create(['name' => 'sliderPrincipal.destroy',
             'description' => 'Eliminar sliderPrincipal']) -> syncRoles([$role1]);
 
