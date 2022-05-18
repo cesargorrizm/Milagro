@@ -106,7 +106,7 @@ class ImageController extends Controller
                         if ($fotoPrincipal == 'on') {
                             $nose= Images::class;
                             //$manager = new $nose(array('driver' => 'imagick'));
-                            $image = $nose::make($estructura . $archivo)->resize(360, 240);
+                            $image = $nose::make($estructura . $archivo)->resize(720, 480);
                             // finally we save the image as a new file
                             $image->save($estructura . $archivo);
                         } 
@@ -217,7 +217,7 @@ class ImageController extends Controller
                         // $nose= Images::class;
                         //$manager = new $nose(array('driver' => 'imagick'));
                         if ($fotoPrincipal == 'on') {
-                            $imagen = (Images::class)::make($estructura . $archivo)->resize(360, 240);
+                            $imagen = (Images::class)::make($estructura . $archivo)->resize(720, 480);
                             // finally we save the image as a new file
                             $imagen->save($estructura . $archivo);
                         } 
