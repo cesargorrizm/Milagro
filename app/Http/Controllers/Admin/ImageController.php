@@ -106,10 +106,10 @@ class ImageController extends Controller
                         $nose= Images::class;
                         //$manager = new $nose(array('driver' => 'imagick'));
                         $image = $nose::make($estructura . $archivo)->resize(360, 240);
-
-                        
                         // finally we save the image as a new file
                         $image->save($estructura . $archivo);
+                        
+                        
                          //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
@@ -214,11 +214,11 @@ class ImageController extends Controller
                         chmod($estructura . $archivo, 0777);
                         $nose= Images::class;
                         //$manager = new $nose(array('driver' => 'imagick'));
-                        $image = $nose::make($estructura . $archivo)->resize(360, 240);
+                        $imagen = $nose::make($estructura . $archivo)->resize(360, 240);
 
                         
                         // finally we save the image as a new file
-                        $image->save($estructura . $archivo);
+                        $imagen->save($estructura . $archivo);
                          //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
                         //Mostramos el mensaje de que se ha subido co éxito
                         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
@@ -239,7 +239,7 @@ class ImageController extends Controller
         } else {
              $image->principal = 0;
         }
-        $image->update();
+        $image->save();
 
         return redirect()->route('image.index')
             ->with('status', '¡Se ha actualizado la imagen ' . $image->url . ' correctamente!');
