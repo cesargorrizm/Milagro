@@ -977,7 +977,7 @@
         <div class="bottom-bar">
             <div class="container text-center">                                   
                 <ul class="list-inline links">
-                    
+                    <li><a href="https://www.starglob.com/"> Powered by Starglob Soluciones Informáticas</a></li>
                 </ul>
 
             </div><!--//container-->
