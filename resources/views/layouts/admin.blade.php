@@ -219,8 +219,55 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1>Página principal</h1>
+                            
                         </div>
+                        
 
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-3 col-6">
+                            
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <p>Slider Principal</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-solid fa-images"></i>
+                                </div>
+                                <a href="{{ route('sliderPrincipal.index') }}" class="small-box-footer">
+                                    Acceder <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <p>Sector</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <a href="{{ route('sector.index') }}" class="small-box-footer">
+                                    Acceder <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <p>Imagenes</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-solid fa-image"></i>
+                                </div>
+                                <a href="{{ route('image.index') }}" class="small-box-footer">
+                                   Acceder <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
@@ -232,51 +279,7 @@
             <div class="container-fluid">
 
                 @yield('content')
-                <div class="row">
-
-                    <div class="col-lg-3 col-6">
-                        
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <p>Slider Principal</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-solid fa-images"></i>
-                            </div>
-                            <a href="{{ route('sliderPrincipal.index') }}" class="small-box-footer">
-                                Acceder <i class="fas fa-arrow-circle-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <p>Sector</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <a href="{{ route('sector.index') }}" class="small-box-footer">
-                                Acceder <i class="fas fa-arrow-circle-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <p>Imagenes</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-solid fa-image"></i>
-                            </div>
-                            <a href="{{ route('image.index') }}" class="small-box-footer">
-                               Acceder <i class="fas fa-arrow-circle-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                
 
         </section>
         <!-- /.content -->
