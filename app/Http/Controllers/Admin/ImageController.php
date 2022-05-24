@@ -73,7 +73,7 @@ class ImageController extends Controller
         
             if ($key->principal ==1 && $request->principal=='on') {
                
-                $fotoPrincipal = 0;
+                $fotoPrincipal = 'off';
                $imagen->principal = 0;
                 
             }
