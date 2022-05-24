@@ -39,7 +39,8 @@ if (isset($image)) {
 </div>
 <div class="row">
     <div class="col-lg-6 form-group">
-        {!! Form::label('principal', 'Principal') !!}
+        {!! Form::label('principal', 'Principal:') !!}
+        <small>(Si ya hay una foto pricipal en el sector no se pondra como principal)</small><br>
         <input type="checkbox" name="principal" id="fotoPrincipal" class="form-control"/>
         {{-- <input type="checkbox" name="principal" id="fotoPrincipal" class="form-control" value="0" checked="checked" 
             {{ old('principal') ? 'checked="checked"' : '0' }} /> --}}

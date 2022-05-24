@@ -63,11 +63,25 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
+        $imagen = new Image();
         $sectores = Sector::all();
+        $imagenes = Image::where('sector_id','=',$request->sector)->get();
+        
+        $fotoPrincipal =  $request->principal;
+        foreach ($imagenes as $key) {
+           
+        
+            if ($key->principal ==1 && $request->principal=='on') {
+               
+                $fotoPrincipal = 0;
+               $imagen->principal = 0;
+                
+            }
+        }
+
         $request->validate([
             'archivo' => 'required',
         ]);
-        $fotoPrincipal =  $request->principal;
 
             //Recogemos el archivo enviado por el formulario
             $archivo = $_FILES['archivo']['name'];
@@ -122,19 +136,19 @@ class ImageController extends Controller
                 }
             }
 
-        $image = new Image();
-        $image->sector_id = $request->sector;
-        $image->url = asset($estructura . $_FILES['archivo']['name']);
+        
+        $imagen->sector_id = $request->sector;
+        $imagen->url = asset($estructura . $_FILES['archivo']['name']);
         if ($fotoPrincipal == 'on') {
-            $image->principal = 1;
+            $imagen->principal = 1;
         } else {
-             $image->principal = 0;
+             $imagen->principal = 0;
         }
-        $image->save();
+        $imagen->save();
 
 
         return redirect()->route('image.index')
-            ->with('status', '¡Se ha creado la imagen ' . $image->url . ' correctamente!');
+            ->with('status', '¡Se ha creado la imagen ' . $imagen->url . ' correctamente!');
     }
 
     /**
@@ -174,7 +188,19 @@ class ImageController extends Controller
         // $request->validate([
         //     'archivo' => 'required',
         // ]);
+        $imagenes = Image::where('sector_id','=',$request->sector)->get();
+        
         $fotoPrincipal =  $request->principal;
+        foreach ($imagenes as $key) {
+           
+        
+            if ($key->principal ==1 && $request->principal=='on') {
+               
+                $fotoPrincipal = 'off';
+                $image->principal = 0;
+                
+            }
+        }
         
 
         // return $image->id;
